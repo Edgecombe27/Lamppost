@@ -10,9 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //Set size of the post
+        scrollView.contentSize = CGSize(width: 1000, height: 1000)
+        
     }
 
     override func didReceiveMemoryWarning() {

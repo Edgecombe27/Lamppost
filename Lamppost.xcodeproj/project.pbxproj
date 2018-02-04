@@ -12,6 +12,8 @@
 		85A6833D2025FEAB0074754E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A6833B2025FEAB0074754E /* Main.storyboard */; };
 		85A6833F2025FEAB0074754E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85A6833E2025FEAB0074754E /* Assets.xcassets */; };
 		85A683422025FEAB0074754E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A683402025FEAB0074754E /* LaunchScreen.storyboard */; };
+		85FE79242027BBF300DE00B0 /* Flyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE79232027BBF300DE00B0 /* Flyer.swift */; };
+		85FE79262027C12C00DE00B0 /* FlyerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE79252027C12C00DE00B0 /* FlyerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		85A6833E2025FEAB0074754E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85A683412025FEAB0074754E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85A683432025FEAB0074754E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85FE79232027BBF300DE00B0 /* Flyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flyer.swift; sourceTree = "<group>"; };
+		85FE79252027C12C00DE00B0 /* FlyerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +59,47 @@
 			isa = PBXGroup;
 			children = (
 				85A683372025FEAB0074754E /* AppDelegate.swift */,
-				85A683392025FEAB0074754E /* ViewController.swift */,
-				85A6833B2025FEAB0074754E /* Main.storyboard */,
 				85A6833E2025FEAB0074754E /* Assets.xcassets */,
-				85A683402025FEAB0074754E /* LaunchScreen.storyboard */,
 				85A683432025FEAB0074754E /* Info.plist */,
+				85A6834C2027BA670074754E /* Storyboards */,
+				85A6834B2027BA4C0074754E /* Controllers */,
+				85A6834A2027BA420074754E /* Views */,
+				85A683492027BA330074754E /* Models */,
 			);
 			path = Lamppost;
+			sourceTree = "<group>";
+		};
+		85A683492027BA330074754E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				85FE79232027BBF300DE00B0 /* Flyer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		85A6834A2027BA420074754E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				85FE79252027C12C00DE00B0 /* FlyerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		85A6834B2027BA4C0074754E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				85A683392025FEAB0074754E /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		85A6834C2027BA670074754E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				85A683402025FEAB0074754E /* LaunchScreen.storyboard */,
+				85A6833B2025FEAB0074754E /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +175,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				85A6833A2025FEAB0074754E /* ViewController.swift in Sources */,
+				85FE79242027BBF300DE00B0 /* Flyer.swift in Sources */,
 				85A683382025FEAB0074754E /* AppDelegate.swift in Sources */,
+				85FE79262027C12C00DE00B0 /* FlyerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
