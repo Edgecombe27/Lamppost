@@ -8,14 +8,23 @@
 
 import Foundation
 import CoreGraphics
+import UIKit
 
-protocol Flyer {
+class Flyer {
     
-    var title : String {get set}
-    var pos : CGPoint {get set}
-    var size : CGSize {get set}
-    var view : FlyerView {get set}
+    var title : String
+    var pos : CGPoint
+    var size : CGSize
+    var view : FlyerView
+    var icon : UIImage
     
-    func updateView() 
-    
+    init(title : String, icon : UIImage) {
+        self.title = title
+        self.icon = icon
+        pos = CGPoint(x: 0, y: 0)
+        size = CGSize(width: 0, height: 0)
+        view = FlyerView()
+    }
+    func updateView() {}
 }
+

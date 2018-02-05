@@ -12,11 +12,17 @@ class ViewController: UIViewController {
 
     @IBOutlet var scrollView: UIScrollView!
     
+    @IBOutlet var flyerView: FlyerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Set size of the post
         scrollView.contentSize = CGSize(width: 1000, height: 1000)
+        
+        var flyer = ContactFlyer(title: "test", icon: UIImage(named: "icon-76.png")!)
+        
+        flyerView.render(withFlyer: flyer)
         
     }
 
