@@ -31,6 +31,7 @@ class FlyerView: UIView {
         Bundle.main.loadNibNamed("FlyerView", owner: self, options: nil)
         addSubview(contentView)
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+
     }
     
     public func render(withFlyer : Flyer) {
@@ -38,6 +39,22 @@ class FlyerView: UIView {
         
         imageView.image = flyer.icon
         
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: bounds.midX, y: bounds.minY + layer.cornerRadius))
+        path.addLine(to: CGPoint(x: bounds.maxX - layer.cornerRadius, y: bounds.midY))
+        path.addLine(to: CGPoint(x: bounds.midX, y: bounds.maxY - layer.cornerRadius))
+        path.addLine(to: CGPoint(x: bounds.minX + layer.cornerRadius, y: bounds.midY))
+        path.close()
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = path.cgPath
+        shapeLayer.fillColor = UIColor.white.cgColor
+        shapeLayer.strokeColor = UIColor.white.cgColor
+        shapeLayer.lineWidth = layer.cornerRadius * 2
+        shapeLayer.lineJoin = kCALineJoinRound
+        shapeLayer.lineCap = kCALineCapRound
+        
+        layer.mask = shapeLayer
     }
     
     

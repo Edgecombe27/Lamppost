@@ -21,23 +21,23 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9o-nt-wcc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLc-ZM-XLS" customClass="FlyerView" customModule="Lamppost" customModuleProvider="target">
-                                        <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rLc-ZM-XLS" customClass="FlyerView" customModule="Lamppost" customModuleProvider="target">
+                                        <rect key="frame" x="113" y="209" width="150" height="251"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="K50-Yb-ulD">
-                                                <rect key="frame" x="0.0" y="0.0" width="129" height="137"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9mw-fy-xio">
-                                                        <rect key="frame" x="0.0" y="0.0" width="129" height="137"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9mw-fy-xio">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="LTC-ac-tIl"/>
-                                            <constraint firstAttribute="width" constant="100" id="gG7-ga-c0t"/>
+                                            <constraint firstAttribute="height" constant="250" id="LTC-ac-tIl"/>
+                                            <constraint firstAttribute="width" constant="150" id="gG7-ga-c0t"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="9mw-fy-xio" id="Ihk-eT-Ox2"/>

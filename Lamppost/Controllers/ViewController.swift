@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         
         flyerView.render(withFlyer: flyer)
         
+        
     }
 
     override func didReceiveMemoryWarning() {
