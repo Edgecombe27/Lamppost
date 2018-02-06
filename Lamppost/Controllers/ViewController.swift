@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         
         //Set size of the post
         scrollView.contentSize = CGSize(width: 1000, height: 1000)
+        //scrollView.contentOffset = CGPoint(x: 400, y: 400)
         
         var flyer = ContactFlyer(title: "test", icon: UIImage(named: "icon-76.png")!)
         

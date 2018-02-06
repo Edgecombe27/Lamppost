@@ -14,6 +14,11 @@ class FlyerView: UIView {
     var flyer : Flyer!
     @IBOutlet var imageView: UIImageView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -26,10 +31,6 @@ class FlyerView: UIView {
         Bundle.main.loadNibNamed("FlyerView", owner: self, options: nil)
         addSubview(contentView)
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        
-        self.layer.cornerRadius = 50
-        self.layer.masksToBounds = true
-        
     }
     
     public func render(withFlyer : Flyer) {
