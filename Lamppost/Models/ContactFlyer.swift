@@ -12,8 +12,10 @@ import UIKit
 
 class ContactFlyer : Flyer {
     
-
-    override init(title : String, icon : UIImage) {
+    var details : [String : Any]
+    
+    init(title : String, icon : UIImage, details: [String : Any]) {
+        self.details = details
         super.init(title: title, icon: icon)
     }
     

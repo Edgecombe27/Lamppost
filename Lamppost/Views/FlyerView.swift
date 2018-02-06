@@ -55,6 +55,10 @@ class FlyerView: UIView {
         shapeLayer.lineCap = kCALineCapRound
         
         layer.mask = shapeLayer
+        
+        layer.borderWidth = 1
+        layer.borderColor = UIColor(red: 86, green: 22, blue: 67, alpha: 1).cgColor
+        
     }
     
     
