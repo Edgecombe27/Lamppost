@@ -19,10 +19,41 @@ class ContactFlyer : Flyer {
         super.init(title: title, icon: icon)
     }
     
-    override func updateView() {
+    override func performAction(action: Action, options : [String : Any]) {
+        switch (action) {
+            
+        case  ContactAction.CallAction:
+            performCallAction(options: options)
+            break
+        case ContactAction.MessageAction:
+            performMessageAction(options: options)
+            break
+        case ContactAction.EmailAction:
+            performEmailAction(options: options)
+            break
+        case ContactAction.AddressAction:
+            performAddressAction(options: options)
+            break
+        default:
+            break
+        }
+    }
+    
+    private func performCallAction(options: [String : Any]) {
         
     }
     
+    private func performMessageAction(options: [String : Any]) {
+        
+    }
+    
+    private func performEmailAction(options: [String : Any]) {
+        
+    }
+    
+    private func performAddressAction(options: [String : Any]) {
+        
+    }
     
     
     

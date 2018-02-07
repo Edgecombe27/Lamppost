@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,14 +22,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ojx-4Z-Alh">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="93.5" y="166.5" width="188.5" height="334.5"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="ojx-4Z-Alh" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="53Q-IK-abt"/>
+                <constraint firstItem="ojx-4Z-Alh" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" constant="1" id="53Q-IK-abt"/>
                 <constraint firstItem="ojx-4Z-Alh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7x9-94-EY6"/>
-                <constraint firstItem="ojx-4Z-Alh" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="TYY-do-E5L"/>
+                <constraint firstItem="ojx-4Z-Alh" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" constant="1" id="TYY-do-E5L"/>
                 <constraint firstItem="ojx-4Z-Alh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="nb3-Bn-tCX"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

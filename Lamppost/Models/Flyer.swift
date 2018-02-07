@@ -25,6 +25,11 @@ class Flyer {
         size = CGSize(width: 0, height: 0)
         view = FlyerView()
     }
+    
     func updateView() {}
+    
+    func performAction(action: Action, options : [String : Any]) {}
+    
+    
 }
 
