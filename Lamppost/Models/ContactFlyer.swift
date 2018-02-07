@@ -13,7 +13,7 @@ import UIKit
 class ContactFlyer : Flyer {
     
     var details : [String : Any]
-    
+        
     init(title : String, icon : UIImage, details: [String : Any]) {
         self.details = details
         super.init(title: title, icon: icon)

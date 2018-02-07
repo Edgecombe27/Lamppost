@@ -9,7 +9,9 @@
 import Foundation
 
 
-protocol Action {}
+protocol Action {
+    
+}
 
 enum ContactAction : Action {
     case CallAction
