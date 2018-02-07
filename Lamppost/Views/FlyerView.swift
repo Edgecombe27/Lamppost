@@ -39,7 +39,7 @@ class FlyerView: UIView {
         
         imageView.image = flyer.icon
         
-        let path = UIBezierPath()
+        /*let path = UIBezierPath()
         path.move(to: CGPoint(x: bounds.midX, y: bounds.minY + layer.cornerRadius))
         path.addLine(to: CGPoint(x: bounds.maxX - layer.cornerRadius, y: bounds.midY))
         path.addLine(to: CGPoint(x: bounds.midX, y: bounds.maxY - layer.cornerRadius))
@@ -54,7 +54,7 @@ class FlyerView: UIView {
         shapeLayer.lineJoin = kCALineJoinRound
         shapeLayer.lineCap = kCALineCapRound
         
-        layer.mask = shapeLayer
+        layer.mask = shapeLayer*/
         
         layer.borderWidth = 1
         layer.borderColor = UIColor(red: 86, green: 22, blue: 67, alpha: 1).cgColor
