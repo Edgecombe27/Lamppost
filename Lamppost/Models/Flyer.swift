@@ -15,7 +15,7 @@ class Flyer {
     var title : String
     var pos : CGPoint
     var size : CGSize
-    var view : FlyerView
+    var view : FlyerCellView
     var icon : UIImage
     
     init(title : String, icon : UIImage) {
@@ -23,7 +23,7 @@ class Flyer {
         self.icon = icon
         pos = CGPoint(x: 0, y: 0)
         size = CGSize(width: 0, height: 0)
-        view = FlyerView()
+        view = FlyerCellView()
     }
     
     func updateView() {}
