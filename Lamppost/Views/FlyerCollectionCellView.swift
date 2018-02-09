@@ -10,13 +10,14 @@ import UIKit
 
 class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
 
+    var collection : FlyerCollection! 
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var sectionLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         collectionView.register(UINib(nibName: "FlyerCellView", bundle: nil), forCellWithReuseIdentifier: "flyer_cell")
-        // Initialization code
         collectionView.dataSource = self
         collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
@@ -25,6 +26,7 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
         flowLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
         flowLayout.minimumInteritemSpacing = 0.0
         collectionView.collectionViewLayout = flowLayout
+        
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -32,12 +34,25 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return collection.count()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : FlyerCellView = self.collectionView.dequeueReusableCell(withReuseIdentifier: "flyer_cell", for: indexPath) as! FlyerCellView
+        cell.render(withFlyer: collection[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let flyer = (collectionView.cellForItem(at: indexPath) as! FlyerCellView).flyer
+        
+        flyer?.performAction(action: ContactAction.MessageAction, options: [:])
+        
+    }
+    
+    func render(withCollection : FlyerCollection) {
+        collection = withCollection
+        sectionLabel.text = collection.name
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

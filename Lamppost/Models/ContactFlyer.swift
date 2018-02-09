@@ -40,11 +40,15 @@ class ContactFlyer : Flyer {
     }
     
     private func performCallAction(options: [String : Any]) {
-        
+        if let url = URL(string: "tel://9056375923"), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
     }
     
     private func performMessageAction(options: [String : Any]) {
-        
+        if let url = URL(string: "sms://2892591790"), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
     }
     
     private func performEmailAction(options: [String : Any]) {
