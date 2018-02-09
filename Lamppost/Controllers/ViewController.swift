@@ -20,14 +20,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.register(UINib(nibName: "FlyerCollectionCellView", bundle: nil), forCellReuseIdentifier: "flyer_collection_cell")
         tableView.rowHeight = 270
         
-        var flyer = ContactFlyer(title: "test", icon: UIImage(named: "icons8-basketball-100.png")!, details: ["lol": 9])
-        var flyer2 = ContactFlyer(title: "test", icon: UIImage(named: "icons8-bmx-100.png")!, details: ["lol": 9])
+        let contactHandler = ContactHandler()
+        contactHandler.importContacts()
         
-        flyerData = [FlyerCollection(withName: "Favorites", andFlyers: [flyer, flyer2, flyer]),
-                    FlyerCollection(withName: "Work", andFlyers: [flyer2, flyer, flyer2, flyer]),
-                    FlyerCollection(withName: "Friends", andFlyers: [flyer, flyer2, flyer, flyer, flyer])]
-
-        
+        flyerData = contactHandler.generateFlyers()
+        flyerData.sort { (f1, f2) -> Bool in
+            print(f1.name)
+            return f1.name.compare(f2.name) == .orderedAscending
+        }
+        tableView.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

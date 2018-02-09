@@ -34,8 +34,8 @@
                         </connections>
                     </collectionView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4x-7k-D02">
-                        <rect key="frame" x="10" y="0.0" width="69.5" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="18" y="0.0" width="74.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -46,7 +46,7 @@
                     <constraint firstAttribute="trailing" secondItem="0Sk-ed-uco" secondAttribute="trailing" id="aOG-D9-ihv"/>
                     <constraint firstItem="0Sk-ed-uco" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="f5d-2s-G3I"/>
                     <constraint firstAttribute="bottom" secondItem="0Sk-ed-uco" secondAttribute="bottom" id="mXp-jj-ECX"/>
-                    <constraint firstItem="a4x-7k-D02" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="rTK-bu-hV2"/>
+                    <constraint firstItem="a4x-7k-D02" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="rTK-bu-hV2"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

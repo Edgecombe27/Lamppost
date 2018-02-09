@@ -44,14 +44,28 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let flyer = (collectionView.cellForItem(at: indexPath) as! FlyerCellView).flyer
         
-        flyer?.performAction(action: ContactAction.MessageAction, options: [:])
+        let flyer = (collectionView.cellForItem(at: indexPath) as! FlyerCellView).flyer as! ContactFlyer
+        
+        let actionSheet = UIAlertController(title: flyer.title, message: "Select an option", preferredStyle: .actionSheet)
+        
+        for action in flyer.getActions() {
+            
+            actionSheet.addAction(UIAlertAction(title: action, style: .default, handler: { actionSheet in
+                flyer.performAction(action: action)
+            }))
+            
+        }
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        UIApplication.shared.keyWindow?.rootViewController?.present(actionSheet, animated: true, completion: nil)
         
     }
     
     func render(withCollection : FlyerCollection) {
         collection = withCollection
+        collectionView.reloadData()
         sectionLabel.text = collection.name
     }
 

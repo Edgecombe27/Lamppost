@@ -19,6 +19,7 @@
 		FB0B0AD0202CEF0F00D0722F /* FlyerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0B0ACE202CEF0F00D0722F /* FlyerCellView.swift */; };
 		FB0B0AD1202CEF0F00D0722F /* FlyerCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB0B0ACF202CEF0F00D0722F /* FlyerCellView.xib */; };
 		FB200301202DE81500776AD2 /* FlyerCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB200300202DE81500776AD2 /* FlyerCollection.swift */; };
+		FB200303202E2CAE00776AD2 /* ContactHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB200302202E2CAE00776AD2 /* ContactHandler.swift */; };
 		FB37F3E0202B8592004527CA /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB37F3DF202B8592004527CA /* Action.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		FB0B0ACE202CEF0F00D0722F /* FlyerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyerCellView.swift; sourceTree = "<group>"; };
 		FB0B0ACF202CEF0F00D0722F /* FlyerCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlyerCellView.xib; sourceTree = "<group>"; };
 		FB200300202DE81500776AD2 /* FlyerCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyerCollection.swift; sourceTree = "<group>"; };
+		FB200302202E2CAE00776AD2 /* ContactHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactHandler.swift; sourceTree = "<group>"; };
 		FB37F3DF202B8592004527CA /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 				85FE79232027BBF300DE00B0 /* Flyer.swift */,
 				FB200300202DE81500776AD2 /* FlyerCollection.swift */,
 				85FE792B20291C2B00DE00B0 /* ContactFlyer.swift */,
+				FB200302202E2CAE00776AD2 /* ContactHandler.swift */,
 				FB37F3DF202B8592004527CA /* Action.swift */,
 			);
 			path = Models;
@@ -200,6 +203,7 @@
 				FB0B0ACA202CEE6200D0722F /* FlyerCollectionCellView.swift in Sources */,
 				85A6833A2025FEAB0074754E /* ViewController.swift in Sources */,
 				85FE79242027BBF300DE00B0 /* Flyer.swift in Sources */,
+				FB200303202E2CAE00776AD2 /* ContactHandler.swift in Sources */,
 				FB200301202DE81500776AD2 /* FlyerCollection.swift in Sources */,
 				85A683382025FEAB0074754E /* AppDelegate.swift in Sources */,
 			);

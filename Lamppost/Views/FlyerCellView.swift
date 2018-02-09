@@ -12,6 +12,8 @@ class FlyerCellView: UICollectionViewCell {
 
     var flyer : Flyer!
     
+    @IBOutlet weak var iconView: UIView!
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
     override func awakeFromNib() {
@@ -22,12 +24,16 @@ class FlyerCellView: UICollectionViewCell {
     func render(withFlyer: Flyer) {
         flyer = withFlyer
         
-        layer.cornerRadius = 10
-        layer.masksToBounds = true
+        imageView.image = nil
+        label.text = ""
+        
+        iconView.layer.cornerRadius = 10
+        iconView.layer.masksToBounds = true
         
         imageView.image = flyer.icon
+        label.text = flyer.title
         
-        backgroundColor = getRandomColor()
+        iconView.backgroundColor = getRandomColor()
         
     }
     
