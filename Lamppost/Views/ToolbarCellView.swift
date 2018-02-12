@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ToolbarCellView: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
+class ToolbarCellView: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate  {
     
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -23,12 +23,11 @@ class ToolbarCellView: UITableViewCell, UICollectionViewDataSource, UICollection
         collectionView.dataSource = self
         collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width:UIScreen.main.bounds.width/2-10,height: 30)
+        flowLayout.estimatedItemSize = CGSize(width:UIScreen.main.bounds.width/10,height: 30)
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
         flowLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
         flowLayout.minimumInteritemSpacing = 0.0
         collectionView.collectionViewLayout = flowLayout
-        
         collectionView.layer.cornerRadius = 15
         collectionView.layer.masksToBounds = true
         
@@ -41,6 +40,8 @@ class ToolbarCellView: UITableViewCell, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : ShortcutCellView = self.collectionView.dequeueReusableCell(withReuseIdentifier: "shortcut_cell", for: indexPath) as! ShortcutCellView
         cell.render(withCollection: viewController.flyerData[indexPath.row], index: indexPath.row)
+        //var size : CGFloat = CGFloat(viewController.flyerData[indexPath.row].name.characters.count*5)
+        //cell.bounds = CGRect(x: cell.bounds.minX, y: cell.bounds.minY, width: size, height: 30)
         return cell
     }
     
@@ -55,3 +56,5 @@ class ToolbarCellView: UITableViewCell, UICollectionViewDataSource, UICollection
     }
 
 }
+
+

@@ -29,6 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print(f1.name)
             return f1.name.compare(f2.name) == .orderedAscending
         }
+        
         tableView.rowHeight = 150
         tableView.reloadData()
     }
