@@ -168,7 +168,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 85A6832F2025FEAB0074754E /* Build configuration list for PBXProject "kiosk" */;
+			buildConfigurationList = 85A6832F2025FEAB0074754E /* Build configuration list for PBXProject "Lamppost" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -383,7 +383,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		85A6832F2025FEAB0074754E /* Build configuration list for PBXProject "kiosk" */ = {
+		85A6832F2025FEAB0074754E /* Build configuration list for PBXProject "Lamppost" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				85A683442025FEAB0074754E /* Debug */,
