@@ -21,6 +21,9 @@
 		FB200301202DE81500776AD2 /* FlyerCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB200300202DE81500776AD2 /* FlyerCollection.swift */; };
 		FB200303202E2CAE00776AD2 /* ContactHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB200302202E2CAE00776AD2 /* ContactHandler.swift */; };
 		FB37F3E0202B8592004527CA /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB37F3DF202B8592004527CA /* Action.swift */; };
+		FBD9AE5420321F3D0039443B /* ToolbarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD9AE5320321F3D0039443B /* ToolbarCellView.swift */; };
+		FBD9AE57203221B90039443B /* ShortcutCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD9AE55203221B90039443B /* ShortcutCellView.swift */; };
+		FBD9AE58203221B90039443B /* ShortcutCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD9AE56203221B90039443B /* ShortcutCellView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		FB200300202DE81500776AD2 /* FlyerCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyerCollection.swift; sourceTree = "<group>"; };
 		FB200302202E2CAE00776AD2 /* ContactHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactHandler.swift; sourceTree = "<group>"; };
 		FB37F3DF202B8592004527CA /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		FBD9AE5320321F3D0039443B /* ToolbarCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarCellView.swift; sourceTree = "<group>"; };
+		FBD9AE55203221B90039443B /* ShortcutCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutCellView.swift; sourceTree = "<group>"; };
+		FBD9AE56203221B90039443B /* ShortcutCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShortcutCellView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +106,10 @@
 			children = (
 				FB0B0AC8202CEE6200D0722F /* FlyerCollectionCellView.swift */,
 				FB0B0AC9202CEE6200D0722F /* FlyerCollectionCellView.xib */,
+				FBD9AE5320321F3D0039443B /* ToolbarCellView.swift */,
 				FB0B0ACE202CEF0F00D0722F /* FlyerCellView.swift */,
+				FBD9AE55203221B90039443B /* ShortcutCellView.swift */,
+				FBD9AE56203221B90039443B /* ShortcutCellView.xib */,
 				FB0B0ACF202CEF0F00D0722F /* FlyerCellView.xib */,
 			);
 			path = Views;
@@ -159,7 +168,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 85A6832F2025FEAB0074754E /* Build configuration list for PBXProject "Lamppost" */;
+			buildConfigurationList = 85A6832F2025FEAB0074754E /* Build configuration list for PBXProject "kiosk" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -186,6 +195,7 @@
 				FB0B0ACB202CEE6200D0722F /* FlyerCollectionCellView.xib in Resources */,
 				FB0B0AD1202CEF0F00D0722F /* FlyerCellView.xib in Resources */,
 				85A6833F2025FEAB0074754E /* Assets.xcassets in Resources */,
+				FBD9AE58203221B90039443B /* ShortcutCellView.xib in Resources */,
 				85A6833D2025FEAB0074754E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,8 +210,10 @@
 				FB0B0AD0202CEF0F00D0722F /* FlyerCellView.swift in Sources */,
 				85FE792C20291C2B00DE00B0 /* ContactFlyer.swift in Sources */,
 				FB37F3E0202B8592004527CA /* Action.swift in Sources */,
+				FBD9AE57203221B90039443B /* ShortcutCellView.swift in Sources */,
 				FB0B0ACA202CEE6200D0722F /* FlyerCollectionCellView.swift in Sources */,
 				85A6833A2025FEAB0074754E /* ViewController.swift in Sources */,
+				FBD9AE5420321F3D0039443B /* ToolbarCellView.swift in Sources */,
 				85FE79242027BBF300DE00B0 /* Flyer.swift in Sources */,
 				FB200303202E2CAE00776AD2 /* ContactHandler.swift in Sources */,
 				FB200301202DE81500776AD2 /* FlyerCollection.swift in Sources */,
@@ -346,7 +358,7 @@
 				DEVELOPMENT_TEAM = C98ZF9CE9P;
 				INFOPLIST_FILE = Lamppost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fwt.Lamppost;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fwt.kiosk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -361,7 +373,7 @@
 				DEVELOPMENT_TEAM = C98ZF9CE9P;
 				INFOPLIST_FILE = Lamppost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fwt.Lamppost;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fwt.kiosk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -371,7 +383,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		85A6832F2025FEAB0074754E /* Build configuration list for PBXProject "Lamppost" */ = {
+		85A6832F2025FEAB0074754E /* Build configuration list for PBXProject "kiosk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				85A683442025FEAB0074754E /* Debug */,

@@ -91,7 +91,7 @@ class ContactHandler {
             if contact.imageDataAvailable {
                 image = UIImage(data: contact.imageData!)!
             } else {
-                image = UIImage(named: "icons8-basketball-100.png")!
+                image = UIImage(named: "icons8-user-96.png")!
             }
             
             var title = ""

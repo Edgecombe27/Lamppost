@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,7 +19,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //Set size of the post
         
         tableView.register(UINib(nibName: "FlyerCollectionCellView", bundle: nil), forCellReuseIdentifier: "flyer_collection_cell")
-        tableView.rowHeight = 270
+        
         
         let contactHandler = ContactHandler()
         contactHandler.importContacts()
@@ -28,11 +29,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print(f1.name)
             return f1.name.compare(f2.name) == .orderedAscending
         }
+        tableView.rowHeight = 150
         tableView.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return flyerData.count
+        return flyerData.count+1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,12 +43,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : FlyerCollectionCellView = self.tableView.dequeueReusableCell(withIdentifier: "flyer_collection_cell", for: indexPath) as! FlyerCollectionCellView
-        cell.render(withCollection: flyerData[indexPath.section])
+        if indexPath.section > 0 {
+            let cell : FlyerCollectionCellView = self.tableView.dequeueReusableCell(withIdentifier: "flyer_collection_cell", for: indexPath) as! FlyerCollectionCellView
+            cell.render(withCollection: flyerData[indexPath.section-1])
+            return cell
+        }
+        let cell : ToolbarCellView = self.tableView.dequeueReusableCell(withIdentifier: "toolbar_cell", for: indexPath) as! ToolbarCellView
+        cell.viewController = self
         return cell
         
     }
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

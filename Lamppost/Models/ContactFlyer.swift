@@ -30,8 +30,12 @@ class ContactFlyer : Flyer {
         } else if details["first_name"] != nil{
             super.title = details["first_name"] as! String
         }
-        if details["last_name"] != nil{
-            super.title += details["last_name"] as! String
+        
+        if details["last_name"] != nil {
+            let lastName = details["last_name"] as! String
+            if !lastName.isEmpty {
+                super.title += " \(lastName[lastName.startIndex])."
+            }
         }
         
         

@@ -21,7 +21,7 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
         collectionView.dataSource = self
         collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width:UIScreen.main.bounds.width/2.5-10,height: 225)
+        flowLayout.itemSize = CGSize(width:UIScreen.main.bounds.width/4-10,height: 100)
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
         flowLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
         flowLayout.minimumInteritemSpacing = 0.0
@@ -65,6 +65,7 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
     
     func render(withCollection : FlyerCollection) {
         collection = withCollection
+        collection.sort()
         collectionView.reloadData()
         sectionLabel.text = collection.name
     }

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,12 +19,104 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0fY-fw-4WJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0fY-fw-4WJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="toolbar_cell" rowHeight="150" id="enB-Pq-MNJ" customClass="ToolbarCellView" customModule="Lamppost" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="enB-Pq-MNJ" id="zER-7B-DkT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNh-H2-hRo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="TUI-ky-vVq"/>
+                                                    </constraints>
+                                                    <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <textAttributes key="titleTextAttributes">
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <color key="textColor" red="0.20784313730000001" green="0.47058823529999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </textAttributes>
+                                                    <items>
+                                                        <navigationItem title="kiOSk" id="QP7-fT-Ckj"/>
+                                                    </items>
+                                                </navigationBar>
+                                                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gxP-3I-LDg">
+                                                    <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="gg4-88-zpd"/>
+                                                    </constraints>
+                                                    <items>
+                                                        <barButtonItem systemItem="compose" id="GUj-cz-xkD"/>
+                                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="OBD-s3-daP"/>
+                                                        <barButtonItem systemItem="search" id="76m-Ry-Czw"/>
+                                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="rNI-ex-Yu1"/>
+                                                        <barButtonItem systemItem="action" id="hxd-7G-JdU"/>
+                                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="s44-2D-giP"/>
+                                                        <barButtonItem systemItem="add" id="t4e-pH-FcP"/>
+                                                    </items>
+                                                    <color key="tintColor" red="0.20784313730000001" green="0.47058823529999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </toolbar>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shortcuts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pkf-Fj-MES">
+                                                    <rect key="frame" x="15" y="103" width="73" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6at-eb-9HN">
+                                                    <rect key="frame" x="96" y="88" width="279" height="53.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yqj-4t-Mag">
+                                                        <size key="itemSize" width="50" height="50"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kVO-K6-kwe">
+                                                            <rect key="frame" x="0.0" y="2" width="50" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </view>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="enB-Pq-MNJ" id="ifU-a6-a1k"/>
+                                                        <outlet property="delegate" destination="enB-Pq-MNJ" id="Qms-wv-MC9"/>
+                                                    </connections>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="gxP-3I-LDg" secondAttribute="trailing" id="68k-fv-3Xr"/>
+                                                <constraint firstAttribute="bottom" secondItem="6at-eb-9HN" secondAttribute="bottom" constant="8" id="8Xl-Jv-qoa"/>
+                                                <constraint firstItem="bNh-H2-hRo" firstAttribute="top" secondItem="zER-7B-DkT" secondAttribute="top" id="9jc-j5-92l"/>
+                                                <constraint firstItem="6at-eb-9HN" firstAttribute="top" secondItem="gxP-3I-LDg" secondAttribute="bottom" id="Asa-l4-Zor"/>
+                                                <constraint firstAttribute="trailing" secondItem="6at-eb-9HN" secondAttribute="trailing" id="Mpk-HA-35t"/>
+                                                <constraint firstItem="bNh-H2-hRo" firstAttribute="leading" secondItem="zER-7B-DkT" secondAttribute="leading" id="Pk9-F5-Z1c"/>
+                                                <constraint firstItem="Pkf-Fj-MES" firstAttribute="top" secondItem="gxP-3I-LDg" secondAttribute="bottom" constant="15" id="TUp-KC-K3f"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Pkf-Fj-MES" secondAttribute="bottom" constant="15" id="W1h-fL-hhb"/>
+                                                <constraint firstAttribute="trailing" secondItem="bNh-H2-hRo" secondAttribute="trailing" id="Z6c-r9-cfS"/>
+                                                <constraint firstItem="6at-eb-9HN" firstAttribute="leading" secondItem="Pkf-Fj-MES" secondAttribute="trailing" constant="8" id="fNb-6f-zqy"/>
+                                                <constraint firstItem="gxP-3I-LDg" firstAttribute="leading" secondItem="zER-7B-DkT" secondAttribute="leading" id="fVg-bk-Vcv"/>
+                                                <constraint firstItem="gxP-3I-LDg" firstAttribute="top" secondItem="bNh-H2-hRo" secondAttribute="bottom" id="ggl-Jc-pvs"/>
+                                                <constraint firstItem="Pkf-Fj-MES" firstAttribute="leading" secondItem="zER-7B-DkT" secondAttribute="leadingMargin" id="u9e-3d-9II"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionView" destination="6at-eb-9HN" id="nzA-2s-u0j"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="myC-P1-aRZ"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="TwK-Yy-ehl"/>

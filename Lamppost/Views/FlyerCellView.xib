@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,22 +22,23 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OxW-A5-A11">
-                        <rect key="frame" x="0.0" y="0.0" width="97" height="133.5"/>
+                        <rect key="frame" x="9.5" y="52.5" width="78.5" height="77.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-bmx-100" translatesAutoresizingMaskIntoConstraints="NO" id="vP0-17-kHm">
-                                <rect key="frame" x="-1" y="-1.5" width="98" height="135"/>
+                                <rect key="frame" x="-1" y="-1.5" width="79.5" height="79"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="width" secondItem="OxW-A5-A11" secondAttribute="height" multiplier="1:1" constant="1" id="1rb-T7-dIp"/>
                             <constraint firstItem="vP0-17-kHm" firstAttribute="centerX" secondItem="OxW-A5-A11" secondAttribute="centerX" id="4ya-Sv-uZx"/>
                             <constraint firstItem="vP0-17-kHm" firstAttribute="height" secondItem="OxW-A5-A11" secondAttribute="height" constant="1" id="Fbc-CA-oUo"/>
                             <constraint firstItem="vP0-17-kHm" firstAttribute="width" secondItem="OxW-A5-A11" secondAttribute="width" constant="1" id="rUc-Nu-jH9"/>
                             <constraint firstItem="vP0-17-kHm" firstAttribute="centerY" secondItem="OxW-A5-A11" secondAttribute="centerY" id="shm-0W-O3w"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wb5-Z8-cjm">
-                        <rect key="frame" x="8" y="133.5" width="89" height="22.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wb5-Z8-cjm">
+                        <rect key="frame" x="30" y="138" width="37.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -45,14 +47,10 @@
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="OxW-A5-A11" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.85" constant="1" id="D1m-8S-2RL"/>
-                <constraint firstItem="OxW-A5-A11" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="LHU-rS-OHB"/>
-                <constraint firstItem="OxW-A5-A11" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Mhb-ew-azR"/>
-                <constraint firstItem="OxW-A5-A11" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ZHJ-Ep-k2G"/>
-                <constraint firstAttribute="trailing" secondItem="Wb5-Z8-cjm" secondAttribute="trailing" id="ey5-Yc-O2y"/>
-                <constraint firstItem="Wb5-Z8-cjm" firstAttribute="top" secondItem="OxW-A5-A11" secondAttribute="bottom" id="hGM-ae-qWh"/>
-                <constraint firstAttribute="trailing" secondItem="OxW-A5-A11" secondAttribute="trailing" id="jrT-gf-wOt"/>
-                <constraint firstItem="Wb5-Z8-cjm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="sA5-O4-rfb"/>
+                <constraint firstItem="OxW-A5-A11" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.8" constant="1" id="LHU-rS-OHB"/>
+                <constraint firstItem="Wb5-Z8-cjm" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Rps-DZ-lad"/>
+                <constraint firstItem="Wb5-Z8-cjm" firstAttribute="top" secondItem="OxW-A5-A11" secondAttribute="bottom" constant="8" id="hGM-ae-qWh"/>
+                <constraint firstItem="OxW-A5-A11" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="kTi-Tf-bzN"/>
                 <constraint firstAttribute="bottom" secondItem="Wb5-Z8-cjm" secondAttribute="bottom" id="yWW-bG-iMW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>

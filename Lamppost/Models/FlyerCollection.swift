@@ -34,6 +34,12 @@ class FlyerCollection {
         return collection.count
     }
     
+    func sort() {
+        collection.sort { (c1, c2) -> Bool in
+            return c1.title.compare(c2.title) == .orderedAscending
+        }
+    }
+    
     subscript(index : Int) -> Flyer {
         get {
             return collection[index]
