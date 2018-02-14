@@ -15,11 +15,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var flyerData : [FlyerCollection]!
     
+    @IBOutlet weak var statusBarView: UILabel!
+    
     override func viewDidLoad() {
         //Set size of the post
         
+        
+        let gradient = CAGradientLayer()
+        gradient.frame = statusBarView.bounds
+        gradient.colors = [UIColor.red.cgColor, UIColor.clear.cgColor]
+        statusBarView.layer.mask = gradient
+        
         tableView.register(UINib(nibName: "FlyerCollectionCellView", bundle: nil), forCellReuseIdentifier: "flyer_collection_cell")
         
+        tableView.register(UINib(nibName: "HeaderCellView", bundle: nil), forCellReuseIdentifier: "header_cell")
         
         let contactHandler = ContactHandler()
         contactHandler.importContacts()
@@ -32,7 +41,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.rowHeight = 150
         tableView.reloadData()
+        
+        
     }
+    
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return flyerData.count+1
@@ -49,7 +62,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.render(withCollection: flyerData[indexPath.section-1])
             return cell
         }
-        let cell : ToolbarCellView = self.tableView.dequeueReusableCell(withIdentifier: "toolbar_cell", for: indexPath) as! ToolbarCellView
+        let cell : HeaderCellView = self.tableView.dequeueReusableCell(withIdentifier: "header_cell", for: indexPath) as! HeaderCellView
         cell.viewController = self
         return cell
         

@@ -22,8 +22,7 @@ class ContactFlyer : Flyer {
         
         actions = ["Call" : performCallAction,
                     "Message" : performMessageAction,
-                    "Email" : performEmailAction,
-                    "Address" : performAddressAction]
+                    "Email" : performEmailAction]
         
         if details["nickname"] != nil && !(details["nickname"] as!String).isEmpty{
             super.title = details["nickname"] as! String
@@ -66,7 +65,9 @@ class ContactFlyer : Flyer {
     }
     
     private func performEmailAction() {
-        if let url = URL(string: "mailto://edge1190@mylaurier.ca"), UIApplication.shared.canOpenURL(url) {
+        let emails = Array((details["email_addresses"] as! [String : String]).values)
+        let index = Array((details["email_addresses"] as! [String : String]).values).startIndex
+        if let url = URL(string: "mailto://\(emails[index])"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         }
     }

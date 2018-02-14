@@ -24,6 +24,8 @@
 		FBD9AE5420321F3D0039443B /* ToolbarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD9AE5320321F3D0039443B /* ToolbarCellView.swift */; };
 		FBD9AE57203221B90039443B /* ShortcutCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD9AE55203221B90039443B /* ShortcutCellView.swift */; };
 		FBD9AE58203221B90039443B /* ShortcutCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD9AE56203221B90039443B /* ShortcutCellView.xib */; };
+		FBE3C975203325E9009B8F83 /* HeaderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3C973203325E9009B8F83 /* HeaderCellView.swift */; };
+		FBE3C976203325E9009B8F83 /* HeaderCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE3C974203325E9009B8F83 /* HeaderCellView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		FBD9AE5320321F3D0039443B /* ToolbarCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarCellView.swift; sourceTree = "<group>"; };
 		FBD9AE55203221B90039443B /* ShortcutCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutCellView.swift; sourceTree = "<group>"; };
 		FBD9AE56203221B90039443B /* ShortcutCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShortcutCellView.xib; sourceTree = "<group>"; };
+		FBE3C973203325E9009B8F83 /* HeaderCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCellView.swift; sourceTree = "<group>"; };
+		FBE3C974203325E9009B8F83 /* HeaderCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCellView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 				FB0B0AC8202CEE6200D0722F /* FlyerCollectionCellView.swift */,
 				FB0B0AC9202CEE6200D0722F /* FlyerCollectionCellView.xib */,
 				FBD9AE5320321F3D0039443B /* ToolbarCellView.swift */,
+				FBE3C973203325E9009B8F83 /* HeaderCellView.swift */,
+				FBE3C974203325E9009B8F83 /* HeaderCellView.xib */,
 				FB0B0ACE202CEF0F00D0722F /* FlyerCellView.swift */,
 				FBD9AE55203221B90039443B /* ShortcutCellView.swift */,
 				FBD9AE56203221B90039443B /* ShortcutCellView.xib */,
@@ -192,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85A683422025FEAB0074754E /* LaunchScreen.storyboard in Resources */,
+				FBE3C976203325E9009B8F83 /* HeaderCellView.xib in Resources */,
 				FB0B0ACB202CEE6200D0722F /* FlyerCollectionCellView.xib in Resources */,
 				FB0B0AD1202CEF0F00D0722F /* FlyerCellView.xib in Resources */,
 				85A6833F2025FEAB0074754E /* Assets.xcassets in Resources */,
@@ -210,6 +217,7 @@
 				FB0B0AD0202CEF0F00D0722F /* FlyerCellView.swift in Sources */,
 				85FE792C20291C2B00DE00B0 /* ContactFlyer.swift in Sources */,
 				FB37F3E0202B8592004527CA /* Action.swift in Sources */,
+				FBE3C975203325E9009B8F83 /* HeaderCellView.swift in Sources */,
 				FBD9AE57203221B90039443B /* ShortcutCellView.swift in Sources */,
 				FB0B0ACA202CEE6200D0722F /* FlyerCollectionCellView.swift in Sources */,
 				85A6833A2025FEAB0074754E /* ViewController.swift in Sources */,

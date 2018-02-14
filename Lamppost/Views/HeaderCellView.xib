@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="header_cell" rowHeight="143" id="KGk-i7-Jjw" customClass="HeaderCellView" customModule="Lamppost" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="379" height="143"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="379" height="142.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKE-Nq-jKG">
+                        <rect key="frame" x="0.0" y="0.0" width="379" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="rk4-0r-9Pj"/>
+                        </constraints>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                            <color key="textColor" red="0.20784313730000001" green="0.47058823529999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                        <items>
+                            <navigationItem title="kiOSk" id="tah-cu-MNx"/>
+                        </items>
+                    </navigationBar>
+                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zH8-rp-kU8">
+                        <rect key="frame" x="0.0" y="44" width="379" height="44"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="WZV-Ip-mxA"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="mCl-bA-lV0"/>
+                        </constraints>
+                        <items>
+                            <barButtonItem systemItem="compose" id="YXl-GE-hpw"/>
+                            <barButtonItem style="plain" systemItem="flexibleSpace" id="Egc-bY-vrS"/>
+                            <barButtonItem systemItem="search" id="lno-W5-ps1"/>
+                            <barButtonItem style="plain" systemItem="flexibleSpace" id="ibk-Ym-JtW"/>
+                            <barButtonItem systemItem="action" id="lnX-KI-ocL"/>
+                            <barButtonItem style="plain" systemItem="flexibleSpace" id="ahv-If-Urb"/>
+                            <barButtonItem systemItem="add" id="qM1-gT-AtO"/>
+                        </items>
+                        <color key="tintColor" red="0.20784313730000001" green="0.47058823529999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </toolbar>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="VXq-i7-YVH">
+                        <rect key="frame" x="0.0" y="88" width="379" height="46.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="quT-2J-HUq"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Esu-hj-CXH">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="yKE-Nq-jKG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="BkI-mx-zJJ"/>
+                    <constraint firstItem="VXq-i7-YVH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Daj-sz-7A4"/>
+                    <constraint firstAttribute="bottom" secondItem="VXq-i7-YVH" secondAttribute="bottom" constant="8" id="FQn-ge-i10"/>
+                    <constraint firstItem="VXq-i7-YVH" firstAttribute="top" secondItem="zH8-rp-kU8" secondAttribute="bottom" id="H1z-Gv-ajQ"/>
+                    <constraint firstAttribute="trailing" secondItem="yKE-Nq-jKG" secondAttribute="trailing" id="K4f-f8-P18"/>
+                    <constraint firstAttribute="trailing" secondItem="zH8-rp-kU8" secondAttribute="trailing" id="Y1R-bR-Nws"/>
+                    <constraint firstItem="yKE-Nq-jKG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="YfM-uB-Zb6"/>
+                    <constraint firstItem="zH8-rp-kU8" firstAttribute="top" secondItem="yKE-Nq-jKG" secondAttribute="bottom" id="fSk-fS-CE5"/>
+                    <constraint firstItem="zH8-rp-kU8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="l1V-RX-SxX"/>
+                    <constraint firstAttribute="trailing" secondItem="VXq-i7-YVH" secondAttribute="trailing" id="nBk-xe-EgL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="collectionView" destination="VXq-i7-YVH" id="gL6-t0-8vs"/>
+            </connections>
+            <point key="canvasLocation" x="74.5" y="103.5"/>
+        </tableViewCell>
+    </objects>
+</document>
