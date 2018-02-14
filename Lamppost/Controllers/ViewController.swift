@@ -22,8 +22,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         let gradient = CAGradientLayer()
-        gradient.frame = statusBarView.bounds
-        gradient.colors = [UIColor.red.cgColor, UIColor.clear.cgColor]
+        if UIDevice().userInterfaceIdiom == .phone && UIScreen.main.nativeBounds.height == 2436 {
+            statusBarView.bounds = CGRect(x: statusBarView.bounds.minX, y: statusBarView.bounds.minY, width: statusBarView.bounds.width, height: 44)
+            gradient.frame = statusBarView.bounds
+        } else {
+            statusBarView.bounds = CGRect(x: statusBarView.bounds.minX, y: statusBarView.bounds.minY, width: statusBarView.bounds.width, height: 33)
+            gradient.frame = statusBarView.bounds
+        }
+        gradient.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
         statusBarView.layer.mask = gradient
         
         tableView.register(UINib(nibName: "FlyerCollectionCellView", bundle: nil), forCellReuseIdentifier: "flyer_collection_cell")
