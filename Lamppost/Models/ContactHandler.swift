@@ -91,7 +91,7 @@ class ContactHandler {
             if contact.imageDataAvailable {
                 image = UIImage(data: contact.imageData!)!
             } else {
-                image = UIImage(named: "icons8-user-96.png")!
+                image = UIImage(named: "logo-placeholder.png")!
             }
             
             var title = ""
