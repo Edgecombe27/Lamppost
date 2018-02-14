@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,8 +20,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon5" translatesAutoresizingMaskIntoConstraints="NO" id="rN7-nK-Lpa">
+                                <rect key="frame" x="74" y="220" width="226" height="226"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rN7-nK-Lpa" secondAttribute="height" multiplier="1:1" id="TZX-Gg-3y2"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kiOSk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kA0-ra-759">
-                                <rect key="frame" x="131.5" y="307.5" width="112" height="53"/>
+                                <rect key="frame" x="131" y="191" width="112" height="53"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                 <color key="textColor" red="0.20784313730000001" green="0.47058823529999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -27,8 +35,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="rN7-nK-Lpa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6R8-Jf-9Gv"/>
+                            <constraint firstItem="rN7-nK-Lpa" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.6" constant="1" id="KG5-PH-45A"/>
                             <constraint firstItem="kA0-ra-759" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="YjA-8a-iw8"/>
-                            <constraint firstItem="kA0-ra-759" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="tIn-Y2-LTf"/>
+                            <constraint firstItem="rN7-nK-Lpa" firstAttribute="top" secondItem="kA0-ra-759" secondAttribute="bottom" constant="-24" id="gV2-XF-DiV"/>
+                            <constraint firstItem="rN7-nK-Lpa" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="wh9-CH-qFr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,4 +49,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon5" width="960" height="960"/>
+    </resources>
 </document>
