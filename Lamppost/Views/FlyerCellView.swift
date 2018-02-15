@@ -27,7 +27,7 @@ class FlyerCellView: UICollectionViewCell {
         imageView.image = nil
         label.text = ""
         
-        iconView.layer.cornerRadius = 35
+        iconView.layer.cornerRadius = 38
         iconView.layer.masksToBounds = true
         
         imageView.image = flyer.icon

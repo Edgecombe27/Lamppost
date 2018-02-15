@@ -40,6 +40,7 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : FlyerCellView = self.collectionView.dequeueReusableCell(withReuseIdentifier: "flyer_cell", for: indexPath) as! FlyerCellView
         cell.render(withFlyer: collection[indexPath.row])
+    
         return cell
     }
     

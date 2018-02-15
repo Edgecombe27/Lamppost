@@ -13,11 +13,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var tableView: UITableView!
     
-    var flyerData : [FlyerCollection]!
+    var flyerData : [FlyerCollection] = []
     
     var contactHandler : ContactHandler!
     
     @IBOutlet weak var statusBarView: UILabel!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         //Set size of the post
@@ -38,21 +39,38 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.register(UINib(nibName: "HeaderCellView", bundle: nil), forCellReuseIdentifier: "header_cell")
         
+        loadingIndicator.layer.cornerRadius = 10
+        loadingIndicator.layer.masksToBounds = true
+        
         contactHandler = ContactHandler()
-        contactHandler.importContacts()
+        renderContacts()
         
-        flyerData = contactHandler.generateFlyers()
-        flyerData.sort { (f1, f2) -> Bool in
-            print(f1.name)
-            return f1.name.compare(f2.name) == .orderedAscending
-        }
-        
-        tableView.rowHeight = 150
-        tableView.reloadData()
+    }
+    
+    func renderContacts() {
+        loadingIndicator.isHidden = false
+        loadingIndicator.startAnimating()
+        contactHandler.importContacts(completion: { granted in
+            if granted {
+                self.flyerData = self.contactHandler.generateFlyers()
+                self.flyerData.sort { (f1, f2) -> Bool in
+                    print(f1.name)
+                    return f1.name.compare(f2.name) == .orderedAscending
+                }
+                
+                self.tableView.rowHeight = 150
+                self.tableView.reloadData()
+            }
+            self.loadingIndicator.stopAnimating()
+            self.loadingIndicator.isHidden = true
+        })
         
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -72,6 +90,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         let cell : HeaderCellView = self.tableView.dequeueReusableCell(withIdentifier: "header_cell", for: indexPath) as! HeaderCellView
         cell.viewController = self
+        cell.collectionView.reloadData()
         return cell
         
     }

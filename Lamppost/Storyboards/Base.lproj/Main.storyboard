@@ -39,6 +39,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="npB-hC-aoB">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -48,11 +52,14 @@
                             <constraint firstAttribute="trailing" secondItem="dAO-yG-rfq" secondAttribute="trailing" id="dfq-5b-Y9d"/>
                             <constraint firstItem="dAO-yG-rfq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fe7-da-YQi"/>
                             <constraint firstItem="dAO-yG-rfq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gOe-0b-PYH"/>
+                            <constraint firstItem="npB-hC-aoB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="haw-Lw-GvR"/>
                             <constraint firstItem="0fY-fw-4WJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rAW-RV-0DZ"/>
+                            <constraint firstItem="npB-hC-aoB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wYB-wu-v7h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="loadingIndicator" destination="npB-hC-aoB" id="SOQ-O8-bIO"/>
                         <outlet property="statusBarView" destination="dAO-yG-rfq" id="5W8-CB-dWW"/>
                         <outlet property="tableView" destination="0fY-fw-4WJ" id="Lfm-Jh-QfJ"/>
                     </connections>

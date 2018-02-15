@@ -31,7 +31,6 @@ class HeaderCellView: UITableViewCell , UICollectionViewDelegate, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         numberLabel.text = "\(viewController.contactHandler.contacts.count) contacts"
         return viewController.flyerData.count
     }

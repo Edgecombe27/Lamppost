@@ -14,14 +14,29 @@ class ContactHandler {
     
     var contactStore : CNContactStore!
     
-    var contacts : [CNContact]!
+    var contacts : [CNContact] = []
     
     init() {
-        
+        contactStore = CNContactStore()
     }
     
-    func importContacts() {
-        contactStore = CNContactStore()
+    func importContacts(completion: @escaping (Bool) -> () ) {
+        
+        if UserDefaults.standard.bool(forKey: "contact_permission_granted") {
+            self.getContacts()
+            completion(true)
+        } else {
+            contactStore.requestAccess(for: .contacts, completionHandler: { (granted, error) in
+                if granted {
+                    self.getContacts()
+                    completion(true)
+                    UserDefaults.standard.set(true, forKey: "contact_permission_granted")
+                }
+            })
+        }
+    }
+    
+     func getContacts() {
         let keysToFetch = [
             CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
             CNContactEmailAddressesKey,
