@@ -33,7 +33,7 @@
                             <navigationItem title="kiOSk" id="tah-cu-MNx"/>
                         </items>
                     </navigationBar>
-                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zH8-rp-kU8">
+                    <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zH8-rp-kU8">
                         <rect key="frame" x="0.0" y="44" width="379" height="44"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -66,13 +66,22 @@
                         </collectionViewFlowLayout>
                         <cells/>
                     </collectionView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ua-fq-Akx">
+                        <rect key="frame" x="168" y="56" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="VXq-i7-YVH" firstAttribute="top" secondItem="5ua-fq-Akx" secondAttribute="bottom" constant="11" id="4m9-lc-R5c"/>
                     <constraint firstItem="yKE-Nq-jKG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="BkI-mx-zJJ"/>
                     <constraint firstItem="VXq-i7-YVH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Daj-sz-7A4"/>
                     <constraint firstAttribute="bottom" secondItem="VXq-i7-YVH" secondAttribute="bottom" constant="8" id="FQn-ge-i10"/>
+                    <constraint firstItem="5ua-fq-Akx" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="GTL-Wo-e7e"/>
                     <constraint firstItem="VXq-i7-YVH" firstAttribute="top" secondItem="zH8-rp-kU8" secondAttribute="bottom" id="H1z-Gv-ajQ"/>
                     <constraint firstAttribute="trailing" secondItem="yKE-Nq-jKG" secondAttribute="trailing" id="K4f-f8-P18"/>
+                    <constraint firstItem="5ua-fq-Akx" firstAttribute="top" secondItem="yKE-Nq-jKG" secondAttribute="bottom" constant="12" id="KB2-WH-z5D"/>
                     <constraint firstAttribute="trailing" secondItem="zH8-rp-kU8" secondAttribute="trailing" id="Y1R-bR-Nws"/>
                     <constraint firstItem="yKE-Nq-jKG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="YfM-uB-Zb6"/>
                     <constraint firstItem="zH8-rp-kU8" firstAttribute="top" secondItem="yKE-Nq-jKG" secondAttribute="bottom" id="fSk-fS-CE5"/>
@@ -83,6 +92,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="collectionView" destination="VXq-i7-YVH" id="gL6-t0-8vs"/>
+                <outlet property="numberLabel" destination="5ua-fq-Akx" id="IZD-cX-skw"/>
             </connections>
             <point key="canvasLocation" x="74.5" y="103.5"/>
         </tableViewCell>

@@ -15,6 +15,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var flyerData : [FlyerCollection]!
     
+    var contactHandler : ContactHandler!
+    
     @IBOutlet weak var statusBarView: UILabel!
     
     override func viewDidLoad() {
@@ -36,7 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.register(UINib(nibName: "HeaderCellView", bundle: nil), forCellReuseIdentifier: "header_cell")
         
-        let contactHandler = ContactHandler()
+        contactHandler = ContactHandler()
         contactHandler.importContacts()
         
         flyerData = contactHandler.generateFlyers()

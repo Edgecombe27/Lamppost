@@ -12,6 +12,8 @@ class HeaderCellView: UITableViewCell , UICollectionViewDelegate, UICollectionVi
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var numberLabel: UILabel!
+    
     var viewController : ViewController!
     
     override func awakeFromNib() {
@@ -29,6 +31,8 @@ class HeaderCellView: UITableViewCell , UICollectionViewDelegate, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        numberLabel.text = "\(viewController.contactHandler.contacts.count) contacts"
         return viewController.flyerData.count
     }
     
