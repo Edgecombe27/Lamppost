@@ -366,7 +366,7 @@
 				DEVELOPMENT_TEAM = DB85A83894;
 				INFOPLIST_FILE = Lamppost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fwt.io.kiOSk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fwtio.kiOSk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -381,7 +381,7 @@
 				DEVELOPMENT_TEAM = DB85A83894;
 				INFOPLIST_FILE = Lamppost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fwt.io.kiOSk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fwtio.kiOSk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
