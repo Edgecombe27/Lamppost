@@ -12,62 +12,70 @@ import UIKit
 
 class ContactFlyer : Flyer {
     
-    var actions : [String : ()->()]!
+    let CALL_ACTION = "call_action"
+    let MESSAGE_ACTION = "message_action"
+    let EMAIL_ACTION = "email_action"
     
-    var details : [String : Any]
+    var actions : [String : [String : String]]!
+    
+    var details : [String : String]
         
-    init(title : String, icon : UIImage, details: [String : Any]) {
+    init(title : String, icon : UIImage, details: [String : String]) {
         self.details = details
         super.init(title: title, icon: icon)
         
-        actions = ["Call" : performCallAction,
-                    "Message" : performMessageAction,
-                    "Email" : performEmailAction]
-        
-        if details["nickname"] != nil && !(details["nickname"] as!String).isEmpty{
-            super.title = details["nickname"] as! String
+        if details["nickname"] != nil && !((details["nickname"])?.isEmpty)!{
+            super.title = details["nickname"]!
         } else if details["first_name"] != nil{
-            super.title = details["first_name"] as! String
+            super.title = details["first_name"]!
         }
         
         if details["last_name"] != nil {
-            let lastName = details["last_name"] as! String
-            if !lastName.isEmpty {
-                super.title += " \(lastName[lastName.startIndex])."
+            let lastName = details["last_name"]
+            if !(lastName?.isEmpty)! {
+                super.title += " \(lastName![(lastName?.startIndex)!])."
             }
         }
         
         
+        
     }
     
-    override func getActions() -> [String] {
-        return Array(actions.keys)
+    override func getActions() -> [String : [String : String]] {
+        return actions
     }
     
-    override func performAction(action: String) {
-        (actions[action] as! () -> ())()
+    override func performAction(action: String, detail: [String: String]) {
+        switch (action) {
+            
+        case CALL_ACTION :
+            performCallAction(detail: detail)
+            break
+        case MESSAGE_ACTION :
+            performMessageAction(detail: detail)
+            break
+        case EMAIL_ACTION :
+            performEmailAction(detail: detail)
+            break
+        default :
+            break
+        }
     }
     
-    private func performCallAction() {
-        let numbers = Array((details["phone_numbers"] as! [String : String]).values)
-        let index = Array((details["phone_numbers"] as! [String : String]).values).startIndex
-        if let url = URL(string: "tel://\(numbers[index])"), UIApplication.shared.canOpenURL(url) {
+    private func performCallAction(detail : [String: String]) {
+        if let url = URL(string: "tel://\(detail["phone_number"]!)"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         }
     }
     
-    private func performMessageAction() {
-        let numbers = Array((details["phone_numbers"] as! [String : String]).values)
-        let index = Array((details["phone_numbers"] as! [String : String]).values).startIndex
-        if let url = URL(string: "sms://\(numbers[index])"), UIApplication.shared.canOpenURL(url) {
+    private func performMessageAction(detail : [String: String]) {
+        if let url = URL(string: "sms://\(detail["phone_number"]!)"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         }
     }
     
-    private func performEmailAction() {
-        let emails = Array((details["email_addresses"] as! [String : String]).values)
-        let index = Array((details["email_addresses"] as! [String : String]).values).startIndex
-        if let url = URL(string: "mailto://\(emails[index])"), UIApplication.shared.canOpenURL(url) {
+    private func performEmailAction(detail : [String: String]) {
+        if let url = URL(string: "mailto://\(detail["email_address"]!)"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         }
     }

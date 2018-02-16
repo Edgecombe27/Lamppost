@@ -17,7 +17,7 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        collectionView.register(UINib(nibName: "FlyerCellView", bundle: nil), forCellWithReuseIdentifier: "flyer_cell")
+        collectionView.register(UINib(nibName: "ContactFlyerCellView", bundle: nil), forCellWithReuseIdentifier: "contact_flyer_cell")
         collectionView.dataSource = self
         collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
@@ -38,7 +38,7 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : FlyerCellView = self.collectionView.dequeueReusableCell(withReuseIdentifier: "flyer_cell", for: indexPath) as! FlyerCellView
+        let cell : ContactFlyerCellView = self.collectionView.dequeueReusableCell(withReuseIdentifier: "contact_flyer_cell", for: indexPath) as! ContactFlyerCellView
         cell.render(withFlyer: collection[indexPath.row])
     
         return cell
@@ -46,21 +46,12 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let flyer = (collectionView.cellForItem(at: indexPath) as! FlyerCellView).flyer as! ContactFlyer
+        let flyer = (collectionView.cellForItem(at: indexPath) as! ContactFlyerCellView).flyer as! ContactFlyer
         
-        let actionSheet = UIAlertController(title: flyer.title, message: "Select an option", preferredStyle: .actionSheet)
+        let contactViewController = ContactDetailViewController()
+        contactViewController.flyer = flyer
         
-        for action in flyer.getActions() {
-            
-            actionSheet.addAction(UIAlertAction(title: action, style: .default, handler: { actionSheet in
-                flyer.performAction(action: action)
-            }))
-            
-        }
-        
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        UIApplication.shared.keyWindow?.rootViewController?.present(actionSheet, animated: true, completion: nil)
+        self.window?.rootViewController?.present(contactViewController, animated: true, completion: nil)
         
     }
     
