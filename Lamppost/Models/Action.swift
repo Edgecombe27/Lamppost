@@ -9,14 +9,13 @@
 import Foundation
 
 
-protocol Action {
+class Action {
+    var type : String
     
+    init(type : String) {
+        self.type = type
+    }
 }
 
-enum ContactAction : Action {
-    case CallAction
-    case MessageAction
-    case EmailAction
-    case AddressAction
-}
+
 

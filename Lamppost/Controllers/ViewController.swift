@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
 
+    @IBOutlet var blurrView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     var flyerData : [FlyerCollection] = []
@@ -22,7 +23,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         //Set size of the post
-        
         
         let gradient = CAGradientLayer()
         if UIDevice().userInterfaceIdiom == .phone && UIScreen.main.nativeBounds.height == 2436 {
@@ -68,11 +68,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-    }
-    
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return flyerData.count+1
     }
@@ -94,7 +89,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
         
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -16,66 +16,76 @@ class ContactFlyer : Flyer {
     let MESSAGE_ACTION = "message_action"
     let EMAIL_ACTION = "email_action"
     
-    var actions : [String : [String : String]]!
+    var actions : [ContactAction]!
     
-    var details : [String : String]
+    var details : [String : Any]
         
-    init(title : String, icon : UIImage, details: [String : String]) {
+    init(title : String, icon : UIImage, details: [String : Any]) {
         self.details = details
         super.init(title: title, icon: icon)
         
-        if details["nickname"] != nil && !((details["nickname"])?.isEmpty)!{
-            super.title = details["nickname"]!
+        if details["nickname"] != nil && !(((details["nickname"]) as! String).isEmpty){
+            super.title = details["nickname"]! as! String
         } else if details["first_name"] != nil{
-            super.title = details["first_name"]!
+            super.title = details["first_name"]! as! String
         }
         
         if details["last_name"] != nil {
-            let lastName = details["last_name"]
-            if !(lastName?.isEmpty)! {
-                super.title += " \(lastName![(lastName?.startIndex)!])."
+            let lastName = details["last_name"] as! String
+            if !lastName.isEmpty {
+                super.title += " \(lastName[(lastName.startIndex)])."
             }
         }
         
+        actions = []
+        
+        for number in details["phone_numbers"] as! [String : String] {
+            actions.append(ContactAction(type: CALL_ACTION, label: number.key, value: number.value))
+        }
+        
+        for email in details["email_addresses"] as! [String : String] {
+            actions.append(ContactAction(type: EMAIL_ACTION, label: email.key, value: email.value))
+        }
         
         
     }
     
-    override func getActions() -> [String : [String : String]] {
+    override func getActions() -> [Action] {
         return actions
     }
     
-    override func performAction(action: String, detail: [String: String]) {
-        switch (action) {
+    override func performAction(action: Action) {
+        let contactAction = action as! ContactAction
+        switch (contactAction.type) {
             
         case CALL_ACTION :
-            performCallAction(detail: detail)
+            performCallAction(action: contactAction)
             break
         case MESSAGE_ACTION :
-            performMessageAction(detail: detail)
+            performMessageAction(action: contactAction)
             break
         case EMAIL_ACTION :
-            performEmailAction(detail: detail)
+            performEmailAction(action: contactAction)
             break
         default :
             break
         }
     }
     
-    private func performCallAction(detail : [String: String]) {
-        if let url = URL(string: "tel://\(detail["phone_number"]!)"), UIApplication.shared.canOpenURL(url) {
+    private func performCallAction(action : ContactAction) {
+        if let url = URL(string: "tel://\(action.value)"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         }
     }
     
-    private func performMessageAction(detail : [String: String]) {
-        if let url = URL(string: "sms://\(detail["phone_number"]!)"), UIApplication.shared.canOpenURL(url) {
+    private func performMessageAction(action : ContactAction) {
+        if let url = URL(string: "sms://\(action.value)"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         }
     }
     
-    private func performEmailAction(detail : [String: String]) {
-        if let url = URL(string: "mailto://\(detail["email_address"]!)"), UIApplication.shared.canOpenURL(url) {
+    private func performEmailAction(action : ContactAction) {
+        if let url = URL(string: "mailto://\(action.value)"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         }
     }

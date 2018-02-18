@@ -21,7 +21,7 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
         collectionView.dataSource = self
         collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width:UIScreen.main.bounds.width/4-10,height: 100)
+        flowLayout.itemSize = CGSize(width:80,height: 100)
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
         flowLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
         flowLayout.minimumInteritemSpacing = 0.0
@@ -51,7 +51,11 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
         let contactViewController = ContactDetailViewController()
         contactViewController.flyer = flyer
         
-        self.window?.rootViewController?.present(contactViewController, animated: true, completion: nil)
+        contactViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        let viewController = self.window?.rootViewController as! ViewController
+        viewController.blurrView.isHidden = false
+        contactViewController.viewController = viewController
+        viewController.present(contactViewController, animated: true, completion: nil)
         
     }
     

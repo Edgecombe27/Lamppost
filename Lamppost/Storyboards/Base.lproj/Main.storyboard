@@ -43,22 +43,31 @@
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
+                            <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8m-iI-Oqh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="0fY-fw-4WJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Pg-ZX-U8i"/>
+                            <constraint firstItem="y8m-iI-Oqh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Otu-4c-giI"/>
                             <constraint firstItem="0fY-fw-4WJ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="QVh-BK-9bL"/>
                             <constraint firstItem="0fY-fw-4WJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="TZk-bj-RLm"/>
+                            <constraint firstItem="y8m-iI-Oqh" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="V7l-u1-5Af"/>
+                            <constraint firstItem="y8m-iI-Oqh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="X1G-S9-0ZG"/>
                             <constraint firstAttribute="trailing" secondItem="dAO-yG-rfq" secondAttribute="trailing" id="dfq-5b-Y9d"/>
                             <constraint firstItem="dAO-yG-rfq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fe7-da-YQi"/>
                             <constraint firstItem="dAO-yG-rfq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gOe-0b-PYH"/>
                             <constraint firstItem="npB-hC-aoB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="haw-Lw-GvR"/>
+                            <constraint firstItem="y8m-iI-Oqh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mB1-2n-bst"/>
                             <constraint firstItem="0fY-fw-4WJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rAW-RV-0DZ"/>
                             <constraint firstItem="npB-hC-aoB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wYB-wu-v7h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="blurrView" destination="y8m-iI-Oqh" id="Mp9-CH-2ti"/>
                         <outlet property="loadingIndicator" destination="npB-hC-aoB" id="SOQ-O8-bIO"/>
                         <outlet property="statusBarView" destination="dAO-yG-rfq" id="5W8-CB-dWW"/>
                         <outlet property="tableView" destination="0fY-fw-4WJ" id="Lfm-Jh-QfJ"/>

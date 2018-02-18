@@ -85,7 +85,7 @@ class ContactHandler {
             
             if contact.phoneNumbers.count > 0 {
                 for number in contact.phoneNumbers {
-                    numbers[number.label!] = number.value.stringValue
+                    numbers[((number.label?.replacingOccurrences(of: "_$!<", with: "").replacingOccurrences(of: ">!$_", with: ""))?.replacingOccurrences(of: "FAX", with: " Fax"))!] = number.value.stringValue
                 }
             }
             
@@ -95,7 +95,7 @@ class ContactHandler {
             
             if contact.emailAddresses.count > 0 {
                 for email in contact.emailAddresses {
-                    emails[email.label!] = email.value as String
+                    emails[(email.label?.replacingOccurrences(of: "_$!<", with: "").replacingOccurrences(of: ">!$_", with: "").replacingOccurrences(of: "FAX", with: " Fax"))!] = (email.value as String) as String
                 }
             }
             

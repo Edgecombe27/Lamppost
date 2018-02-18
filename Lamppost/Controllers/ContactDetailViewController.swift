@@ -15,34 +15,58 @@ class ContactDetailViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
+    var viewController : ViewController!
+    
     var flyer : ContactFlyer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        contentView.layer.cornerRadius = 20
+        contentView.layer.masksToBounds = true
+        
         tableView.dataSource = self
         tableView.delegate = self
-        // Do any additional setup after loading the view.
+        tableView.rowHeight = 75
+        tableView.register(UINib(nibName: "EmailActionCellView", bundle: nil), forCellReuseIdentifier: "email_action_cell")
+        tableView.register(UINib(nibName: "PhoneActionCellView", bundle: nil), forCellReuseIdentifier: "phone_action_cell")
         
         imageView.image = flyer.icon
+        imageView.layer.cornerRadius = imageView.frame.width/2.0
+        imageView.clipsToBounds = true
+        
         nameLabel.text = "\(flyer.details["first_name"] as! String) \(flyer.details["last_name"] as! String)"
         if !(flyer.details["nickname"] as! String).isEmpty {
             nameLabel.text = nameLabel.text! + " (\(flyer.details["nickname"] as! String))"
         }
         
+        
     }
     
     
-
+    @IBAction func exitViewTapped(_ sender: Any) {
+        viewController.blurrView.isHidden = true
+        self.dismiss(animated: true, completion: {
+            
+        })
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return flyer.getActions().count
+        return flyer.actions.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell : HeaderCellView = self.tableView.dequeueReusableCell(withIdentifier: "header_cell", for: indexPath) as! HeaderCellView
-        cell.collectionView.reloadData()
-        return cell
+        if flyer.actions[indexPath.row].type == flyer.CALL_ACTION {
+            let cell : PhoneActionCellView = tableView.dequeueReusableCell(withIdentifier: "phone_action_cell") as! PhoneActionCellView
+            cell.render(withAction: flyer.actions[indexPath.row], andFlyer: flyer)
+            return cell
+        } else {
+            let cell : EmailActionCellView = tableView.dequeueReusableCell(withIdentifier: "email_action_cell") as! EmailActionCellView
+            cell.render(withAction: flyer.actions[indexPath.row], andFlyer: flyer)
+            return cell
+        }
         
     }
     

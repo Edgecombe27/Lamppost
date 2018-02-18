@@ -12,6 +12,11 @@
 		85A6833D2025FEAB0074754E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A6833B2025FEAB0074754E /* Main.storyboard */; };
 		85A6833F2025FEAB0074754E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85A6833E2025FEAB0074754E /* Assets.xcassets */; };
 		85A683422025FEAB0074754E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A683402025FEAB0074754E /* LaunchScreen.storyboard */; };
+		85ABB2EC2039E76D00F46C83 /* PhoneActionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ABB2EA2039E76D00F46C83 /* PhoneActionCellView.swift */; };
+		85ABB2ED2039E76D00F46C83 /* PhoneActionCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85ABB2EB2039E76D00F46C83 /* PhoneActionCellView.xib */; };
+		85ABB2F02039E78100F46C83 /* EmailActionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ABB2EE2039E78100F46C83 /* EmailActionCellView.swift */; };
+		85ABB2F12039E78100F46C83 /* EmailActionCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85ABB2EF2039E78100F46C83 /* EmailActionCellView.xib */; };
+		85ABB2F32039F16000F46C83 /* ContactAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ABB2F22039F16000F46C83 /* ContactAction.swift */; };
 		85FE79242027BBF300DE00B0 /* Flyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE79232027BBF300DE00B0 /* Flyer.swift */; };
 		85FE792C20291C2B00DE00B0 /* ContactFlyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE792B20291C2B00DE00B0 /* ContactFlyer.swift */; };
 		FB0B0ACA202CEE6200D0722F /* FlyerCollectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0B0AC8202CEE6200D0722F /* FlyerCollectionCellView.swift */; };
@@ -39,6 +44,11 @@
 		85A6833E2025FEAB0074754E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85A683412025FEAB0074754E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85A683432025FEAB0074754E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85ABB2EA2039E76D00F46C83 /* PhoneActionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneActionCellView.swift; sourceTree = "<group>"; };
+		85ABB2EB2039E76D00F46C83 /* PhoneActionCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneActionCellView.xib; sourceTree = "<group>"; };
+		85ABB2EE2039E78100F46C83 /* EmailActionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailActionCellView.swift; sourceTree = "<group>"; };
+		85ABB2EF2039E78100F46C83 /* EmailActionCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailActionCellView.xib; sourceTree = "<group>"; };
+		85ABB2F22039F16000F46C83 /* ContactAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAction.swift; sourceTree = "<group>"; };
 		85FE79232027BBF300DE00B0 /* Flyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flyer.swift; sourceTree = "<group>"; };
 		85FE792B20291C2B00DE00B0 /* ContactFlyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFlyer.swift; sourceTree = "<group>"; };
 		FB0B0AC8202CEE6200D0722F /* FlyerCollectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyerCollectionCellView.swift; sourceTree = "<group>"; };
@@ -107,6 +117,7 @@
 				85FE792B20291C2B00DE00B0 /* ContactFlyer.swift */,
 				FB200302202E2CAE00776AD2 /* ContactHandler.swift */,
 				FB37F3DF202B8592004527CA /* Action.swift */,
+				85ABB2F22039F16000F46C83 /* ContactAction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -123,6 +134,10 @@
 				FB11EF01203780A000C6A8C4 /* FlyerCellView.swift */,
 				FBD9AE55203221B90039443B /* ShortcutCellView.swift */,
 				FBD9AE56203221B90039443B /* ShortcutCellView.xib */,
+				85ABB2EA2039E76D00F46C83 /* PhoneActionCellView.swift */,
+				85ABB2EB2039E76D00F46C83 /* PhoneActionCellView.xib */,
+				85ABB2EE2039E78100F46C83 /* EmailActionCellView.swift */,
+				85ABB2EF2039E78100F46C83 /* EmailActionCellView.xib */,
 				FB0B0ACF202CEF0F00D0722F /* ContactFlyerCellView.xib */,
 			);
 			path = Views;
@@ -206,10 +221,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85ABB2ED2039E76D00F46C83 /* PhoneActionCellView.xib in Resources */,
 				85A683422025FEAB0074754E /* LaunchScreen.storyboard in Resources */,
 				FBE3C976203325E9009B8F83 /* HeaderCellView.xib in Resources */,
 				FB0B0ACB202CEE6200D0722F /* FlyerCollectionCellView.xib in Resources */,
 				FB0B0AD1202CEF0F00D0722F /* ContactFlyerCellView.xib in Resources */,
+				85ABB2F12039E78100F46C83 /* EmailActionCellView.xib in Resources */,
 				85A6833F2025FEAB0074754E /* Assets.xcassets in Resources */,
 				FBD9AE58203221B90039443B /* ShortcutCellView.xib in Resources */,
 				FBA2C347203785E5001791B1 /* ContactDetailViewController.xib in Resources */,
@@ -229,10 +246,13 @@
 				FB37F3E0202B8592004527CA /* Action.swift in Sources */,
 				FBE3C975203325E9009B8F83 /* HeaderCellView.swift in Sources */,
 				FBD9AE57203221B90039443B /* ShortcutCellView.swift in Sources */,
+				85ABB2F02039E78100F46C83 /* EmailActionCellView.swift in Sources */,
+				85ABB2EC2039E76D00F46C83 /* PhoneActionCellView.swift in Sources */,
 				FB0B0ACA202CEE6200D0722F /* FlyerCollectionCellView.swift in Sources */,
 				85A6833A2025FEAB0074754E /* ViewController.swift in Sources */,
 				FBD9AE5420321F3D0039443B /* ToolbarCellView.swift in Sources */,
 				FB11EF02203780A000C6A8C4 /* FlyerCellView.swift in Sources */,
+				85ABB2F32039F16000F46C83 /* ContactAction.swift in Sources */,
 				85FE79242027BBF300DE00B0 /* Flyer.swift in Sources */,
 				FBA2C346203785E5001791B1 /* ContactDetailViewController.swift in Sources */,
 				FB200303202E2CAE00776AD2 /* ContactHandler.swift in Sources */,

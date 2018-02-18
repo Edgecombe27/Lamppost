@@ -25,7 +25,7 @@ class ContactFlyerCellView: FlyerCellView {
         imageView.image = nil
         label.text = ""
         
-        imageView.layer.cornerRadius = imageView.frame.size.width / 2.25
+        imageView.layer.cornerRadius = 32.5
         imageView.clipsToBounds = true
         
         imageView.image = flyer.icon

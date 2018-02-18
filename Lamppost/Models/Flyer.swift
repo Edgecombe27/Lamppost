@@ -27,13 +27,13 @@ class Flyer {
         
     }
     
-    func getActions() -> [String :  [String: String]] {
-        return ["": [:]]
+    func getActions() -> [Action] {
+        return []
     }
     
     func updateView() {}
     
-    func performAction(action: String, detail: [String : String]) {}
+    func performAction(action: Action) {}
     
 }
 
