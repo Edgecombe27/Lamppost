@@ -20,7 +20,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="53.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZP-92-eHt">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZP-92-eHt">
                         <rect key="frame" x="16" y="27" width="0.0" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -37,8 +37,11 @@
                             <action selector="emailButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="36o-Y3-R66"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nn5-yE-vBe">
-                        <rect key="frame" x="23.5" y="27.5" width="0.0" height="0.0"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nn5-yE-vBe">
+                        <rect key="frame" x="23.5" y="27.5" width="175" height="0.0"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="175" id="JEL-WH-3YM"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -50,9 +53,8 @@
                     <constraint firstItem="ebh-1l-pT3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="U3p-fZ-1ET"/>
                     <constraint firstItem="ZZP-92-eHt" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Wgy-Pt-58F"/>
                     <constraint firstAttribute="bottom" secondItem="ebh-1l-pT3" secondAttribute="bottom" id="ftu-C1-9sP"/>
-                    <constraint firstItem="ebh-1l-pT3" firstAttribute="leading" secondItem="Nn5-yE-vBe" secondAttribute="trailing" constant="8" id="gEG-Xh-t5h"/>
-                    <constraint firstAttribute="trailing" secondItem="ebh-1l-pT3" secondAttribute="trailing" id="jcE-pU-B4G"/>
                     <constraint firstItem="Nn5-yE-vBe" firstAttribute="top" secondItem="ZZP-92-eHt" secondAttribute="top" id="tr9-2X-nUV"/>
+                    <constraint firstAttribute="trailing" secondItem="ebh-1l-pT3" secondAttribute="trailing" id="yIe-Eh-Tgn"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
