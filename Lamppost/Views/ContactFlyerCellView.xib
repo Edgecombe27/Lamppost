@@ -22,10 +22,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OxW-A5-A11">
-                        <rect key="frame" x="9.5" y="52.5" width="78.5" height="77.5"/>
+                        <rect key="frame" x="9.5" y="13" width="78.5" height="77.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="vP0-17-kHm">
-                                <rect key="frame" x="-1" y="-1.5" width="79.5" height="79"/>
+                                <rect key="frame" x="-0.5" y="-0.5" width="79.5" height="79"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -37,8 +37,8 @@
                             <constraint firstItem="vP0-17-kHm" firstAttribute="centerY" secondItem="OxW-A5-A11" secondAttribute="centerY" id="shm-0W-O3w"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wb5-Z8-cjm">
-                        <rect key="frame" x="30" y="138" width="37.5" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wb5-Z8-cjm">
+                        <rect key="frame" x="0.0" y="99" width="97" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -48,10 +48,12 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="OxW-A5-A11" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.8" constant="1" id="LHU-rS-OHB"/>
+                <constraint firstItem="Wb5-Z8-cjm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QEH-GR-j1G"/>
                 <constraint firstItem="Wb5-Z8-cjm" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Rps-DZ-lad"/>
                 <constraint firstItem="Wb5-Z8-cjm" firstAttribute="top" secondItem="OxW-A5-A11" secondAttribute="bottom" constant="8" id="hGM-ae-qWh"/>
+                <constraint firstItem="OxW-A5-A11" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="13" id="ies-xC-D76"/>
                 <constraint firstItem="OxW-A5-A11" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="kTi-Tf-bzN"/>
-                <constraint firstAttribute="bottom" secondItem="Wb5-Z8-cjm" secondAttribute="bottom" id="yWW-bG-iMW"/>
+                <constraint firstAttribute="trailing" secondItem="Wb5-Z8-cjm" secondAttribute="trailing" id="rgM-Hs-TKD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="97" height="156"/>

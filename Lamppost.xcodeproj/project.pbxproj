@@ -131,6 +131,7 @@
 				FBE3C973203325E9009B8F83 /* HeaderCellView.swift */,
 				FBE3C974203325E9009B8F83 /* HeaderCellView.xib */,
 				FB0B0ACE202CEF0F00D0722F /* ContactFlyerCellView.swift */,
+				FB0B0ACF202CEF0F00D0722F /* ContactFlyerCellView.xib */,
 				FB11EF01203780A000C6A8C4 /* FlyerCellView.swift */,
 				FBD9AE55203221B90039443B /* ShortcutCellView.swift */,
 				FBD9AE56203221B90039443B /* ShortcutCellView.xib */,
@@ -138,7 +139,6 @@
 				85ABB2EB2039E76D00F46C83 /* PhoneActionCellView.xib */,
 				85ABB2EE2039E78100F46C83 /* EmailActionCellView.swift */,
 				85ABB2EF2039E78100F46C83 /* EmailActionCellView.xib */,
-				FB0B0ACF202CEF0F00D0722F /* ContactFlyerCellView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";

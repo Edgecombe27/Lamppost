@@ -27,10 +27,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTi-11-LSy">
-                    <rect key="frame" x="0.0" y="266" width="375" height="401"/>
+                    <rect key="frame" x="0.0" y="249" width="375" height="468"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Grc-iL-ktz">
-                            <rect key="frame" x="8" y="75.5" width="359" height="325.5"/>
+                            <rect key="frame" x="8" y="75.5" width="359" height="342.5"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -52,18 +52,17 @@
                         <constraint firstItem="Grc-iL-ktz" firstAttribute="top" secondItem="zkd-C8-Y7f" secondAttribute="bottom" constant="8" id="LyP-ID-VhV"/>
                         <constraint firstItem="zkd-C8-Y7f" firstAttribute="leading" secondItem="aTi-11-LSy" secondAttribute="leading" constant="8" id="Stz-8i-cYs"/>
                         <constraint firstAttribute="trailing" secondItem="zkd-C8-Y7f" secondAttribute="trailing" constant="8" id="Ynb-3C-TuT"/>
-                        <constraint firstAttribute="bottom" secondItem="Grc-iL-ktz" secondAttribute="bottom" id="ljk-1I-bX3"/>
                     </constraints>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bQF-6u-07L">
-                    <rect key="frame" x="147" y="226" width="80" height="80"/>
+                    <rect key="frame" x="147" y="209" width="80" height="80"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="bQF-6u-07L" secondAttribute="height" multiplier="1:1" id="u2n-mx-Ngc"/>
                         <constraint firstAttribute="width" constant="80" id="wFa-TF-Nmx"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHy-oK-pXL">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="258"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="241"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
                     <connections>
@@ -78,10 +77,11 @@
                 <constraint firstItem="bHy-oK-pXL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="56B-16-bPM"/>
                 <constraint firstItem="aTi-11-LSy" firstAttribute="top" secondItem="bHy-oK-pXL" secondAttribute="bottom" constant="8" id="79p-nu-oSx"/>
                 <constraint firstItem="aTi-11-LSy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DX6-26-bbW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Grc-iL-ktz" secondAttribute="bottom" id="QNO-EU-bfe"/>
                 <constraint firstItem="zkd-C8-Y7f" firstAttribute="top" secondItem="bQF-6u-07L" secondAttribute="bottom" constant="7" id="apj-Ib-tY8"/>
-                <constraint firstItem="aTi-11-LSy" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.6" constant="1" id="dvN-vi-3bU"/>
+                <constraint firstItem="aTi-11-LSy" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.7" constant="1" id="dvN-vi-3bU"/>
                 <constraint firstItem="bQF-6u-07L" firstAttribute="top" secondItem="aTi-11-LSy" secondAttribute="top" constant="-40" id="f4f-LY-oEO"/>
-                <constraint firstItem="aTi-11-LSy" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="gYQ-rC-Gia"/>
+                <constraint firstItem="aTi-11-LSy" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="50" id="gYQ-rC-Gia"/>
                 <constraint firstItem="aTi-11-LSy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="hz9-4B-efP"/>
                 <constraint firstItem="bHy-oK-pXL" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="kRb-SG-aYO"/>
                 <constraint firstItem="bHy-oK-pXL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yVB-bA-m2W"/>

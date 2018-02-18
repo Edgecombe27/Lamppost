@@ -26,7 +26,11 @@ class EmailActionCellView: UITableViewCell {
         action = withAction
         flyer = andFlyer
         
-        typeLabel.text = "\(action.label) Email:"
+        if !action.label.isEmpty {
+            typeLabel.text = "\(action.label):"
+        } else {
+            typeLabel.text = "Email:"
+        }
         emailLabel.text = action.value
     }
 
