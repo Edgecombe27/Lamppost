@@ -76,7 +76,9 @@ class ContactFlyer : Flyer {
     }
     
     private func performCallAction(action : ContactAction) {
-        if let url = URL(string: "tel://\(action.value)"), UIApplication.shared.canOpenURL(url) {
+        
+        let number = action.value.replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "-", with: "").replacingOccurrences(of: " ", with: "")
+        if let url = URL(string: "tel://\(number)"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         } else {
             
@@ -84,7 +86,8 @@ class ContactFlyer : Flyer {
     }
     
     private func performMessageAction(action : ContactAction) {
-        if let url = URL(string: "sms://\(action.value)"), UIApplication.shared.canOpenURL(url) {
+        let number = action.value.replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "-", with: "").replacingOccurrences(of: " ", with: "")
+        if let url = URL(string: "sms://\(number)"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         } else {
             
