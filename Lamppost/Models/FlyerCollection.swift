@@ -13,11 +13,13 @@ class FlyerCollection {
     static let COLLECTION_TYPES = ["Contacts"]
     
     var name : String
+    var order : Int
     var collection : [Flyer]
     
-    init(withName: String, andFlyers: [Flyer]) {
+    init(withName: String,order : Int, andFlyers: [Flyer]) {
         name = withName
         collection = andFlyers
+        self.order = order
     }
     
     func addFlyer(flyer : Flyer) {

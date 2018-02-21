@@ -26,7 +26,7 @@
 		FB11EF02203780A000C6A8C4 /* FlyerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB11EF01203780A000C6A8C4 /* FlyerCellView.swift */; };
 		FB200301202DE81500776AD2 /* FlyerCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB200300202DE81500776AD2 /* FlyerCollection.swift */; };
 		FB200303202E2CAE00776AD2 /* ContactHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB200302202E2CAE00776AD2 /* ContactHandler.swift */; };
-		FB22A74E203DF99C0064BA76 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB22A74D203DF99C0064BA76 /* File.swift */; };
+		FB22A74E203DF99C0064BA76 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB22A74D203DF99C0064BA76 /* UserData.swift */; };
 		FB37F3E0202B8592004527CA /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB37F3DF202B8592004527CA /* Action.swift */; };
 		FB6E744B203DC52900C15740 /* AddCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E7449203DC52900C15740 /* AddCollectionViewController.swift */; };
 		FB6E744C203DC52900C15740 /* AddCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6E744A203DC52900C15740 /* AddCollectionViewController.xib */; };
@@ -63,7 +63,7 @@
 		FB11EF01203780A000C6A8C4 /* FlyerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyerCellView.swift; sourceTree = "<group>"; };
 		FB200300202DE81500776AD2 /* FlyerCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyerCollection.swift; sourceTree = "<group>"; };
 		FB200302202E2CAE00776AD2 /* ContactHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactHandler.swift; sourceTree = "<group>"; };
-		FB22A74D203DF99C0064BA76 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		FB22A74D203DF99C0064BA76 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		FB37F3DF202B8592004527CA /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		FB6E7449203DC52900C15740 /* AddCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionViewController.swift; sourceTree = "<group>"; };
 		FB6E744A203DC52900C15740 /* AddCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCollectionViewController.xib; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 				FB200302202E2CAE00776AD2 /* ContactHandler.swift */,
 				FB37F3DF202B8592004527CA /* Action.swift */,
 				85ABB2F22039F16000F46C83 /* ContactAction.swift */,
-				FB22A74D203DF99C0064BA76 /* File.swift */,
+				FB22A74D203DF99C0064BA76 /* UserData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,7 +263,7 @@
 				FB37F3E0202B8592004527CA /* Action.swift in Sources */,
 				FBE3C975203325E9009B8F83 /* HeaderCellView.swift in Sources */,
 				FBD9AE57203221B90039443B /* ShortcutCellView.swift in Sources */,
-				FB22A74E203DF99C0064BA76 /* File.swift in Sources */,
+				FB22A74E203DF99C0064BA76 /* UserData.swift in Sources */,
 				85ABB2F02039E78100F46C83 /* EmailActionCellView.swift in Sources */,
 				85ABB2EC2039E76D00F46C83 /* PhoneActionCellView.swift in Sources */,
 				FB0B0ACA202CEE6200D0722F /* FlyerCollectionCellView.swift in Sources */,

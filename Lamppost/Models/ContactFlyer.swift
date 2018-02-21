@@ -24,22 +24,6 @@ class ContactFlyer : Flyer {
         self.details = details
         super.init(title: title, icon: icon)
         
-        if details["nickname"] != nil && !(details["nickname"] as! String).isEmpty {
-            super.title = details["nickname"] as! String
-        } else if details["first_name"] != nil && !(details["first_name"] as! String).isEmpty {
-            super.title = details["first_name"] as! String
-            if details["last_name"] != nil {
-                let lastName = details["last_name"] as! String
-                if !lastName.isEmpty {
-                    super.title += " \(lastName[(lastName.startIndex)])."
-                }
-            }
-        } else if details["last_name"] != nil && !(details["last_name"] as! String).isEmpty {
-            super.title = details["last_name"] as! String
-        } else {
-            super.title = "unknown contact"
-        }
-        
         actions = []
         
         for number in details["phone_numbers"] as! [String : String] {

@@ -15,21 +15,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet var blurrView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    var selectedCollection : FlyerCollection!
-
-    
-    var userData : [String : Any]!
-    
-    var flyerData : [FlyerCollection] = []
-    
-    var contactHandler : ContactHandler!
-    
     @IBOutlet weak var statusBarView: UILabel!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
+    var selectedCollection : FlyerCollection!
+    var userData : UserData!
+    var flyerData : [FlyerCollection] = []
+    var contactHandler : ContactHandler!
     
     override func viewDidLoad() {
         //Set size of the post
         
+        setUpViews()
+        loadUserData()
+        
+        contactHandler = ContactHandler()
+        
+    }
+    
+    
+    func setUpViews() {
         let gradient = CAGradientLayer()
         if UIDevice().userInterfaceIdiom == .phone && UIScreen.main.nativeBounds.height == 2436 {
             statusBarView.bounds = CGRect(x: statusBarView.bounds.minX, y: statusBarView.bounds.minY, width: statusBarView.bounds.width, height: 44)
@@ -46,33 +51,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.register(UINib(nibName: "HeaderCellView", bundle: nil), forCellReuseIdentifier: "header_cell")
         
         self.tableView.rowHeight = 150
-        
         loadingIndicator.layer.cornerRadius = 10
         loadingIndicator.layer.masksToBounds = true
         loadingIndicator.isHidden = true
-        
-        loadUserData()
-        
-        //contactHandler = ContactHandler()
-        //renderContacts()
-        
     }
     
     func loadUserData() {
-        userData = UserDefaults.standard.volatileDomain(forName: "user_data")
+        userData = UserData()
         
-        if userData.count > 0 {
-            
-        } else {
+        if userData.isEmpty() {
             noDataLabel.isHidden = false
+        } else {
+            flyerData = userData.getFlyerData()
+            tableView.reloadData()
         }
         
     }
     
     func renderContacts() {
-        loadingIndicator.isHidden = false
+        /*loadingIndicator.isHidden = false
         loadingIndicator.startAnimating()
-        contactHandler.importContacts(completion: { granted in
+        contactHandler.im(completion: { granted in
             if granted {
                 self.flyerData = self.contactHandler.generateFlyers()
                 self.flyerData.sort { (f1, f2) -> Bool in
@@ -84,7 +83,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             self.loadingIndicator.stopAnimating()
             self.loadingIndicator.isHidden = true
-        })
+        })*/
     }
     
     func selectContacts() {
@@ -96,50 +95,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
         contacts.forEach { contact in
-            var details = ["first_name" : contact.givenName,
-                           "middle_name" : contact.middleName,
-                           "last_name" : contact.familyName,
-                           "nickname" : contact.nickname,
-                           ] as [String : Any]
             
-            var numbers : [String : String] = [:]
-            
-            if contact.phoneNumbers.count > 0 {
-                for number in contact.phoneNumbers {
-                    numbers[((number.label?.replacingOccurrences(of: "_$!<", with: "").replacingOccurrences(of: ">!$_", with: ""))?.replacingOccurrences(of: "FAX", with: " Fax"))!] = number.value.stringValue
-                }
-            }
-            
-            details["phone_numbers"] = numbers
-            
-            var emails : [String : String] = [:]
-            
-            if contact.emailAddresses.count > 0 {
-                for email in contact.emailAddresses {
-                    emails[(email.label?.replacingOccurrences(of: "_$!<", with: "").replacingOccurrences(of: ">!$_", with: "").replacingOccurrences(of: "FAX", with: " Fax"))!] = (email.value as String) as String
-                }
-            }
-            
-            details["email_addresses"] = emails
-            
-            var image : UIImage
-            
-            if contact.imageDataAvailable {
-                image = UIImage(data: contact.imageData!)!
-            } else {
-                image = UIImage(named: "logo-placeholder.png")!
-            }
-            
-            var title = ""
-            
-            if (details["nickname"] != nil && !(details["nickname"] as! String).isEmpty) {title = details["nickname"] as! String}
-            else if (details["first_name"] != nil) {title = "\(details["first_name"] as! String) \(details["last_name"] as! String)"}
-            
-            selectedCollection.addFlyer(flyer: ContactFlyer(title: title, icon: image, details: details))
+            selectedCollection.addFlyer(flyer: contactHandler.getFlyerFromContact(contact: contact))
             
         }
-        
         selectedCollection.sort()
+        
+        userData.addCollection(collection: selectedCollection)
+        
         tableView.reloadData()
         
     }

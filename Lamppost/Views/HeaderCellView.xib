@@ -45,7 +45,11 @@
                             <barButtonItem style="plain" systemItem="flexibleSpace" id="Egc-bY-vrS"/>
                             <barButtonItem systemItem="search" id="lno-W5-ps1"/>
                             <barButtonItem style="plain" systemItem="flexibleSpace" id="ibk-Ym-JtW"/>
-                            <barButtonItem systemItem="action" id="lnX-KI-ocL"/>
+                            <barButtonItem systemItem="action" id="lnX-KI-ocL">
+                                <connections>
+                                    <action selector="shareButtonPressed:" destination="KGk-i7-Jjw" id="1CV-Ua-d24"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem style="plain" systemItem="flexibleSpace" id="ahv-If-Urb"/>
                             <barButtonItem systemItem="add" id="qM1-gT-AtO">
                                 <connections>
