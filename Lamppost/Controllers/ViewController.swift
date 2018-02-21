@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import ContactsUI
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CNContactPickerDelegate, UIAlertViewDelegate {
     
 
     @IBOutlet var blurrView: UIView!
@@ -88,6 +89,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.collectionView.reloadData()
         return cell
         
+    }
+    
+    func selectContacts() {
+        
+        let cnPicker = CNContactPickerViewController()
+        cnPicker.delegate = self
+        self.present(cnPicker, animated: true, completion: nil)
+    }
+    
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
+        contacts.forEach { contact in
+            for number in contact.phoneNumbers {
+                let phoneNumber = number.value
+                print("number is = \(phoneNumber)")
+            }
+        }
+    }
+    func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
+        print("Cancel Contact Picker")
     }
     
     override func didReceiveMemoryWarning() {

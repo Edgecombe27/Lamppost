@@ -47,6 +47,10 @@ class HeaderCellView: UITableViewCell , UICollectionViewDelegate, UICollectionVi
         viewController.tableView.contentOffset = CGPoint(x: 0, y: (indexPath.row+1)*150-22)
     }
     
+    @IBAction func addButtonPressed(_ sender: Any) {
+        viewController.selectContacts()
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

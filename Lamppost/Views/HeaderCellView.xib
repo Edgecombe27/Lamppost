@@ -33,7 +33,7 @@
                             <navigationItem title="kiOSk" id="tah-cu-MNx"/>
                         </items>
                     </navigationBar>
-                    <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zH8-rp-kU8">
+                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zH8-rp-kU8">
                         <rect key="frame" x="0.0" y="44" width="379" height="44"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -47,7 +47,11 @@
                             <barButtonItem style="plain" systemItem="flexibleSpace" id="ibk-Ym-JtW"/>
                             <barButtonItem systemItem="action" id="lnX-KI-ocL"/>
                             <barButtonItem style="plain" systemItem="flexibleSpace" id="ahv-If-Urb"/>
-                            <barButtonItem systemItem="add" id="qM1-gT-AtO"/>
+                            <barButtonItem systemItem="add" id="qM1-gT-AtO">
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="KGk-i7-Jjw" id="Epz-Qn-TT7"/>
+                                </connections>
+                            </barButtonItem>
                         </items>
                         <color key="tintColor" red="0.20784313730000001" green="0.47058823529999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -66,7 +70,7 @@
                         </collectionViewFlowLayout>
                         <cells/>
                     </collectionView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ua-fq-Akx">
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ua-fq-Akx">
                         <rect key="frame" x="168" y="56" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
