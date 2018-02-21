@@ -41,7 +41,11 @@
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="mCl-bA-lV0"/>
                         </constraints>
                         <items>
-                            <barButtonItem systemItem="compose" id="YXl-GE-hpw"/>
+                            <barButtonItem systemItem="compose" id="YXl-GE-hpw">
+                                <connections>
+                                    <action selector="editButtonPressed:" destination="KGk-i7-Jjw" id="cCc-lH-iTW"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem style="plain" systemItem="flexibleSpace" id="Egc-bY-vrS"/>
                             <barButtonItem systemItem="search" id="lno-W5-ps1"/>
                             <barButtonItem style="plain" systemItem="flexibleSpace" id="ibk-Ym-JtW"/>

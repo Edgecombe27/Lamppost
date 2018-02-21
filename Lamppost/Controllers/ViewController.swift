@@ -18,10 +18,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var statusBarView: UILabel!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
+    var selectedCollections : [FlyerCollection]!
+    var selectedFlyers : [String : [Flyer]]!
     var selectedCollection : FlyerCollection!
     var userData : UserData!
     var flyerData : [FlyerCollection] = []
     var contactHandler : ContactHandler!
+    var inEditMode = false
     
     override func viewDidLoad() {
         //Set size of the post
@@ -138,6 +141,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section > 0 {
             let cell : FlyerCollectionCellView = self.tableView.dequeueReusableCell(withIdentifier: "flyer_collection_cell", for: indexPath) as! FlyerCollectionCellView
+            cell.viewController = self
             cell.render(withCollection: flyerData[indexPath.section-1])
             return cell
         }
@@ -148,6 +152,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+    func enterEditMode() {
+        inEditMode = true
+        selectedCollections = []
+        selectedFlyers = [:]
+        tableView.reloadData()
+    }
+    
+    func exitEditMode() {
+        inEditMode = false
+        for collection in selectedCollections {
+            userData.removeCollection(collection: collection)
+        }
+        for collection in selectedFlyers {
+            for flyer in collection.value {
+                userData.removeFlyer(flyer: flyer, fromCollection: FlyerCollection(withName: collection.key, order: 0, andFlyers: []))
+            }
+        }
+        loadUserData()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

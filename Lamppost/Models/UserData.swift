@@ -35,7 +35,9 @@ class UserData {
         
     }
     
-    func removeCollection(named: String) {
+    func removeCollection(collection: FlyerCollection) {
+        
+        data.removeValue(forKey: collection.name)
         
         UserDefaults.standard.setPersistentDomain(data, forName: "user_data")
     }
@@ -56,6 +58,15 @@ class UserData {
     }
     
     func removeFlyer(flyer : Flyer, fromCollection : FlyerCollection) {
+        
+        let contactFlyer = flyer as! ContactFlyer
+        let contactIdentifier = contactFlyer.details["identifier"] as! String
+        
+        var collection = data[fromCollection.name] as! [String]
+        
+        collection.remove(at: collection.index(of: contactIdentifier)!)
+        
+        data[fromCollection.name] = collection
         
         UserDefaults.standard.setPersistentDomain(data, forName: "user_data")
     }

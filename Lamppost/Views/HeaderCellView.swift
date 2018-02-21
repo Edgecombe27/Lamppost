@@ -46,8 +46,16 @@ class HeaderCellView: UITableViewCell , UICollectionViewDelegate, UICollectionVi
         viewController.tableView.contentOffset = CGPoint(x: 0, y: (indexPath.row+1)*150-22)
     }
     
+    @IBAction func editButtonPressed(_ sender: Any) {
+        if viewController.inEditMode {
+            viewController.exitEditMode()
+        } else {
+            viewController.enterEditMode()
+        }
+    }
+    
     @IBAction func shareButtonPressed(_ sender: Any) {
-            viewController.loadUserData()
+            viewController.tableView.reloadData()
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {

@@ -47,10 +47,19 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9M-qa-ac5">
+                        <rect key="frame" x="95" y="-1" width="42" height="30"/>
+                        <state key="normal" title="select"/>
+                        <connections>
+                            <action selector="selectButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="05g-Eh-TBa"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="0Sk-ed-uco" firstAttribute="top" secondItem="a4x-7k-D02" secondAttribute="bottom" constant="8" id="BWr-Ff-fmN"/>
                     <constraint firstItem="a4x-7k-D02" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="D7z-Zk-sFe"/>
+                    <constraint firstItem="Q9M-qa-ac5" firstAttribute="leading" secondItem="a4x-7k-D02" secondAttribute="trailing" constant="2.5" id="Gp5-Zq-Mlh"/>
+                    <constraint firstItem="Q9M-qa-ac5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="-1" id="ivv-mG-Pb7"/>
                     <constraint firstItem="a4x-7k-D02" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="rTK-bu-hV2"/>
                     <constraint firstAttribute="bottom" secondItem="0Sk-ed-uco" secondAttribute="bottom" constant="8" id="rVA-FE-PtV"/>
                     <constraint firstItem="0Sk-ed-uco" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="ukZ-uf-vq3"/>
@@ -61,8 +70,9 @@
             <connections>
                 <outlet property="collectionView" destination="0Sk-ed-uco" id="qZJ-Vo-Q6x"/>
                 <outlet property="sectionLabel" destination="a4x-7k-D02" id="wud-Wu-7Oc"/>
+                <outlet property="selectButton" destination="Q9M-qa-ac5" id="ayr-ge-LHL"/>
             </connections>
-            <point key="canvasLocation" x="46.5" y="116.5"/>
+            <point key="canvasLocation" x="-23" y="78"/>
         </tableViewCell>
     </objects>
 </document>
