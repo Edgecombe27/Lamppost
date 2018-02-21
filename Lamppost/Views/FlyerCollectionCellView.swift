@@ -94,7 +94,7 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
         if viewController.inEditMode {
             selectButton.isHidden = false
         } else {
-           // selectButton.isHidden = true
+           selectButton.isHidden = true
         }
         
     }
