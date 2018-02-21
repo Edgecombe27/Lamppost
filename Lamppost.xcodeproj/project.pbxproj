@@ -27,6 +27,8 @@
 		FB200301202DE81500776AD2 /* FlyerCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB200300202DE81500776AD2 /* FlyerCollection.swift */; };
 		FB200303202E2CAE00776AD2 /* ContactHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB200302202E2CAE00776AD2 /* ContactHandler.swift */; };
 		FB37F3E0202B8592004527CA /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB37F3DF202B8592004527CA /* Action.swift */; };
+		FB6E744B203DC52900C15740 /* AddCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E7449203DC52900C15740 /* AddCollectionViewController.swift */; };
+		FB6E744C203DC52900C15740 /* AddCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6E744A203DC52900C15740 /* AddCollectionViewController.xib */; };
 		FBA2C346203785E5001791B1 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA2C344203785E5001791B1 /* ContactDetailViewController.swift */; };
 		FBA2C347203785E5001791B1 /* ContactDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA2C345203785E5001791B1 /* ContactDetailViewController.xib */; };
 		FBD9AE5420321F3D0039443B /* ToolbarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD9AE5320321F3D0039443B /* ToolbarCellView.swift */; };
@@ -59,6 +61,8 @@
 		FB200300202DE81500776AD2 /* FlyerCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyerCollection.swift; sourceTree = "<group>"; };
 		FB200302202E2CAE00776AD2 /* ContactHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactHandler.swift; sourceTree = "<group>"; };
 		FB37F3DF202B8592004527CA /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		FB6E7449203DC52900C15740 /* AddCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionViewController.swift; sourceTree = "<group>"; };
+		FB6E744A203DC52900C15740 /* AddCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCollectionViewController.xib; sourceTree = "<group>"; };
 		FBA2C344203785E5001791B1 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		FBA2C345203785E5001791B1 /* ContactDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactDetailViewController.xib; sourceTree = "<group>"; };
 		FBD9AE5320321F3D0039443B /* ToolbarCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarCellView.swift; sourceTree = "<group>"; };
@@ -149,6 +153,8 @@
 				85A683392025FEAB0074754E /* ViewController.swift */,
 				FBA2C344203785E5001791B1 /* ContactDetailViewController.swift */,
 				FBA2C345203785E5001791B1 /* ContactDetailViewController.xib */,
+				FB6E7449203DC52900C15740 /* AddCollectionViewController.swift */,
+				FB6E744A203DC52900C15740 /* AddCollectionViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -231,6 +237,7 @@
 				FBD9AE58203221B90039443B /* ShortcutCellView.xib in Resources */,
 				FBA2C347203785E5001791B1 /* ContactDetailViewController.xib in Resources */,
 				85A6833D2025FEAB0074754E /* Main.storyboard in Resources */,
+				FB6E744C203DC52900C15740 /* AddCollectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +262,7 @@
 				85ABB2F32039F16000F46C83 /* ContactAction.swift in Sources */,
 				85FE79242027BBF300DE00B0 /* Flyer.swift in Sources */,
 				FBA2C346203785E5001791B1 /* ContactDetailViewController.swift in Sources */,
+				FB6E744B203DC52900C15740 /* AddCollectionViewController.swift in Sources */,
 				FB200303202E2CAE00776AD2 /* ContactHandler.swift in Sources */,
 				FB200301202DE81500776AD2 /* FlyerCollection.swift in Sources */,
 				85A683382025FEAB0074754E /* AppDelegate.swift in Sources */,

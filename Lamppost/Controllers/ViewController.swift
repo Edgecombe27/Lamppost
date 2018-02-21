@@ -7,13 +7,15 @@
 //
 
 import UIKit
-import ContactsUI
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CNContactPickerDelegate, UIAlertViewDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 
+    @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet var blurrView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    
+    var userData : [String : Any]!
     
     var flyerData : [FlyerCollection] = []
     
@@ -42,9 +44,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         loadingIndicator.layer.cornerRadius = 10
         loadingIndicator.layer.masksToBounds = true
+        loadingIndicator.isHidden = true
         
-        contactHandler = ContactHandler()
-        renderContacts()
+        loadUserData()
+        
+        //contactHandler = ContactHandler()
+        //renderContacts()
+        
+    }
+    
+    func loadUserData() {
+        userData = UserDefaults.standard.volatileDomain(forName: "user_data")
+        
+        if userData.count > 0 {
+            
+        } else {
+            noDataLabel.isHidden = false
+        }
         
     }
     
@@ -91,6 +107,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+   /*
     func selectContacts() {
         
         let cnPicker = CNContactPickerViewController()
@@ -109,6 +126,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
         print("Cancel Contact Picker")
     }
+ */
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

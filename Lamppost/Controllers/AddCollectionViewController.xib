@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddCollectionViewController" customModule="Lamppost" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="ruF-DB-p0v" id="HtZ-yc-Zbu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruF-DB-p0v">
+                    <rect key="frame" x="0.0" y="244" width="375" height="468"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q0x-WB-Yny">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="236"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="KVQ-9R-dFW" appends="YES" id="BkA-2q-HyE"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="Q0x-WB-Yny" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="7En-x1-raK"/>
+                <constraint firstItem="Q0x-WB-Yny" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HEZ-E1-XQ8"/>
+                <constraint firstItem="Q0x-WB-Yny" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="I2n-h9-1D6"/>
+                <constraint firstItem="ruF-DB-p0v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="b2M-7g-3l4"/>
+                <constraint firstItem="ruF-DB-p0v" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ci1-Mh-g7P"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ruF-DB-p0v" secondAttribute="bottom" constant="-45" id="eEy-DB-C5T"/>
+                <constraint firstItem="ruF-DB-p0v" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.7" constant="1" id="kSh-Sa-zvb"/>
+                <constraint firstItem="ruF-DB-p0v" firstAttribute="top" secondItem="Q0x-WB-Yny" secondAttribute="bottom" constant="8" id="qUS-XW-vbd"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="79.5" y="54.5"/>
+        </view>
+        <tapGestureRecognizer id="KVQ-9R-dFW">
+            <connections>
+                <action selector="exitViewTapped:" destination="-1" id="7lZ-Ap-WWM"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>

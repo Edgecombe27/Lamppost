@@ -31,7 +31,6 @@ class HeaderCellView: UITableViewCell , UICollectionViewDelegate, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        numberLabel.text = "\(viewController.contactHandler.contacts.count) contacts"
         return viewController.flyerData.count
     }
     
@@ -48,7 +47,13 @@ class HeaderCellView: UITableViewCell , UICollectionViewDelegate, UICollectionVi
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
-        viewController.selectContacts()
+        let addCollectionViewController = AddCollectionViewController()
+        
+        addCollectionViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        let viewController = self.window?.rootViewController as! ViewController
+        viewController.blurrView.isHidden = false
+        addCollectionViewController.viewController = viewController
+        viewController.present(addCollectionViewController, animated: true, completion: nil)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
