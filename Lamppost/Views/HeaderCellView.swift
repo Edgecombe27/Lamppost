@@ -47,10 +47,9 @@ class HeaderCellView: UITableViewCell , UICollectionViewDelegate, UICollectionVi
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
-        let addCollectionViewController = AddCollectionViewController()
         
+        let addCollectionViewController = AddCollectionViewController()
         addCollectionViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        let viewController = self.window?.rootViewController as! ViewController
         viewController.blurrView.isHidden = false
         addCollectionViewController.viewController = viewController
         viewController.present(addCollectionViewController, animated: true, completion: nil)

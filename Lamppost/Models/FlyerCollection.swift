@@ -10,6 +10,8 @@ import Foundation
 
 class FlyerCollection {
     
+    static let COLLECTION_TYPES = ["Contacts"]
+    
     var name : String
     var collection : [Flyer]
     

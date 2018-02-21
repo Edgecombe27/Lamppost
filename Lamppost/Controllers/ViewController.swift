@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import ContactsUI
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CNContactPickerDelegate {
     
 
     @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet var blurrView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    var selectedCollection : FlyerCollection!
+
     
     var userData : [String : Any]!
     
@@ -41,6 +44,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.register(UINib(nibName: "FlyerCollectionCellView", bundle: nil), forCellReuseIdentifier: "flyer_collection_cell")
         
         tableView.register(UINib(nibName: "HeaderCellView", bundle: nil), forCellReuseIdentifier: "header_cell")
+        
+        self.tableView.rowHeight = 150
         
         loadingIndicator.layer.cornerRadius = 10
         loadingIndicator.layer.masksToBounds = true
@@ -75,13 +80,86 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     return f1.name.compare(f2.name) == .orderedAscending
                 }
                 
-                self.tableView.rowHeight = 150
                 self.tableView.reloadData()
             }
             self.loadingIndicator.stopAnimating()
             self.loadingIndicator.isHidden = true
         })
+    }
+    
+    func selectContacts() {
         
+        let cnPicker = CNContactPickerViewController()
+        cnPicker.delegate = self
+        self.present(cnPicker, animated: true, completion: nil)
+    }
+    
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
+        contacts.forEach { contact in
+            var details = ["first_name" : contact.givenName,
+                           "middle_name" : contact.middleName,
+                           "last_name" : contact.familyName,
+                           "nickname" : contact.nickname,
+                           ] as [String : Any]
+            
+            var numbers : [String : String] = [:]
+            
+            if contact.phoneNumbers.count > 0 {
+                for number in contact.phoneNumbers {
+                    numbers[((number.label?.replacingOccurrences(of: "_$!<", with: "").replacingOccurrences(of: ">!$_", with: ""))?.replacingOccurrences(of: "FAX", with: " Fax"))!] = number.value.stringValue
+                }
+            }
+            
+            details["phone_numbers"] = numbers
+            
+            var emails : [String : String] = [:]
+            
+            if contact.emailAddresses.count > 0 {
+                for email in contact.emailAddresses {
+                    emails[(email.label?.replacingOccurrences(of: "_$!<", with: "").replacingOccurrences(of: ">!$_", with: "").replacingOccurrences(of: "FAX", with: " Fax"))!] = (email.value as String) as String
+                }
+            }
+            
+            details["email_addresses"] = emails
+            
+            var image : UIImage
+            
+            if contact.imageDataAvailable {
+                image = UIImage(data: contact.imageData!)!
+            } else {
+                image = UIImage(named: "logo-placeholder.png")!
+            }
+            
+            var title = ""
+            
+            if (details["nickname"] != nil && !(details["nickname"] as! String).isEmpty) {title = details["nickname"] as! String}
+            else if (details["first_name"] != nil) {title = "\(details["first_name"] as! String) \(details["last_name"] as! String)"}
+            
+            selectedCollection.addFlyer(flyer: ContactFlyer(title: title, icon: image, details: details))
+            
+        }
+        
+        selectedCollection.sort()
+        tableView.reloadData()
+        
+    }
+    func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
+        print("Cancel Contact Picker")
+    }
+    
+    func addToCollection(named: String) {
+        
+        noDataLabel.isHidden = true
+        tableView.reloadData()
+        
+        for coll in flyerData {
+            if coll.name == named {
+                selectedCollection = coll
+                break
+            }
+        }
+        
+        selectContacts()
         
     }
     
@@ -107,26 +185,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-   /*
-    func selectContacts() {
-        
-        let cnPicker = CNContactPickerViewController()
-        cnPicker.delegate = self
-        self.present(cnPicker, animated: true, completion: nil)
-    }
-    
-    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
-        contacts.forEach { contact in
-            for number in contact.phoneNumbers {
-                let phoneNumber = number.value
-                print("number is = \(phoneNumber)")
-            }
-        }
-    }
-    func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
-        print("Cancel Contact Picker")
-    }
- */
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

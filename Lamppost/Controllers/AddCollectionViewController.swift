@@ -7,22 +7,70 @@
 //
 
 import UIKit
+import ContactsUI
 
-class AddCollectionViewController: UIViewController {
+class AddCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CNContactPickerDelegate, UITextFieldDelegate{
+    
 
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var viewController : ViewController!
     
+    @IBOutlet weak var nameTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSize(width:80,height: 130)
+        flowLayout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
+        //flowLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
+        flowLayout.minimumInteritemSpacing = 0.0
+        collectionView.collectionViewLayout = flowLayout
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(UINib(nibName: "ContactFlyerCellView", bundle: nil), forCellWithReuseIdentifier: "contact_flyer_cell")
+
         contentView.layer.cornerRadius = 20
         contentView.layer.masksToBounds = true
         
         // Do any additional setup after loading the view.
     }
 
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return FlyerCollection.COLLECTION_TYPES.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell : ContactFlyerCellView = collectionView.dequeueReusableCell(withReuseIdentifier: "contact_flyer_cell", for: indexPath) as! ContactFlyerCellView
+        cell.render(withFlyer: Flyer(title: "Contacts", icon: UIImage(named: "logo-placeholder.png")!))
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    
+    @IBAction func createButtonPressed(_ sender: Any) {
+       
+        viewController.blurrView.isHidden = true
+        viewController.flyerData.append(FlyerCollection(withName: nameTextField.text!, andFlyers: []))
+        self.dismiss(animated: true, completion: {
+            self.viewController.addToCollection(named: self.nameTextField.text!)
+        })
+        
+    }
+    
     @IBAction func exitViewTapped(_ sender: Any) {
         viewController.blurrView.isHidden = true
         self.dismiss(animated: true, completion: {
