@@ -20,23 +20,28 @@ class ContactHandler {
         contactStore = CNContactStore()
     }
     
-    /*
-        if UserDefaults.standard.bool(forKey: "contact_permission_granted") {
-            self.getContacts()
-            completion(true)
-        } else {
+    func requestPermission(completion: @escaping (Bool) -> ()) {
+        if !UserDefaults.standard.bool(forKey: "contact_permission_granted") {
             contactStore.requestAccess(for: .contacts, completionHandler: { (granted, error) in
                 if granted {
-                    self.getContacts()
                     completion(true)
                     UserDefaults.standard.set(true, forKey: "contact_permission_granted")
+                } else {
+                    completion(false)
                 }
             })
+        } else {
+            completion(true)
         }
+    }
  
- */
+ 
     
     func getFlyerCollection(fromData : [String], order : Int, collectionName: String) -> FlyerCollection {
+        
+        var data = fromData
+        
+        let order = Int(data.remove(at: 0))
         
         importContacts(withIdentifiers: fromData)
         
@@ -48,7 +53,11 @@ class ContactHandler {
             
         }
         
-        return FlyerCollection(withName: collectionName, order: order, andFlyers: flyers)
+        let collection = FlyerCollection(withName: collectionName, order: order!, andFlyers: flyers)
+        
+        collection.isGroup = true
+        
+        return collection
         
     }
     
@@ -160,7 +169,7 @@ class ContactHandler {
         
         var result : [Character : FlyerCollection] = [:]
         
-        
+        let preference = UserData.getSortPrefernece()
         
         for contact in contacts {
             
@@ -168,15 +177,28 @@ class ContactHandler {
         
             let title = flyer.title
             
-            if result[title[title.startIndex]] != nil {
-                result[title[title.startIndex]]?.addFlyer(flyer: flyer)
-            } else {
-                result[title[title.startIndex]] = FlyerCollection(withName: "\(title[title.startIndex])", order: 0, andFlyers: [flyer])
+            var sortKey = title
+            
+            if preference == UserData.LAST_NAME && !contact.familyName.isEmpty {
+                sortKey = contact.familyName
             }
+            
+            if result[sortKey[sortKey.startIndex]] != nil {
+                result[sortKey[sortKey.startIndex]]?.addFlyer(flyer: flyer)
+            } else {
+                result[sortKey[sortKey.startIndex]] = FlyerCollection(withName: "\(sortKey[sortKey.startIndex])", order: 0, andFlyers: [flyer])
+            }
+            
             
         }
         
-        return Array(result.values)
+        var flyerData = Array(result.values)
+        flyerData.sort { (f1, f2) -> Bool in
+            print(f1.name)
+            return f1.name.compare(f2.name) == .orderedAscending
+        }
+        
+        return flyerData
         
     }
     

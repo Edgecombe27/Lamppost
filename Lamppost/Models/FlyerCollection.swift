@@ -15,6 +15,7 @@ class FlyerCollection {
     var name : String
     var order : Int
     var collection : [Flyer]
+    var isGroup = false
     
     init(withName: String,order : Int, andFlyers: [Flyer]) {
         name = withName

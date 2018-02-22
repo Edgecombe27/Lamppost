@@ -7,11 +7,16 @@
 //
 
 import Foundation
-
+import UIKit
 class UserData {
     
     private var data : [String : Any]
     
+    static var numGroups = 0
+    static let ORDER_DATA = "sdfghjki765rfghu765rghu765"
+    static let FIRST_NAME = "first_name"
+    static let LAST_NAME = "last_name"
+
     init() {
         
         if let savedData  = UserDefaults.standard.persistentDomain(forName: "user_data") {
@@ -19,19 +24,27 @@ class UserData {
         } else {
             data = [:]
         }
+        
+        UserData.numGroups = data.count
+        
     }
     
-    func collectionExists(collection : FlyerCollection) -> Bool {
-        return data[collection.name] != nil
+    func collectionExists(collectionName : String) -> Bool {
+        return data[collectionName] != nil
     }
     
     func addCollection(collection : FlyerCollection) {
         
         data[collection.name] = []
         
+        
+        addFlyer(flyer: ContactFlyer(title: UserData.ORDER_DATA, icon: UIImage(), details: ["identifier" : "\(collection.order)"]), toCollection: collection)
+        
         for flyer in collection.collection {
             addFlyer(flyer: flyer, toCollection: collection)
         }
+        
+        UserData.numGroups = UserData.numGroups + 1
         
     }
     
@@ -68,6 +81,10 @@ class UserData {
         
         data[fromCollection.name] = collection
         
+        if collection.count == 1 {
+            data.removeValue(forKey: fromCollection.name)
+        }
+        
         UserDefaults.standard.setPersistentDomain(data, forName: "user_data")
     }
     
@@ -89,7 +106,27 @@ class UserData {
             result.append(contactHandler.getFlyerCollection(fromData: collection.value as! [String], order: 0, collectionName: collection.key))
         }
         
+        result.sort { (c1, c2) -> Bool in
+            return c1.order <= c2.order
+        }
+        
         return result
+        
+    }
+    
+    static func setSortPreference(preference : String) {
+        UserDefaults.standard.set(preference, forKey: "sort_preference")
+    }
+    
+    static func getSortPrefernece() -> String {
+        
+        if let preference = UserDefaults.standard.object(forKey: "sort_preference") {
+            return preference as! String
+        } else {
+            return UserData.FIRST_NAME
+        }
+        
+        
         
     }
     

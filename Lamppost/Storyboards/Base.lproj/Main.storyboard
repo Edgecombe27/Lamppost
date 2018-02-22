@@ -47,18 +47,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the + button to get started! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H87-SW-Kq2">
-                                <rect key="frame" x="57.5" y="323" width="259.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="0fY-fw-4WJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Pg-ZX-U8i"/>
-                            <constraint firstItem="H87-SW-Kq2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EPK-mk-2a5"/>
-                            <constraint firstItem="H87-SW-Kq2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MWd-2g-ep0"/>
                             <constraint firstItem="y8m-iI-Oqh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Otu-4c-giI"/>
                             <constraint firstItem="0fY-fw-4WJ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="QVh-BK-9bL"/>
                             <constraint firstItem="0fY-fw-4WJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="TZk-bj-RLm"/>
@@ -77,7 +69,6 @@
                     <connections>
                         <outlet property="blurrView" destination="y8m-iI-Oqh" id="Mp9-CH-2ti"/>
                         <outlet property="loadingIndicator" destination="npB-hC-aoB" id="SOQ-O8-bIO"/>
-                        <outlet property="noDataLabel" destination="H87-SW-Kq2" id="Ktl-6f-dPg"/>
                         <outlet property="statusBarView" destination="dAO-yG-rfq" id="5W8-CB-dWW"/>
                         <outlet property="tableView" destination="0fY-fw-4WJ" id="Lfm-Jh-QfJ"/>
                     </connections>

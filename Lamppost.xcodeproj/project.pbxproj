@@ -19,6 +19,8 @@
 		85ABB2F32039F16000F46C83 /* ContactAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ABB2F22039F16000F46C83 /* ContactAction.swift */; };
 		85FE79242027BBF300DE00B0 /* Flyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE79232027BBF300DE00B0 /* Flyer.swift */; };
 		85FE792C20291C2B00DE00B0 /* ContactFlyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE792B20291C2B00DE00B0 /* ContactFlyer.swift */; };
+		FB02EF6C203F374600BC5E4E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB02EF6A203F374600BC5E4E /* SettingsViewController.swift */; };
+		FB02EF6D203F374600BC5E4E /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB02EF6B203F374600BC5E4E /* SettingsViewController.xib */; };
 		FB0B0ACA202CEE6200D0722F /* FlyerCollectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0B0AC8202CEE6200D0722F /* FlyerCollectionCellView.swift */; };
 		FB0B0ACB202CEE6200D0722F /* FlyerCollectionCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB0B0AC9202CEE6200D0722F /* FlyerCollectionCellView.xib */; };
 		FB0B0AD0202CEF0F00D0722F /* ContactFlyerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0B0ACE202CEF0F00D0722F /* ContactFlyerCellView.swift */; };
@@ -56,6 +58,8 @@
 		85ABB2F22039F16000F46C83 /* ContactAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAction.swift; sourceTree = "<group>"; };
 		85FE79232027BBF300DE00B0 /* Flyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flyer.swift; sourceTree = "<group>"; };
 		85FE792B20291C2B00DE00B0 /* ContactFlyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFlyer.swift; sourceTree = "<group>"; };
+		FB02EF6A203F374600BC5E4E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FB02EF6B203F374600BC5E4E /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		FB0B0AC8202CEE6200D0722F /* FlyerCollectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyerCollectionCellView.swift; sourceTree = "<group>"; };
 		FB0B0AC9202CEE6200D0722F /* FlyerCollectionCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlyerCollectionCellView.xib; sourceTree = "<group>"; };
 		FB0B0ACE202CEF0F00D0722F /* ContactFlyerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFlyerCellView.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				FBA2C345203785E5001791B1 /* ContactDetailViewController.xib */,
 				FB6E7449203DC52900C15740 /* AddCollectionViewController.swift */,
 				FB6E744A203DC52900C15740 /* AddCollectionViewController.xib */,
+				FB02EF6A203F374600BC5E4E /* SettingsViewController.swift */,
+				FB02EF6B203F374600BC5E4E /* SettingsViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB02EF6D203F374600BC5E4E /* SettingsViewController.xib in Resources */,
 				85ABB2ED2039E76D00F46C83 /* PhoneActionCellView.xib in Resources */,
 				85A683422025FEAB0074754E /* LaunchScreen.storyboard in Resources */,
 				FBE3C976203325E9009B8F83 /* HeaderCellView.xib in Resources */,
@@ -260,6 +267,7 @@
 			files = (
 				FB0B0AD0202CEF0F00D0722F /* ContactFlyerCellView.swift in Sources */,
 				85FE792C20291C2B00DE00B0 /* ContactFlyer.swift in Sources */,
+				FB02EF6C203F374600BC5E4E /* SettingsViewController.swift in Sources */,
 				FB37F3E0202B8592004527CA /* Action.swift in Sources */,
 				FBE3C975203325E9009B8F83 /* HeaderCellView.swift in Sources */,
 				FBD9AE57203221B90039443B /* ShortcutCellView.swift in Sources */,
@@ -418,6 +426,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DB85A83894;
 				INFOPLIST_FILE = Lamppost/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fwtio.kiOSk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -436,6 +445,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DB85A83894;
 				INFOPLIST_FILE = Lamppost/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fwtio.kiOSk;
 				PRODUCT_NAME = "$(TARGET_NAME)";

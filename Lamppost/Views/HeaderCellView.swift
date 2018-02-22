@@ -11,8 +11,12 @@ import UIKit
 class HeaderCellView: UITableViewCell , UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBOutlet weak var deleteButton: UIBarButtonItem!
+    @IBOutlet weak var settingsButton: UIBarButtonItem!
+    
     
     var viewController : ViewController!
     
@@ -28,6 +32,7 @@ class HeaderCellView: UITableViewCell , UICollectionViewDelegate, UICollectionVi
         flowLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
         flowLayout.minimumInteritemSpacing = 0.0
         collectionView.collectionViewLayout = flowLayout
+        deleteButton.isEnabled = false
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -46,17 +51,40 @@ class HeaderCellView: UITableViewCell , UICollectionViewDelegate, UICollectionVi
         viewController.tableView.contentOffset = CGPoint(x: 0, y: (indexPath.row+1)*150-22)
     }
     
-    @IBAction func editButtonPressed(_ sender: Any) {
-        if viewController.inEditMode {
-            viewController.exitEditMode()
-        } else {
-            viewController.enterEditMode()
-        }
+    @IBAction func deleteButtonPressed(_ sender: Any) {
+        let deleteAlert = UIAlertController(title: "Delete flyers", message: "Are you sure you want to delete these flyers?", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+            self.viewController.deleteSelected()
+        })
+        
+        deleteAlert.addAction(action)
+        viewController.present(deleteAlert, animated: true, completion: nil)
+        
     }
     
-    @IBAction func shareButtonPressed(_ sender: Any) {
-            viewController.tableView.reloadData()
+    @IBAction func editButtonPressed(_ sender: Any) {
+        if viewController.inEditMode {
+            deleteButton.isEnabled = false
+            editButton.title = "Edit"
+            deleteButton.title = ""
+            viewController.exitEditMode()
+        } else {
+            deleteButton.isEnabled = true
+            deleteButton.title = "delete"
+            editButton.title = "Done"
+            viewController.enterEditMode()
+        }
+        
     }
+    
+    @IBAction func settingsButtonPressed(_ sender: Any) {
+        let settingsViewController = SettingsViewController()
+        settingsViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        viewController.blurrView.isHidden = false
+        settingsViewController.viewController = viewController
+        viewController.present(settingsViewController, animated: true, completion: nil)
+    }
+    
     
     @IBAction func addButtonPressed(_ sender: Any) {
         
@@ -65,6 +93,7 @@ class HeaderCellView: UITableViewCell , UICollectionViewDelegate, UICollectionVi
         viewController.blurrView.isHidden = false
         addCollectionViewController.viewController = viewController
         viewController.present(addCollectionViewController, animated: true, completion: nil)
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

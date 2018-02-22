@@ -14,6 +14,7 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var selectButton: UIButton!
     @IBOutlet weak var sectionLabel: UILabel!
+    @IBOutlet weak var addButton: UIButton!
     var viewController : ViewController!
     
     override func awakeFromNib() {
@@ -91,12 +92,19 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
         collectionView.reloadData()
         sectionLabel.text = collection.name
         
-        if viewController.inEditMode {
+        if viewController.inEditMode && collection.isGroup {
+            selectButton.setTitle("select", for: .normal)
             selectButton.isHidden = false
+            addButton.isHidden = false
         } else {
            selectButton.isHidden = true
+            addButton.isHidden = true
         }
         
+    }
+    
+    @IBAction func addButtonPressed(_ sender: Any) {
+        viewController.addToCollection(named: collection.name)
     }
     
     @IBAction func selectButtonPressed(_ sender: Any) {

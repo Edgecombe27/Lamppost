@@ -64,7 +64,6 @@ class AddCollectionViewController: UIViewController, UICollectionViewDelegate, U
     @IBAction func createButtonPressed(_ sender: Any) {
        
         viewController.blurrView.isHidden = true
-        viewController.flyerData.append(FlyerCollection(withName: nameTextField.text!, order: viewController.flyerData.count, andFlyers: []))
         self.dismiss(animated: true, completion: {
             self.viewController.addToCollection(named: self.nameTextField.text!)
         })

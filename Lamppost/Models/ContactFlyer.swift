@@ -26,12 +26,14 @@ class ContactFlyer : Flyer {
         
         actions = []
         
-        for number in details["phone_numbers"] as! [String : String] {
-            actions.append(ContactAction(type: CALL_ACTION, label: number.key, value: number.value))
-        }
+        if title != UserData.ORDER_DATA {
+            for number in details["phone_numbers"] as! [String : String] {
+                actions.append(ContactAction(type: CALL_ACTION, label: number.key, value: number.value))
+            }
         
-        for email in details["email_addresses"] as! [String : String] {
-            actions.append(ContactAction(type: EMAIL_ACTION, label: email.key, value: email.value))
+            for email in details["email_addresses"] as! [String : String] {
+                actions.append(ContactAction(type: EMAIL_ACTION, label: email.key, value: email.value))
+            }
         }
         
         

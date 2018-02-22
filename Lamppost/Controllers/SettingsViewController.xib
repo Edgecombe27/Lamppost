@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="Lamppost" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="kHw-oa-wsu" id="5Bf-BQ-Lat"/>
+                <outlet property="pickerView" destination="Qdo-FR-INW" id="IHh-qV-r0T"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHw-oa-wsu">
+                    <rect key="frame" x="0.0" y="249" width="375" height="468"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort contacts by:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXS-D3-Mot">
+                            <rect key="frame" x="114" y="8" width="148" height="24"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qdo-FR-INW">
+                            <rect key="frame" x="0.0" y="40" width="375" height="150"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="150" id="1LH-UM-How"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="6Sa-Pu-3ci"/>
+                                <outlet property="delegate" destination="-1" id="hMp-Ah-5sH"/>
+                            </connections>
+                        </pickerView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIc-7b-xdJ">
+                            <rect key="frame" x="327" y="8" width="32" height="30"/>
+                            <state key="normal" title="save"/>
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="-1" eventType="touchUpInside" id="gRt-aa-nZ8"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="QXS-D3-Mot" firstAttribute="top" secondItem="kHw-oa-wsu" secondAttribute="top" constant="8" id="1cx-Op-N2H"/>
+                        <constraint firstAttribute="trailing" secondItem="Qdo-FR-INW" secondAttribute="trailing" id="IEL-VT-RNe"/>
+                        <constraint firstItem="Qdo-FR-INW" firstAttribute="top" secondItem="QXS-D3-Mot" secondAttribute="bottom" constant="8" id="Nmp-7g-yj7"/>
+                        <constraint firstAttribute="trailing" secondItem="WIc-7b-xdJ" secondAttribute="trailing" constant="16" id="RM1-HY-XEh"/>
+                        <constraint firstItem="WIc-7b-xdJ" firstAttribute="top" secondItem="kHw-oa-wsu" secondAttribute="top" constant="8" id="f0Y-pH-bCA"/>
+                        <constraint firstItem="QXS-D3-Mot" firstAttribute="centerX" secondItem="kHw-oa-wsu" secondAttribute="centerX" id="g4u-e2-k5e"/>
+                        <constraint firstItem="Qdo-FR-INW" firstAttribute="leading" secondItem="kHw-oa-wsu" secondAttribute="leading" id="xEe-TP-2qq"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JzG-aP-0Oo">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="241"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="Lms-CV-pAp" appends="YES" id="ltd-Jd-Cr6"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="JzG-aP-0Oo" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="3tf-4D-TiW"/>
+                <constraint firstItem="kHw-oa-wsu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DvL-fl-LLb"/>
+                <constraint firstItem="kHw-oa-wsu" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="50" id="PKj-Tf-RpE"/>
+                <constraint firstItem="kHw-oa-wsu" firstAttribute="top" secondItem="JzG-aP-0Oo" secondAttribute="bottom" constant="8" id="RjE-Vn-wiN"/>
+                <constraint firstItem="kHw-oa-wsu" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.7" constant="1" id="Wuf-92-WwK"/>
+                <constraint firstItem="JzG-aP-0Oo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Zde-cp-VzD"/>
+                <constraint firstItem="JzG-aP-0Oo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="oBW-3H-qhU"/>
+                <constraint firstItem="kHw-oa-wsu" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="yCn-ck-aCm"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+        <tapGestureRecognizer id="Lms-CV-pAp">
+            <connections>
+                <action selector="exitViewTapped:" destination="-1" id="NLt-Cq-43k"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>

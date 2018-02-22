@@ -30,7 +30,14 @@
                             <color key="textColor" red="0.20784313730000001" green="0.47058823529999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                         <items>
-                            <navigationItem title="kiOSk" id="tah-cu-MNx"/>
+                            <navigationItem title="kiOSk" id="tah-cu-MNx">
+                                <barButtonItem key="rightBarButtonItem" style="plain" systemItem="organize" id="mp5-Em-7Wp">
+                                    <color key="tintColor" red="0.20784313730000001" green="0.47058823529999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="settingsButtonPressed:" destination="KGk-i7-Jjw" id="34u-P1-mN1"/>
+                                    </connections>
+                                </barButtonItem>
+                            </navigationItem>
                         </items>
                     </navigationBar>
                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zH8-rp-kU8">
@@ -41,20 +48,19 @@
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="mCl-bA-lV0"/>
                         </constraints>
                         <items>
-                            <barButtonItem systemItem="compose" id="YXl-GE-hpw">
+                            <barButtonItem title="Edit" id="YXl-GE-hpw">
                                 <connections>
                                     <action selector="editButtonPressed:" destination="KGk-i7-Jjw" id="cCc-lH-iTW"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem style="plain" systemItem="flexibleSpace" id="Egc-bY-vrS"/>
-                            <barButtonItem systemItem="search" id="lno-W5-ps1"/>
-                            <barButtonItem style="plain" systemItem="flexibleSpace" id="ibk-Ym-JtW"/>
-                            <barButtonItem systemItem="action" id="lnX-KI-ocL">
+                            <barButtonItem id="lno-W5-ps1">
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <action selector="shareButtonPressed:" destination="KGk-i7-Jjw" id="1CV-Ua-d24"/>
+                                    <action selector="deleteButtonPressed:" destination="KGk-i7-Jjw" id="GCI-jp-qwx"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem style="plain" systemItem="flexibleSpace" id="ahv-If-Urb"/>
+                            <barButtonItem style="plain" systemItem="flexibleSpace" id="ibk-Ym-JtW"/>
                             <barButtonItem systemItem="add" id="qM1-gT-AtO">
                                 <connections>
                                     <action selector="addButtonPressed:" destination="KGk-i7-Jjw" id="Epz-Qn-TT7"/>
@@ -103,8 +109,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="addButton" destination="qM1-gT-AtO" id="yaq-Jj-EHg"/>
                 <outlet property="collectionView" destination="VXq-i7-YVH" id="gL6-t0-8vs"/>
+                <outlet property="deleteButton" destination="lno-W5-ps1" id="EhT-sC-uMH"/>
+                <outlet property="editButton" destination="YXl-GE-hpw" id="0FN-7W-UlA"/>
                 <outlet property="numberLabel" destination="5ua-fq-Akx" id="IZD-cX-skw"/>
+                <outlet property="settingsButton" destination="mp5-Em-7Wp" id="vGX-no-w39"/>
             </connections>
             <point key="canvasLocation" x="74.5" y="103.5"/>
         </tableViewCell>

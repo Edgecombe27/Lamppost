@@ -12,7 +12,6 @@ import ContactsUI
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CNContactPickerDelegate {
     
 
-    @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet var blurrView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var statusBarView: UILabel!
@@ -30,9 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //Set size of the post
         
         setUpViews()
-        loadUserData()
-        
-        contactHandler = ContactHandler()
+        renderContacts()
         
     }
     
@@ -63,7 +60,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         userData = UserData()
         
         if userData.isEmpty() {
-            noDataLabel.isHidden = false
         } else {
             flyerData = userData.getFlyerData()
             tableView.reloadData()
@@ -72,21 +68,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func renderContacts() {
-        /*loadingIndicator.isHidden = false
+        contactHandler = ContactHandler()
+        loadingIndicator.isHidden = false
         loadingIndicator.startAnimating()
-        contactHandler.im(completion: { granted in
+        loadUserData()
+        contactHandler.requestPermission(completion: { granted in
             if granted {
-                self.flyerData = self.contactHandler.generateFlyers()
-                self.flyerData.sort { (f1, f2) -> Bool in
-                    print(f1.name)
-                    return f1.name.compare(f2.name) == .orderedAscending
-                }
-                
+                self.contactHandler.importContacts()
+                self.flyerData.append(contentsOf: self.contactHandler.generateFlyers())
                 self.tableView.reloadData()
             }
             self.loadingIndicator.stopAnimating()
             self.loadingIndicator.isHidden = true
-        })*/
+        })
     }
     
     func selectContacts() {
@@ -103,6 +97,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
         selectedCollection.sort()
+        selectedCollection.isGroup = true
+        
+        if !userData.collectionExists(collectionName: selectedCollection.name) {
+            flyerData.insert(selectedCollection, at: selectedCollection.order-1)
+        }
         
         userData.addCollection(collection: selectedCollection)
         
@@ -110,19 +109,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
-        print("Cancel Contact Picker")
+        
     }
+    
     
     func addToCollection(named: String) {
         
-        noDataLabel.isHidden = true
-        tableView.reloadData()
-        
-        for coll in flyerData {
-            if coll.name == named {
-                selectedCollection = coll
-                break
+        if userData.collectionExists(collectionName: named) {
+            for coll in flyerData {
+                if coll.name == named {
+                    selectedCollection = coll
+                    break
+                }
             }
+        } else {
+            selectedCollection = FlyerCollection(withName: named, order: UserData.numGroups+1, andFlyers: [])
         }
         
         selectContacts()
@@ -161,6 +162,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func exitEditMode() {
         inEditMode = false
+        tableView.reloadData()
+    }
+    
+    func deleteSelected() {
         for collection in selectedCollections {
             userData.removeCollection(collection: collection)
         }
@@ -169,8 +174,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 userData.removeFlyer(flyer: flyer, fromCollection: FlyerCollection(withName: collection.key, order: 0, andFlyers: []))
             }
         }
-        loadUserData()
+        renderContacts()
+        selectedFlyers = [:]
+        selectedCollections = []
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
