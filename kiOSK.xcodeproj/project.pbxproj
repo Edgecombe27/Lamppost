@@ -41,7 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		85A683342025FEAB0074754E /* Lamppost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lamppost.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85A683342025FEAB0074754E /* kiOSK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kiOSK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A683372025FEAB0074754E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85A683392025FEAB0074754E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		85A6833C2025FEAB0074754E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		85A683352025FEAB0074754E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				85A683342025FEAB0074754E /* Lamppost.app */,
+				85A683342025FEAB0074754E /* kiOSK.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,9 +177,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		85A683332025FEAB0074754E /* Lamppost */ = {
+		85A683332025FEAB0074754E /* kiOSK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 85A683462025FEAB0074754E /* Build configuration list for PBXNativeTarget "Lamppost" */;
+			buildConfigurationList = 85A683462025FEAB0074754E /* Build configuration list for PBXNativeTarget "kiOSK" */;
 			buildPhases = (
 				85A683302025FEAB0074754E /* Sources */,
 				85A683312025FEAB0074754E /* Frameworks */,
@@ -189,9 +189,9 @@
 			);
 			dependencies = (
 			);
-			name = Lamppost;
+			name = kiOSK;
 			productName = Lamppost;
-			productReference = 85A683342025FEAB0074754E /* Lamppost.app */;
+			productReference = 85A683342025FEAB0074754E /* kiOSK.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -210,7 +210,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 85A6832F2025FEAB0074754E /* Build configuration list for PBXProject "Lamppost" */;
+			buildConfigurationList = 85A6832F2025FEAB0074754E /* Build configuration list for PBXProject "kiOSK" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -223,7 +223,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				85A683332025FEAB0074754E /* Lamppost */,
+				85A683332025FEAB0074754E /* kiOSK */,
 			);
 		};
 /* End PBXProject section */
@@ -447,7 +447,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		85A6832F2025FEAB0074754E /* Build configuration list for PBXProject "Lamppost" */ = {
+		85A6832F2025FEAB0074754E /* Build configuration list for PBXProject "kiOSK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				85A683442025FEAB0074754E /* Debug */,
@@ -456,7 +456,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		85A683462025FEAB0074754E /* Build configuration list for PBXNativeTarget "Lamppost" */ = {
+		85A683462025FEAB0074754E /* Build configuration list for PBXNativeTarget "kiOSK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				85A683472025FEAB0074754E /* Debug */,
