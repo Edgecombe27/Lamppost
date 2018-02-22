@@ -16,7 +16,6 @@ class ContactDetailViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var tableView: UITableView!
     
     var viewController : ViewController!
-    
     var flyer : ContactFlyer!
     
     override func viewDidLoad() {

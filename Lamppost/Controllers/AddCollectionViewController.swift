@@ -59,8 +59,6 @@ class AddCollectionViewController: UIViewController, UICollectionViewDelegate, U
         return true
     }
     
-    
-    
     @IBAction func createButtonPressed(_ sender: Any) {
        
         viewController.blurrView.isHidden = true
