@@ -14,6 +14,9 @@ class PhoneActionCellView: UITableViewCell {
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var numberLabel: UILabel!
     
+    static let NIB_NAME = "PhoneActionCellView"
+    static let IDENTIFIER = "phone_action_cell"
+
     var flyer : ContactFlyer!
     var action : ContactAction!
     

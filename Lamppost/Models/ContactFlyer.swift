@@ -17,7 +17,6 @@ class ContactFlyer : Flyer {
     let EMAIL_ACTION = "email_action"
     
     var actions : [ContactAction]!
-    
     var details : [String : Any]
         
     init(title : String, icon : UIImage, details: [String : Any]) {

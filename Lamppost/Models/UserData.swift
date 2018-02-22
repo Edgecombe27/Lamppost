@@ -10,16 +10,20 @@ import Foundation
 import UIKit
 class UserData {
     
-    private var data : [String : Any]
-    
-    static var numGroups = 0
     static let ORDER_DATA = "sdfghjki765rfghu765rghu765"
     static let FIRST_NAME = "first_name"
     static let LAST_NAME = "last_name"
+    private static let USER_DATA_KEY = "user_data"
+    private static let SORT_PREFERENCE_KEY = "sort_preference"
 
+    
+    static var numGroups = 0
+    
+    private var data : [String : Any]
+    
     init() {
         
-        if let savedData  = UserDefaults.standard.persistentDomain(forName: "user_data") {
+        if let savedData  = UserDefaults.standard.persistentDomain(forName: UserData.USER_DATA_KEY) {
             data = savedData
         } else {
             data = [:]
@@ -52,7 +56,7 @@ class UserData {
         
         data.removeValue(forKey: collection.name)
         
-        UserDefaults.standard.setPersistentDomain(data, forName: "user_data")
+        UserDefaults.standard.setPersistentDomain(data, forName: UserData.USER_DATA_KEY)
     }
     
     func addFlyer(flyer : Flyer, toCollection: FlyerCollection) {
@@ -65,7 +69,7 @@ class UserData {
         
         data[toCollection.name] = collectionData
         
-        UserDefaults.standard.setPersistentDomain(data, forName: "user_data")
+        UserDefaults.standard.setPersistentDomain(data, forName: UserData.USER_DATA_KEY)
 
         
     }
@@ -85,11 +89,11 @@ class UserData {
             data.removeValue(forKey: fromCollection.name)
         }
         
-        UserDefaults.standard.setPersistentDomain(data, forName: "user_data")
+        UserDefaults.standard.setPersistentDomain(data, forName: UserData.USER_DATA_KEY)
     }
     
     func fetchData() {
-        data = UserDefaults.standard.persistentDomain(forName: "user_data")!
+        data = UserDefaults.standard.persistentDomain(forName: UserData.USER_DATA_KEY)!
     }
     
     func isEmpty() -> Bool {
@@ -115,12 +119,12 @@ class UserData {
     }
     
     static func setSortPreference(preference : String) {
-        UserDefaults.standard.set(preference, forKey: "sort_preference")
+        UserDefaults.standard.set(preference, forKey: SORT_PREFERENCE_KEY)
     }
     
     static func getSortPrefernece() -> String {
         
-        if let preference = UserDefaults.standard.object(forKey: "sort_preference") {
+        if let preference = UserDefaults.standard.object(forKey: SORT_PREFERENCE_KEY) {
             return preference as! String
         } else {
             return UserData.FIRST_NAME

@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  Lamppost
+//  kiOSk
 //
 //  Created by Spencer Edgecombe on 2018-02-03.
-//  Copyright © 2018 Lamppost. All rights reserved.
+//  Copyright © 2018 kiOSK. All rights reserved.
 //
 
 import UIKit
@@ -46,9 +46,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         gradient.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
         statusBarView.layer.mask = gradient
         
-        tableView.register(UINib(nibName: "FlyerCollectionCellView", bundle: nil), forCellReuseIdentifier: "flyer_collection_cell")
+        tableView.register(UINib(nibName: FlyerCollectionCellView.NIB_NAME, bundle: nil), forCellReuseIdentifier: FlyerCollectionCellView.IDENTIFIER)
         
-        tableView.register(UINib(nibName: "HeaderCellView", bundle: nil), forCellReuseIdentifier: "header_cell")
+        tableView.register(UINib(nibName: HeaderCellView.NIB_NAME, bundle: nil), forCellReuseIdentifier: HeaderCellView.IDENTIFIER)
         
         self.tableView.rowHeight = 150
         loadingIndicator.layer.cornerRadius = 10
@@ -141,12 +141,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section > 0 {
-            let cell : FlyerCollectionCellView = self.tableView.dequeueReusableCell(withIdentifier: "flyer_collection_cell", for: indexPath) as! FlyerCollectionCellView
+            let cell : FlyerCollectionCellView = self.tableView.dequeueReusableCell(withIdentifier: FlyerCollectionCellView.IDENTIFIER, for: indexPath) as! FlyerCollectionCellView
             cell.viewController = self
             cell.render(withCollection: flyerData[indexPath.section-1])
             return cell
         }
-        let cell : HeaderCellView = self.tableView.dequeueReusableCell(withIdentifier: "header_cell", for: indexPath) as! HeaderCellView
+        let cell : HeaderCellView = self.tableView.dequeueReusableCell(withIdentifier: HeaderCellView.IDENTIFIER, for: indexPath) as! HeaderCellView
         cell.viewController = self
         cell.collectionView.reloadData()
         return cell

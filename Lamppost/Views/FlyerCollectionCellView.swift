@@ -10,17 +10,20 @@ import UIKit
 
 class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    var collection : FlyerCollection! 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var selectButton: UIButton!
     @IBOutlet weak var sectionLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
+    
+    static let NIB_NAME = "FlyerCollectionCellView"
+    static let IDENTIFIER = "flyer_collection_cell"
+
+    var collection : FlyerCollection!
     var viewController : ViewController!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        collectionView.register(UINib(nibName: "ContactFlyerCellView", bundle: nil), forCellWithReuseIdentifier: "contact_flyer_cell")
+        collectionView.register(UINib(nibName: ContactFlyerCellView.NIB_NAME, bundle: nil), forCellWithReuseIdentifier: ContactFlyerCellView.IDENTIFIER)
         collectionView.dataSource = self
         collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
@@ -41,7 +44,7 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : ContactFlyerCellView = self.collectionView.dequeueReusableCell(withReuseIdentifier: "contact_flyer_cell", for: indexPath) as! ContactFlyerCellView
+        let cell : ContactFlyerCellView = self.collectionView.dequeueReusableCell(withReuseIdentifier: ContactFlyerCellView.IDENTIFIER, for: indexPath) as! ContactFlyerCellView
         cell.render(withFlyer: collection[indexPath.row])
     
         return cell

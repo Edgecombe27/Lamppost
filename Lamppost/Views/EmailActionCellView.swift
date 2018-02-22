@@ -14,6 +14,9 @@ class EmailActionCellView: UITableViewCell {
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var emailButton: UIButton!
     
+    static let NIB_NAME = "EmailActionCellView"
+    static let IDENTIFIER = "email_action_cell"
+
     var action : ContactAction!
     var flyer : ContactFlyer!
     
