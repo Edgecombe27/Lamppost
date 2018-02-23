@@ -14,6 +14,9 @@ class ContactFlyerCellView: FlyerCellView {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
+    static let NIB_NAME = "ContactFlyerCellView"
+    static let IDENTIFIER = "contact_flyer_cell"
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

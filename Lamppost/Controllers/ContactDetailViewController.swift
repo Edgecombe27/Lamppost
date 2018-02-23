@@ -16,7 +16,6 @@ class ContactDetailViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var tableView: UITableView!
     
     var viewController : ViewController!
-    
     var flyer : ContactFlyer!
     
     override func viewDidLoad() {
@@ -28,8 +27,8 @@ class ContactDetailViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = 75
-        tableView.register(UINib(nibName: "EmailActionCellView", bundle: nil), forCellReuseIdentifier: "email_action_cell")
-        tableView.register(UINib(nibName: "PhoneActionCellView", bundle: nil), forCellReuseIdentifier: "phone_action_cell")
+        tableView.register(UINib(nibName: EmailActionCellView.NIB_NAME, bundle: nil), forCellReuseIdentifier: EmailActionCellView.IDENTIFIER)
+        tableView.register(UINib(nibName: PhoneActionCellView.NIB_NAME, bundle: nil), forCellReuseIdentifier: PhoneActionCellView.IDENTIFIER)
         
         imageView.image = flyer.icon
         imageView.layer.cornerRadius = imageView.frame.width/2.0
@@ -59,11 +58,11 @@ class ContactDetailViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if flyer.actions[indexPath.row].type == flyer.CALL_ACTION {
-            let cell : PhoneActionCellView = tableView.dequeueReusableCell(withIdentifier: "phone_action_cell") as! PhoneActionCellView
+            let cell : PhoneActionCellView = tableView.dequeueReusableCell(withIdentifier: PhoneActionCellView.IDENTIFIER) as! PhoneActionCellView
             cell.render(withAction: flyer.actions[indexPath.row], andFlyer: flyer)
             return cell
         } else {
-            let cell : EmailActionCellView = tableView.dequeueReusableCell(withIdentifier: "email_action_cell") as! EmailActionCellView
+            let cell : EmailActionCellView = tableView.dequeueReusableCell(withIdentifier: EmailActionCellView.IDENTIFIER) as! EmailActionCellView
             cell.render(withAction: flyer.actions[indexPath.row], andFlyer: flyer)
             return cell
         }
@@ -76,14 +75,6 @@ class ContactDetailViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }

@@ -29,7 +29,7 @@ class AddCollectionViewController: UIViewController, UICollectionViewDelegate, U
         collectionView.collectionViewLayout = flowLayout
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(UINib(nibName: "ContactFlyerCellView", bundle: nil), forCellWithReuseIdentifier: "contact_flyer_cell")
+        collectionView.register(UINib(nibName: ContactFlyerCellView.NIB_NAME, bundle: nil), forCellWithReuseIdentifier: ContactFlyerCellView.IDENTIFIER)
 
         contentView.layer.cornerRadius = 20
         contentView.layer.masksToBounds = true
@@ -43,7 +43,7 @@ class AddCollectionViewController: UIViewController, UICollectionViewDelegate, U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell : ContactFlyerCellView = collectionView.dequeueReusableCell(withReuseIdentifier: "contact_flyer_cell", for: indexPath) as! ContactFlyerCellView
+        let cell : ContactFlyerCellView = collectionView.dequeueReusableCell(withReuseIdentifier: ContactFlyerCellView.IDENTIFIER, for: indexPath) as! ContactFlyerCellView
         cell.render(withFlyer: Flyer(title: "Contacts", icon: UIImage(named: "logo-placeholder.png")!))
         return cell
     }
@@ -58,8 +58,6 @@ class AddCollectionViewController: UIViewController, UICollectionViewDelegate, U
         textField.resignFirstResponder()
         return true
     }
-    
-    
     
     @IBAction func createButtonPressed(_ sender: Any) {
        

@@ -12,6 +12,9 @@ class ShortcutCellView: UICollectionViewCell {
 
     @IBOutlet weak var label: UILabel!
     
+    static let NIB_NAME = "ShortcutCellView"
+    static let IDENTIFIER = "shortcut_cell"
+
     var collection : FlyerCollection!
     
     override func awakeFromNib() {

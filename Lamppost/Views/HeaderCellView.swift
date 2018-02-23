@@ -17,13 +17,15 @@ class HeaderCellView: UITableViewCell , UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var deleteButton: UIBarButtonItem!
     @IBOutlet weak var settingsButton: UIBarButtonItem!
     
-    
+    static let NIB_NAME = "HeaderCellView"
+    static let IDENTIFIER = "header_cell"
+
     var viewController : ViewController!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        collectionView.register(UINib(nibName: "ShortcutCellView", bundle: nil), forCellWithReuseIdentifier: "shortcut_cell")
+        collectionView.register(UINib(nibName: ShortcutCellView.NIB_NAME, bundle: nil), forCellWithReuseIdentifier: ShortcutCellView.IDENTIFIER)
         collectionView.dataSource = self
         collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
@@ -36,12 +38,12 @@ class HeaderCellView: UITableViewCell , UICollectionViewDelegate, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewController.flyerData.count
+        return viewController.getFlyerCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : ShortcutCellView = self.collectionView.dequeueReusableCell(withReuseIdentifier: "shortcut_cell", for: indexPath) as! ShortcutCellView
-        cell.render(withCollection: viewController.flyerData[indexPath.row], index: indexPath.row)
+        let cell : ShortcutCellView = self.collectionView.dequeueReusableCell(withReuseIdentifier: ShortcutCellView.IDENTIFIER, for: indexPath) as! ShortcutCellView
+        cell.render(withCollection: viewController.getCollection(at: indexPath.row), index: indexPath.row)
         //var size : CGFloat = CGFloat(viewController.flyerData[indexPath.row].name.characters.count*5)
         //cell.bounds = CGRect(x: cell.bounds.minX, y: cell.bounds.minY, width: size, height: 30)
         return cell
@@ -63,7 +65,7 @@ class HeaderCellView: UITableViewCell , UICollectionViewDelegate, UICollectionVi
     }
     
     @IBAction func editButtonPressed(_ sender: Any) {
-        if viewController.inEditMode {
+        if viewController.isInEditMode() {
             deleteButton.isEnabled = false
             editButton.title = "Edit"
             deleteButton.title = ""

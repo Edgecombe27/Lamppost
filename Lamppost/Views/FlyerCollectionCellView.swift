@@ -10,17 +10,20 @@ import UIKit
 
 class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    var collection : FlyerCollection! 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var selectButton: UIButton!
     @IBOutlet weak var sectionLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
+    
+    static let NIB_NAME = "FlyerCollectionCellView"
+    static let IDENTIFIER = "flyer_collection_cell"
+
+    var collection : FlyerCollection!
     var viewController : ViewController!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        collectionView.register(UINib(nibName: "ContactFlyerCellView", bundle: nil), forCellWithReuseIdentifier: "contact_flyer_cell")
+        collectionView.register(UINib(nibName: ContactFlyerCellView.NIB_NAME, bundle: nil), forCellWithReuseIdentifier: ContactFlyerCellView.IDENTIFIER)
         collectionView.dataSource = self
         collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
@@ -41,7 +44,7 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : ContactFlyerCellView = self.collectionView.dequeueReusableCell(withReuseIdentifier: "contact_flyer_cell", for: indexPath) as! ContactFlyerCellView
+        let cell : ContactFlyerCellView = self.collectionView.dequeueReusableCell(withReuseIdentifier: ContactFlyerCellView.IDENTIFIER, for: indexPath) as! ContactFlyerCellView
         cell.render(withFlyer: collection[indexPath.row])
     
         return cell
@@ -49,7 +52,7 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if !viewController.inEditMode {
+        if !viewController.isInEditMode() {
             let flyer = (collectionView.cellForItem(at: indexPath) as! ContactFlyerCellView).flyer as! ContactFlyer
         
             let contactViewController = ContactDetailViewController()
@@ -65,21 +68,11 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
             
             if cell.alpha == 1 {
                 cell.alpha = 0.4
-                if viewController.selectedFlyers[collection.name] == nil{
-                    viewController.selectedFlyers[collection.name] = []
-                }
-                viewController.selectedFlyers[collection.name]?.append(cell.flyer)
+                viewController.selectFlyer(flyer: cell.flyer, collection: collection)
                 
             } else {
                 cell.alpha = 1
-                var i = 0
-                for flyer in viewController.selectedFlyers[collection.name]! {
-                    if flyer.title == cell.flyer.title {
-                        viewController.selectedFlyers[collection.name]?.remove(at: i)
-                        break
-                    }
-                    i = i + 1
-                }
+                viewController.unselectFlyer(flyer: cell.flyer, collection: collection)
             }
             
         }
@@ -92,7 +85,7 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
         collectionView.reloadData()
         sectionLabel.text = collection.name
         
-        if viewController.inEditMode && collection.isGroup {
+        if viewController.isInEditMode() && collection.isGroup {
             selectButton.setTitle("select", for: .normal)
             selectButton.isHidden = false
             addButton.isHidden = false
@@ -112,20 +105,11 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
         
         if selectButton.titleLabel?.text == "select" {
             selectButton.setTitle("unselect", for: .normal)
-            viewController.selectedCollections.append(collection)
+            
             collectionView.alpha = 0.4
         } else {
             selectButton.setTitle("select", for: .normal)
-            
-            var i = 0
-            
-            for col in viewController.selectedCollections {
-                if col.name == collection.name {
-                    viewController.selectedCollections.remove(at: i)
-                    break
-                }
-                i = i + 1
-            }
+            viewController.unselectCollection(collection: collection)
             collectionView.alpha = 1
         }
         
