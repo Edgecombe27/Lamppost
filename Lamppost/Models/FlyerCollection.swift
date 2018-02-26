@@ -10,7 +10,7 @@ import Foundation
 
 class FlyerCollection {
     
-    static let COLLECTION_TYPES = ["Contacts"]
+    static let COLLECTION_TYPES = ["Contact", "Contact Group"]
     
     var name : String
     var order : Int

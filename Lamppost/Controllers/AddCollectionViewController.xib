@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddCollectionViewController" customModule="Lamppost" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddCollectionViewController" customModule="kiOSK" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="YpJ-B2-vGc" id="NAi-Md-9wd"/>
                 <outlet property="contentView" destination="ruF-DB-p0v" id="HtZ-yc-Zbu"/>
@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruF-DB-p0v">
-                    <rect key="frame" x="0.0" y="244" width="375" height="468"/>
+                    <rect key="frame" x="0.0" y="311" width="375" height="401"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input a name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxx-ie-lSL">
                             <rect key="frame" x="7.5" y="48" width="359" height="17"/>
@@ -33,8 +33,8 @@
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rz-JV-Zv4">
-                            <rect key="frame" x="138.5" y="8" width="98" height="24"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Contact Group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rz-JV-Zv4">
+                            <rect key="frame" x="101.5" y="8" width="172" height="24"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="YpJ-B2-vGc">
-                            <rect key="frame" x="8" y="140" width="359" height="283"/>
+                            <rect key="frame" x="8" y="140" width="359" height="216"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mrZ-7Y-2cI">
                                 <size key="itemSize" width="50" height="50"/>
@@ -90,7 +90,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q0x-WB-Yny">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="236"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="303"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
                     <connections>
@@ -108,7 +108,7 @@
                 <constraint firstItem="ruF-DB-p0v" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ci1-Mh-g7P"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ruF-DB-p0v" secondAttribute="bottom" constant="-45" id="eEy-DB-C5T"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="YpJ-B2-vGc" secondAttribute="bottom" id="hpI-li-4PJ"/>
-                <constraint firstItem="ruF-DB-p0v" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.7" constant="1" id="kSh-Sa-zvb"/>
+                <constraint firstItem="ruF-DB-p0v" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.6" constant="1" id="kSh-Sa-zvb"/>
                 <constraint firstItem="ruF-DB-p0v" firstAttribute="top" secondItem="Q0x-WB-Yny" secondAttribute="bottom" constant="8" id="qUS-XW-vbd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

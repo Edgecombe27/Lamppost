@@ -12,7 +12,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactDetailViewController" customModule="Lamppost" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactDetailViewController" customModule="kiOSK" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="aTi-11-LSy" id="mET-3d-P0j"/>
                 <outlet property="imageView" destination="bQF-6u-07L" id="adJ-u9-gFP"/>
@@ -27,10 +27,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTi-11-LSy">
-                    <rect key="frame" x="0.0" y="249" width="375" height="468"/>
+                    <rect key="frame" x="0.0" y="349" width="375" height="368"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Grc-iL-ktz">
-                            <rect key="frame" x="8" y="75.5" width="359" height="342.5"/>
+                            <rect key="frame" x="8" y="75.5" width="359" height="242.5"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -55,14 +55,14 @@
                     </constraints>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bQF-6u-07L">
-                    <rect key="frame" x="147" y="209" width="80" height="80"/>
+                    <rect key="frame" x="147" y="309" width="80" height="80"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="bQF-6u-07L" secondAttribute="height" multiplier="1:1" id="u2n-mx-Ngc"/>
                         <constraint firstAttribute="width" constant="80" id="wFa-TF-Nmx"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHy-oK-pXL">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="241"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="341"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
                     <connections>
@@ -79,7 +79,7 @@
                 <constraint firstItem="aTi-11-LSy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DX6-26-bbW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Grc-iL-ktz" secondAttribute="bottom" id="QNO-EU-bfe"/>
                 <constraint firstItem="zkd-C8-Y7f" firstAttribute="top" secondItem="bQF-6u-07L" secondAttribute="bottom" constant="7" id="apj-Ib-tY8"/>
-                <constraint firstItem="aTi-11-LSy" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.7" constant="1" id="dvN-vi-3bU"/>
+                <constraint firstItem="aTi-11-LSy" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.55" constant="1" id="dvN-vi-3bU"/>
                 <constraint firstItem="bQF-6u-07L" firstAttribute="top" secondItem="aTi-11-LSy" secondAttribute="top" constant="-40" id="f4f-LY-oEO"/>
                 <constraint firstItem="aTi-11-LSy" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="50" id="gYQ-rC-Gia"/>
                 <constraint firstItem="aTi-11-LSy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="hz9-4B-efP"/>

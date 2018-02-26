@@ -29,7 +29,7 @@ class HeaderCellView: UITableViewCell , UICollectionViewDelegate, UICollectionVi
         collectionView.dataSource = self
         collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width:UIScreen.main.bounds.width/4,height: 30)
+        flowLayout.itemSize = CGSize(width:UIScreen.main.bounds.width/3,height: 30)
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
         flowLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
         flowLayout.minimumInteritemSpacing = 0.0

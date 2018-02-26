@@ -30,7 +30,7 @@ class AddCollectionViewController: UIViewController, UICollectionViewDelegate, U
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: ContactFlyerCellView.NIB_NAME, bundle: nil), forCellWithReuseIdentifier: ContactFlyerCellView.IDENTIFIER)
-
+        
         contentView.layer.cornerRadius = 20
         contentView.layer.masksToBounds = true
         
@@ -44,7 +44,8 @@ class AddCollectionViewController: UIViewController, UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell : ContactFlyerCellView = collectionView.dequeueReusableCell(withReuseIdentifier: ContactFlyerCellView.IDENTIFIER, for: indexPath) as! ContactFlyerCellView
-        cell.render(withFlyer: Flyer(title: "Contacts", icon: UIImage(named: "logo-placeholder.png")!))
+        cell.render(withFlyer: Flyer(title: FlyerCollection.COLLECTION_TYPES[indexPath.row], icon: UIImage(named: "logo-placeholder.png")!))
+        
         return cell
     }
     

@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="Lamppost" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="kiOSK" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="kHw-oa-wsu" id="5Bf-BQ-Lat"/>
                 <outlet property="pickerView" destination="Qdo-FR-INW" id="IHh-qV-r0T"/>
@@ -24,19 +24,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHw-oa-wsu">
-                    <rect key="frame" x="0.0" y="249" width="375" height="468"/>
+                    <rect key="frame" x="0.0" y="516" width="375" height="201"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort contacts by:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXS-D3-Mot">
                             <rect key="frame" x="114" y="8" width="148" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="uhZ-NG-IWD"/>
+                            </constraints>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qdo-FR-INW">
-                            <rect key="frame" x="0.0" y="40" width="375" height="150"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="150" id="1LH-UM-How"/>
-                            </constraints>
+                            <rect key="frame" x="0.0" y="40" width="375" height="111"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="6Sa-Pu-3ci"/>
                                 <outlet property="delegate" destination="-1" id="hMp-Ah-5sH"/>
@@ -62,7 +62,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JzG-aP-0Oo">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="241"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="508"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
                     <connections>
@@ -75,8 +75,9 @@
                 <constraint firstItem="JzG-aP-0Oo" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="3tf-4D-TiW"/>
                 <constraint firstItem="kHw-oa-wsu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DvL-fl-LLb"/>
                 <constraint firstItem="kHw-oa-wsu" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="50" id="PKj-Tf-RpE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Qdo-FR-INW" secondAttribute="bottom" id="RHP-KO-dZD"/>
                 <constraint firstItem="kHw-oa-wsu" firstAttribute="top" secondItem="JzG-aP-0Oo" secondAttribute="bottom" constant="8" id="RjE-Vn-wiN"/>
-                <constraint firstItem="kHw-oa-wsu" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.7" constant="1" id="Wuf-92-WwK"/>
+                <constraint firstItem="kHw-oa-wsu" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" constant="1" id="Wuf-92-WwK"/>
                 <constraint firstItem="JzG-aP-0Oo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Zde-cp-VzD"/>
                 <constraint firstItem="JzG-aP-0Oo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="oBW-3H-qhU"/>
                 <constraint firstItem="kHw-oa-wsu" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="yCn-ck-aCm"/>
