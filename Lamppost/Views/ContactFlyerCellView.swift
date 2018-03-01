@@ -25,6 +25,8 @@ class ContactFlyerCellView: FlyerCellView {
     override func render(withFlyer: Flyer) {
         flyer = withFlyer
         
+        alpha = 1
+        
         imageView.image = nil
         label.text = ""
         

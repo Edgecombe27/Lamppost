@@ -70,6 +70,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // Loads saved data and fetches all contacts to populate flyerData
     func renderContacts() {
+        flyerData = []
         contactHandler = ContactHandler()
         loadingIndicator.isHidden = false
         loadingIndicator.startAnimating()

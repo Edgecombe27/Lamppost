@@ -66,7 +66,7 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
         } else {
             let cell = collectionView.cellForItem(at: indexPath) as! ContactFlyerCellView
             
-            if cell.alpha == 1 {
+            if cell.alpha == 1 && collectionView.alpha == 1{
                 cell.alpha = 0.4
                 viewController.selectFlyer(flyer: cell.flyer, collection: collection)
                 
@@ -84,6 +84,7 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
         collection.sort()
         collectionView.reloadData()
         sectionLabel.text = collection.name
+        collectionView.alpha = 1
         
         if viewController.isInEditMode() && collection.isGroup {
             selectButton.setTitle("select", for: .normal)
@@ -101,11 +102,17 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
     }
     
     @IBAction func selectButtonPressed(_ sender: Any) {
-        
+    
+        for i in 0...collectionView.numberOfItems(inSection: 0)-1 {
+            let cell = collectionView.cellForItem(at: IndexPath(row: i, section: 0)) as! ContactFlyerCellView
+            if cell.alpha != 1 {
+                viewController.unselectFlyer(flyer: cell.flyer, collection: collection)
+            }
+        }
         
         if selectButton.titleLabel?.text == "select" {
             selectButton.setTitle("unselect", for: .normal)
-            
+            viewController.selectCollection(collection: collection)
             collectionView.alpha = 0.4
         } else {
             selectButton.setTitle("select", for: .normal)

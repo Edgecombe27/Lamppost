@@ -43,11 +43,15 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         else { return "Last Name" }
     }
     
-    @IBAction func exitViewTapped(_ sender: Any) {
+    func exit() {
         viewController.blurrView.isHidden = true
         self.dismiss(animated: true, completion: {
             
         })
+    }
+    
+    @IBAction func exitViewTapped(_ sender: Any) {
+        exit()
     }
 
     @IBAction func saveButtonPressed(_ sender: Any) {
@@ -58,6 +62,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
         
         viewController.renderContacts()
+        exit()
         
     }
     

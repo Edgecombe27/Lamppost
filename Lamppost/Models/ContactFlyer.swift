@@ -62,7 +62,7 @@ class ContactFlyer : Flyer {
     
     private func performCallAction(action : ContactAction) {
         
-        var number = phoneNumberUrl(number: action.value)
+        let number = phoneNumberUrl(number: action.value)
     
         if let url = URL(string: "tel://\(number)"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
