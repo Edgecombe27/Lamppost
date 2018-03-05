@@ -66,7 +66,7 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
         } else {
             let cell = collectionView.cellForItem(at: indexPath) as! ContactFlyerCellView
             
-            if cell.alpha == 1 && collectionView.alpha == 1{
+            if collection.isGroup && cell.alpha == 1 && collectionView.alpha == 1{
                 cell.alpha = 0.4
                 viewController.selectFlyer(flyer: cell.flyer, collection: collection)
                 

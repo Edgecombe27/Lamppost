@@ -38,12 +38,12 @@ class HeaderCellView: UITableViewCell , UICollectionViewDelegate, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewController.getFlyerCount()
+        return 3//viewController.getFlyerCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : ShortcutCellView = self.collectionView.dequeueReusableCell(withReuseIdentifier: ShortcutCellView.IDENTIFIER, for: indexPath) as! ShortcutCellView
-        cell.render(withCollection: viewController.getCollection(at: indexPath.row), index: indexPath.row)
+        //cell.render(withCollection: viewController.getCollection(at: indexPath.row), index: indexPath.row)
         //var size : CGFloat = CGFloat(viewController.flyerData[indexPath.row].name.characters.count*5)
         //cell.bounds = CGRect(x: cell.bounds.minX, y: cell.bounds.minY, width: size, height: 30)
         return cell

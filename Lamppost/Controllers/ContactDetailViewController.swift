@@ -21,6 +21,7 @@ class ContactDetailViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         contentView.layer.cornerRadius = 20
         contentView.layer.masksToBounds = true
         
