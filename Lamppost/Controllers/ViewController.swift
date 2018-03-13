@@ -270,12 +270,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func unselectFlyer(flyer : Flyer, collection : FlyerCollection) {
         var i = 0
-        for fly in selectedFlyers[collection.name]! {
-            if fly.title == flyer.title {
-                selectedFlyers[collection.name]?.remove(at: i)
-                break
+        if selectedFlyers[collection.name] != nil {
+            for fly in selectedFlyers[collection.name]! {
+                if fly.title == flyer.title {
+                    selectedFlyers[collection.name]?.remove(at: i)
+                    break
+                }
+                i = i + 1
             }
-            i = i + 1
         }
     }
     

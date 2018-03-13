@@ -104,9 +104,10 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
     @IBAction func selectButtonPressed(_ sender: Any) {
     
         for i in 0...collectionView.numberOfItems(inSection: 0)-1 {
-            let cell = collectionView.cellForItem(at: IndexPath(row: i, section: 0)) as! ContactFlyerCellView
-            if cell.alpha != 1 {
-                viewController.unselectFlyer(flyer: cell.flyer, collection: collection)
+            if let cell = collectionView.cellForItem(at: IndexPath(row: i, section: 0)) {
+                if cell.alpha != 1 {
+                    viewController.unselectFlyer(flyer: (cell as! ContactFlyerCellView).flyer, collection: collection)
+                }
             }
         }
         

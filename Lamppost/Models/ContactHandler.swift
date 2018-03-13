@@ -198,6 +198,7 @@ class ContactHandler {
             return f1.name.compare(f2.name) == .orderedAscending
         }
         
+        
         return flyerData
         
     }

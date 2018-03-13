@@ -43,6 +43,20 @@ class FlyerCollection {
         collection.sort { (c1, c2) -> Bool in
             return c1.title.compare(c2.title) == .orderedAscending
         }
+        
+        var i = 0
+        
+        while i < collection.count-1 {
+            let f1 = collection[i] as! ContactFlyer
+            let f2 = collection[i+1] as! ContactFlyer
+            if (f1.details["first_name"] as! String) == (f2.details["first_name"] as! String) && (f1.details["last_name"] as! String) == (f2.details["last_name"] as! String) && (f1.details["phone_numbers"] as! [String:String]) == (f2.details["phone_numbers"] as! [String:String]) {
+                self.removeFlyer(atIndex: i+1)
+            } else {
+                i = i + 1
+            }
+            
+        }
+        
     }
     
     subscript(index : Int) -> Flyer {
