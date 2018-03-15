@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,10 +19,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EPz-F1-q0Q">
-                        <rect key="frame" x="0.0" y="36.5" width="345" height="124"/>
+                        <rect key="frame" x="0.0" y="30" width="345" height="138.5"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0Sk-ed-uco">
-                                <rect key="frame" x="0.0" y="0.0" width="345" height="124"/>
+                                <rect key="frame" x="0.0" y="0.0" width="345" height="138.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2Th-Jp-WIx">
                                     <size key="itemSize" width="50" height="50"/>
@@ -42,7 +41,7 @@
                         </constraints>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4x-7k-D02">
-                        <rect key="frame" x="18" y="8" width="74.5" height="20.5"/>
+                        <rect key="frame" x="18" y="0.0" width="74.5" height="30"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -67,14 +66,16 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="0Sk-ed-uco" firstAttribute="top" secondItem="a4x-7k-D02" secondAttribute="bottom" constant="8" id="BWr-Ff-fmN"/>
-                    <constraint firstItem="a4x-7k-D02" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="D7z-Zk-sFe"/>
+                    <constraint firstItem="0Sk-ed-uco" firstAttribute="top" secondItem="a4x-7k-D02" secondAttribute="bottom" id="BWr-Ff-fmN"/>
+                    <constraint firstItem="a4x-7k-D02" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="D7z-Zk-sFe"/>
                     <constraint firstItem="ua2-2X-1mm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ZVf-Sq-BTZ"/>
+                    <constraint firstItem="Ky2-cW-Vb1" firstAttribute="height" secondItem="a4x-7k-D02" secondAttribute="height" id="qKM-RL-xrJ"/>
                     <constraint firstItem="a4x-7k-D02" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="rTK-bu-hV2"/>
-                    <constraint firstAttribute="bottom" secondItem="0Sk-ed-uco" secondAttribute="bottom" constant="8" id="rVA-FE-PtV"/>
+                    <constraint firstAttribute="bottom" secondItem="0Sk-ed-uco" secondAttribute="bottom" id="rVA-FE-PtV"/>
                     <constraint firstAttribute="trailing" secondItem="ua2-2X-1mm" secondAttribute="trailing" constant="16" id="uZo-QP-vfK"/>
                     <constraint firstItem="0Sk-ed-uco" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="ukZ-uf-vq3"/>
                     <constraint firstItem="ua2-2X-1mm" firstAttribute="leading" secondItem="Ky2-cW-Vb1" secondAttribute="trailing" constant="16" id="ups-oh-mHm"/>
+                    <constraint firstItem="ua2-2X-1mm" firstAttribute="height" secondItem="Ky2-cW-Vb1" secondAttribute="height" id="vOs-uG-pH2"/>
                     <constraint firstItem="Ky2-cW-Vb1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="w1v-WL-Kx6"/>
                     <constraint firstItem="EPz-F1-q0Q" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="wUd-9L-Po2"/>
                 </constraints>

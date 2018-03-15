@@ -29,12 +29,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     private var flyerData : [FlyerCollection] = []
     private var contactHandler : ContactHandler!
     private var inEditMode = false
+    var contactsEnabled : Bool!
     
     override func viewDidLoad() {
         //Set size of the post
         
+        contactsEnabled = CNContactStore.authorizationStatus(for: .contacts) == .authorized
         setUpViews()
         renderContacts()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        contactsEnabled = CNContactStore.authorizationStatus(for: .contacts) == .authorized
+        
+        editButton.isEnabled = contactsEnabled
+        addButton.isEnabled = contactsEnabled
+        tableView.isHidden = !contactsEnabled
+        collectionView.isHidden = !contactsEnabled
         
     }
     

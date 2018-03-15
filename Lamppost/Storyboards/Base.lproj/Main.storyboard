@@ -4,8 +4,8 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,6 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authorize kiOSk to access your contacts to use its features" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89F-M0-5JG">
+                                <rect key="frame" x="93" y="323" width="188.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0fY-fw-4WJ">
                                 <rect key="frame" x="0.0" y="120" width="375" height="582"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -121,24 +127,30 @@
                                     <constraint firstItem="isz-Ox-zAO" firstAttribute="top" secondItem="Y49-Gx-avr" secondAttribute="top" constant="53" id="qLw-Ts-2hW"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y8m-iI-Oqh">
+                            <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8m-iI-Oqh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="0fY-fw-4WJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Pg-ZX-U8i"/>
+                            <constraint firstItem="89F-M0-5JG" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" constant="1" id="3je-qk-Lb0"/>
+                            <constraint firstItem="89F-M0-5JG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="70h-sO-XVN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0fY-fw-4WJ" secondAttribute="bottom" constant="-35" id="7PR-1A-1Qv"/>
+                            <constraint firstItem="y8m-iI-Oqh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fu8-Ow-kz7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y49-Gx-avr" secondAttribute="trailing" id="Htt-Lh-CZ2"/>
+                            <constraint firstItem="y8m-iI-Oqh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="J8c-KL-3FN"/>
                             <constraint firstItem="0fY-fw-4WJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="TZk-bj-RLm"/>
+                            <constraint firstItem="y8m-iI-Oqh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Tze-jP-Zb1"/>
                             <constraint firstItem="Y49-Gx-avr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Yjw-H0-yzO"/>
+                            <constraint firstItem="y8m-iI-Oqh" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="bsG-Op-eet"/>
                             <constraint firstAttribute="trailing" secondItem="dAO-yG-rfq" secondAttribute="trailing" id="dfq-5b-Y9d"/>
                             <constraint firstItem="dAO-yG-rfq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fe7-da-YQi"/>
                             <constraint firstItem="dAO-yG-rfq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gOe-0b-PYH"/>
                             <constraint firstItem="npB-hC-aoB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="haw-Lw-GvR"/>
                             <constraint firstItem="0fY-fw-4WJ" firstAttribute="top" secondItem="Y49-Gx-avr" secondAttribute="bottom" id="jpv-eY-7k9"/>
+                            <constraint firstItem="89F-M0-5JG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oPh-Cr-Ghc"/>
                             <constraint firstItem="Y49-Gx-avr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-45" id="qjt-Y8-5I3"/>
                             <constraint firstItem="npB-hC-aoB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wYB-wu-v7h"/>
                         </constraints>
