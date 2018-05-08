@@ -62,7 +62,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.register(UINib(nibName: FlyerCollectionCellView.NIB_NAME, bundle: nil), forCellReuseIdentifier: FlyerCollectionCellView.IDENTIFIER)
         tableView.register(UINib(nibName: HeaderCellView.NIB_NAME, bundle: nil), forCellReuseIdentifier: HeaderCellView.IDENTIFIER)
-        self.tableView.rowHeight = 150
+        self.tableView.rowHeight = 250
         
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width:UIScreen.main.bounds.width/3,height: 30)

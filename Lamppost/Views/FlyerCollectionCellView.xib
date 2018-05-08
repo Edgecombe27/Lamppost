@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="flyer_collection_cell" rowHeight="169" id="KGk-i7-Jjw" customClass="FlyerCollectionCellView" customModule="kiOSK" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="345" height="169"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="flyer_collection_cell" rowHeight="183" id="KGk-i7-Jjw" customClass="FlyerCollectionCellView" customModule="kiOSK" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="355" height="183"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="345" height="168.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="355" height="182.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EPz-F1-q0Q">
-                        <rect key="frame" x="0.0" y="30" width="345" height="138.5"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORv-ld-PRr">
+                        <rect key="frame" x="35" y="18" width="285" height="147"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0Sk-ed-uco">
-                                <rect key="frame" x="0.0" y="0.0" width="345" height="138.5"/>
+                                <rect key="frame" x="8" y="32" width="269" height="107"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2Th-Jp-WIx">
                                     <size key="itemSize" width="50" height="50"/>
@@ -35,51 +36,57 @@
                                     <outlet property="delegate" destination="-1" id="1UI-li-w7K"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4x-7k-D02">
+                                <rect key="frame" x="8" y="8" width="74.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ua2-2X-1mm">
+                                <rect key="frame" x="235" y="0.0" width="42" height="30"/>
+                                <state key="normal" title="select">
+                                    <color key="titleColor" red="0.20784313730000001" green="0.47058823529999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hyJ-me-VA6"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ky2-cW-Vb1">
+                                <rect key="frame" x="197" y="0.0" width="30" height="30"/>
+                                <state key="normal" title="add">
+                                    <color key="titleColor" red="0.20784313730000001" green="0.47058823529999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="N7a-zc-MwW"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0Sk-ed-uco" firstAttribute="centerX" secondItem="EPz-F1-q0Q" secondAttribute="centerX" id="ndl-rr-Mc3"/>
+                            <constraint firstAttribute="bottom" secondItem="0Sk-ed-uco" secondAttribute="bottom" constant="8" id="0he-mZ-flD"/>
+                            <constraint firstItem="a4x-7k-D02" firstAttribute="leading" secondItem="ORv-ld-PRr" secondAttribute="leading" constant="8" id="3dN-mA-n9c"/>
+                            <constraint firstItem="ua2-2X-1mm" firstAttribute="top" secondItem="ORv-ld-PRr" secondAttribute="top" id="TMk-xg-HRp"/>
+                            <constraint firstAttribute="trailing" secondItem="ua2-2X-1mm" secondAttribute="trailing" constant="8" id="Uif-bT-aXb"/>
+                            <constraint firstItem="0Sk-ed-uco" firstAttribute="leading" secondItem="ORv-ld-PRr" secondAttribute="leading" constant="8" id="han-nf-7KB"/>
+                            <constraint firstItem="ua2-2X-1mm" firstAttribute="leading" secondItem="Ky2-cW-Vb1" secondAttribute="trailing" constant="8" id="ipw-Th-E0t"/>
+                            <constraint firstItem="Ky2-cW-Vb1" firstAttribute="top" secondItem="ORv-ld-PRr" secondAttribute="top" id="wTx-qX-Raq"/>
+                            <constraint firstItem="a4x-7k-D02" firstAttribute="top" secondItem="ORv-ld-PRr" secondAttribute="top" constant="8" id="x3g-Fq-F5H"/>
+                            <constraint firstAttribute="trailing" secondItem="0Sk-ed-uco" secondAttribute="trailing" constant="8" id="xjj-HN-8Qx"/>
+                            <constraint firstItem="0Sk-ed-uco" firstAttribute="top" secondItem="a4x-7k-D02" secondAttribute="top" constant="24" id="zBV-87-5ng"/>
                         </constraints>
-                    </stackView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4x-7k-D02">
-                        <rect key="frame" x="18" y="0.0" width="74.5" height="30"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ua2-2X-1mm">
-                        <rect key="frame" x="287" y="0.0" width="42" height="30"/>
-                        <state key="normal" title="select">
-                            <color key="titleColor" red="0.20784313730000001" green="0.47058823529999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </state>
-                        <connections>
-                            <action selector="selectButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hyJ-me-VA6"/>
-                        </connections>
-                    </button>
-                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ky2-cW-Vb1">
-                        <rect key="frame" x="241" y="0.0" width="30" height="30"/>
-                        <state key="normal" title="add">
-                            <color key="titleColor" red="0.20784313730000001" green="0.47058823529999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </state>
-                        <connections>
-                            <action selector="addButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="N7a-zc-MwW"/>
-                        </connections>
-                    </button>
+                    </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="0Sk-ed-uco" firstAttribute="top" secondItem="a4x-7k-D02" secondAttribute="bottom" id="BWr-Ff-fmN"/>
-                    <constraint firstItem="a4x-7k-D02" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="D7z-Zk-sFe"/>
-                    <constraint firstItem="ua2-2X-1mm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ZVf-Sq-BTZ"/>
-                    <constraint firstItem="Ky2-cW-Vb1" firstAttribute="height" secondItem="a4x-7k-D02" secondAttribute="height" id="qKM-RL-xrJ"/>
-                    <constraint firstItem="a4x-7k-D02" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="rTK-bu-hV2"/>
-                    <constraint firstAttribute="bottom" secondItem="0Sk-ed-uco" secondAttribute="bottom" id="rVA-FE-PtV"/>
-                    <constraint firstAttribute="trailing" secondItem="ua2-2X-1mm" secondAttribute="trailing" constant="16" id="uZo-QP-vfK"/>
-                    <constraint firstItem="0Sk-ed-uco" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="ukZ-uf-vq3"/>
-                    <constraint firstItem="ua2-2X-1mm" firstAttribute="leading" secondItem="Ky2-cW-Vb1" secondAttribute="trailing" constant="16" id="ups-oh-mHm"/>
-                    <constraint firstItem="ua2-2X-1mm" firstAttribute="height" secondItem="Ky2-cW-Vb1" secondAttribute="height" id="vOs-uG-pH2"/>
-                    <constraint firstItem="Ky2-cW-Vb1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="w1v-WL-Kx6"/>
-                    <constraint firstItem="EPz-F1-q0Q" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="wUd-9L-Po2"/>
+                    <constraint firstItem="ORv-ld-PRr" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="8gQ-t1-jrQ"/>
+                    <constraint firstItem="ORv-ld-PRr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ehh-yn-ALe"/>
+                    <constraint firstItem="ORv-ld-PRr" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.8" constant="1" id="ICV-KV-7Te"/>
+                    <constraint firstItem="ORv-ld-PRr" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.8" constant="1" id="Ore-He-IoH"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="addButton" destination="Ky2-cW-Vb1" id="zKL-ZO-vn1"/>
@@ -87,7 +94,7 @@
                 <outlet property="sectionLabel" destination="a4x-7k-D02" id="wud-Wu-7Oc"/>
                 <outlet property="selectButton" destination="ua2-2X-1mm" id="j3V-7o-ItQ"/>
             </connections>
-            <point key="canvasLocation" x="-23.5" y="77.5"/>
+            <point key="canvasLocation" x="-18.5" y="84.5"/>
         </tableViewCell>
     </objects>
 </document>
