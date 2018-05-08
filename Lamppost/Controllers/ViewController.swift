@@ -9,7 +9,7 @@
 import UIKit
 import ContactsUI
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CNContactPickerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CNContactPickerDelegate {
     
 
     @IBOutlet var blurrView: UIView!
@@ -18,7 +18,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
-    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var menuView: UIView!
     
@@ -46,8 +45,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         editButton.isEnabled = contactsEnabled
         addButton.isEnabled = contactsEnabled
         tableView.isHidden = !contactsEnabled
-        collectionView.isHidden = !contactsEnabled
-        
     }
     
     func setUpViews() {
@@ -67,15 +64,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.register(UINib(nibName: HeaderCellView.NIB_NAME, bundle: nil), forCellReuseIdentifier: HeaderCellView.IDENTIFIER)
         self.tableView.rowHeight = 150
         
-        collectionView.register(UINib(nibName: ShortcutCellView.NIB_NAME, bundle: nil), forCellWithReuseIdentifier: ShortcutCellView.IDENTIFIER)
-        collectionView.dataSource = self
-        collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width:UIScreen.main.bounds.width/3,height: 30)
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
         flowLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
         flowLayout.minimumInteritemSpacing = 0.0
-        collectionView.collectionViewLayout = flowLayout
         
         
         menuView.backgroundColor = UIColor.white.withAlphaComponent(0.85)
@@ -184,21 +177,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return getFlyerCount()
-    }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : ShortcutCellView = self.collectionView.dequeueReusableCell(withReuseIdentifier: ShortcutCellView.IDENTIFIER, for: indexPath) as! ShortcutCellView
-        cell.render(withCollection: getCollection(at: indexPath.row), index: indexPath.row)
-        //var size : CGFloat = CGFloat(viewController.flyerData[indexPath.row].name.characters.count*5)
-        //cell.bounds = CGRect(x: cell.bounds.minX, y: cell.bounds.minY, width: size, height: 30)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        tableView.contentOffset = CGPoint(x: 0, y: (indexPath.row)*150)
-    }
     
     @IBAction func deleteButtonPressed(_ sender: Any) {
         let deleteAlert = UIAlertController(title: "Delete flyers", message: "Are you sure you want to delete these flyers?", preferredStyle: .alert)

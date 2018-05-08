@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,14 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8m-iI-Oqh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authorize kiOSk to access your contacts to use its features" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89F-M0-5JG">
-                                <rect key="frame" x="93" y="323" width="188.5" height="20.5"/>
+                                <rect key="frame" x="94" y="303" width="188.5" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0fY-fw-4WJ">
-                                <rect key="frame" x="0.0" y="120" width="375" height="582"/>
+                                <rect key="frame" x="0.0" y="75" width="375" height="627"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,10 +55,10 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y49-Gx-avr">
-                                <rect key="frame" x="0.0" y="-25" width="375" height="145"/>
+                                <rect key="frame" x="0.0" y="-25" width="375" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kiOSk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isz-Ox-zAO">
-                                        <rect key="frame" x="153.5" y="53" width="67" height="31.5"/>
+                                        <rect key="frame" x="154" y="53" width="67" height="31.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <color key="textColor" red="0.20784313730000001" green="0.47058823529999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -75,30 +79,6 @@
                                             <action selector="editButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YAa-Fy-vdh"/>
                                         </connections>
                                     </button>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="R3c-xi-Orv">
-                                        <rect key="frame" x="0.0" y="90.5" width="375" height="54.5"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5nr-Gz-92O">
-                                            <size key="itemSize" width="50" height="50"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cZz-Ra-Xf1">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </view>
-                                            </collectionViewCell>
-                                        </cells>
-                                        <connections>
-                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="mtN-AX-b4A"/>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="66d-iH-LKj"/>
-                                        </connections>
-                                    </collectionView>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM6-ge-QNa">
                                         <rect key="frame" x="56" y="52.5" width="48" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -112,24 +92,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="R3c-xi-Orv" firstAttribute="top" secondItem="PtT-4M-Gap" secondAttribute="bottom" constant="5" id="5wU-y0-PUL"/>
                                     <constraint firstItem="isz-Ox-zAO" firstAttribute="centerX" secondItem="Y49-Gx-avr" secondAttribute="centerX" id="BWG-tC-lLY"/>
                                     <constraint firstAttribute="trailing" secondItem="PtT-4M-Gap" secondAttribute="trailing" constant="16" id="Lkr-i8-dDb"/>
                                     <constraint firstItem="2no-G8-V9h" firstAttribute="centerY" secondItem="isz-Ox-zAO" secondAttribute="centerY" id="LsU-uo-il3"/>
                                     <constraint firstItem="PtT-4M-Gap" firstAttribute="centerY" secondItem="isz-Ox-zAO" secondAttribute="centerY" id="Lsq-ze-6Ke"/>
-                                    <constraint firstAttribute="height" constant="145" id="Pu2-3l-d1Z"/>
-                                    <constraint firstAttribute="trailing" secondItem="R3c-xi-Orv" secondAttribute="trailing" id="SIe-ZR-7Z6"/>
+                                    <constraint firstAttribute="height" constant="100" id="Pu2-3l-d1Z"/>
                                     <constraint firstItem="2no-G8-V9h" firstAttribute="leading" secondItem="Y49-Gx-avr" secondAttribute="leading" constant="16" id="WIr-hN-jwe"/>
-                                    <constraint firstAttribute="bottom" secondItem="R3c-xi-Orv" secondAttribute="bottom" id="b7i-in-J26"/>
                                     <constraint firstItem="QM6-ge-QNa" firstAttribute="centerY" secondItem="2no-G8-V9h" secondAttribute="centerY" id="fgj-CN-Sbu"/>
                                     <constraint firstItem="QM6-ge-QNa" firstAttribute="leading" secondItem="2no-G8-V9h" secondAttribute="trailing" constant="10" id="gNB-f1-jce"/>
-                                    <constraint firstItem="R3c-xi-Orv" firstAttribute="leading" secondItem="Y49-Gx-avr" secondAttribute="leading" id="oyA-Hd-pDV"/>
                                     <constraint firstItem="isz-Ox-zAO" firstAttribute="top" secondItem="Y49-Gx-avr" secondAttribute="top" constant="53" id="qLw-Ts-2hW"/>
                                 </constraints>
-                            </view>
-                            <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8m-iI-Oqh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -159,7 +131,6 @@
                     <connections>
                         <outlet property="addButton" destination="PtT-4M-Gap" id="C3Y-OP-Sbg"/>
                         <outlet property="blurrView" destination="y8m-iI-Oqh" id="Mp9-CH-2ti"/>
-                        <outlet property="collectionView" destination="R3c-xi-Orv" id="GML-cQ-CqE"/>
                         <outlet property="deleteButton" destination="QM6-ge-QNa" id="HZQ-Zq-iCv"/>
                         <outlet property="editButton" destination="2no-G8-V9h" id="2TZ-cE-WCg"/>
                         <outlet property="loadingIndicator" destination="npB-hC-aoB" id="SOQ-O8-bIO"/>
