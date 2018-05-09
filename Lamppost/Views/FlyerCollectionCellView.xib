@@ -20,10 +20,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORv-ld-PRr">
-                        <rect key="frame" x="35" y="18" width="285" height="147"/>
+                        <rect key="frame" x="8.5" y="13.5" width="338" height="156"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0Sk-ed-uco">
-                                <rect key="frame" x="8" y="32" width="269" height="107"/>
+                                <rect key="frame" x="8" y="43.5" width="330" height="104.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2Th-Jp-WIx">
                                     <size key="itemSize" width="50" height="50"/>
@@ -37,13 +37,13 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4x-7k-D02">
-                                <rect key="frame" x="8" y="8" width="74.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <rect key="frame" x="24" y="16" width="99" height="27.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ua2-2X-1mm">
-                                <rect key="frame" x="235" y="0.0" width="42" height="30"/>
+                                <rect key="frame" x="288" y="0.0" width="42" height="30"/>
                                 <state key="normal" title="select">
                                     <color key="titleColor" red="0.20784313730000001" green="0.47058823529999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -52,7 +52,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ky2-cW-Vb1">
-                                <rect key="frame" x="197" y="0.0" width="30" height="30"/>
+                                <rect key="frame" x="250" y="0.0" width="30" height="30"/>
                                 <state key="normal" title="add">
                                     <color key="titleColor" red="0.20784313730000001" green="0.47058823529999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -64,15 +64,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="0Sk-ed-uco" secondAttribute="bottom" constant="8" id="0he-mZ-flD"/>
-                            <constraint firstItem="a4x-7k-D02" firstAttribute="leading" secondItem="ORv-ld-PRr" secondAttribute="leading" constant="8" id="3dN-mA-n9c"/>
+                            <constraint firstItem="a4x-7k-D02" firstAttribute="leading" secondItem="ORv-ld-PRr" secondAttribute="leading" constant="24" id="3dN-mA-n9c"/>
                             <constraint firstItem="ua2-2X-1mm" firstAttribute="top" secondItem="ORv-ld-PRr" secondAttribute="top" id="TMk-xg-HRp"/>
                             <constraint firstAttribute="trailing" secondItem="ua2-2X-1mm" secondAttribute="trailing" constant="8" id="Uif-bT-aXb"/>
                             <constraint firstItem="0Sk-ed-uco" firstAttribute="leading" secondItem="ORv-ld-PRr" secondAttribute="leading" constant="8" id="han-nf-7KB"/>
                             <constraint firstItem="ua2-2X-1mm" firstAttribute="leading" secondItem="Ky2-cW-Vb1" secondAttribute="trailing" constant="8" id="ipw-Th-E0t"/>
                             <constraint firstItem="Ky2-cW-Vb1" firstAttribute="top" secondItem="ORv-ld-PRr" secondAttribute="top" id="wTx-qX-Raq"/>
-                            <constraint firstItem="a4x-7k-D02" firstAttribute="top" secondItem="ORv-ld-PRr" secondAttribute="top" constant="8" id="x3g-Fq-F5H"/>
-                            <constraint firstAttribute="trailing" secondItem="0Sk-ed-uco" secondAttribute="trailing" constant="8" id="xjj-HN-8Qx"/>
-                            <constraint firstItem="0Sk-ed-uco" firstAttribute="top" secondItem="a4x-7k-D02" secondAttribute="top" constant="24" id="zBV-87-5ng"/>
+                            <constraint firstItem="a4x-7k-D02" firstAttribute="top" secondItem="ORv-ld-PRr" secondAttribute="top" constant="16" id="x3g-Fq-F5H"/>
+                            <constraint firstAttribute="trailing" secondItem="0Sk-ed-uco" secondAttribute="trailing" id="xjj-HN-8Qx"/>
+                            <constraint firstItem="0Sk-ed-uco" firstAttribute="top" secondItem="a4x-7k-D02" secondAttribute="bottom" id="ziE-lM-8mv"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -81,8 +81,8 @@
                 <constraints>
                     <constraint firstItem="ORv-ld-PRr" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="8gQ-t1-jrQ"/>
                     <constraint firstItem="ORv-ld-PRr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ehh-yn-ALe"/>
-                    <constraint firstItem="ORv-ld-PRr" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.8" constant="1" id="ICV-KV-7Te"/>
-                    <constraint firstItem="ORv-ld-PRr" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.8" constant="1" id="Ore-He-IoH"/>
+                    <constraint firstItem="ORv-ld-PRr" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.95" constant="1" id="ICV-KV-7Te"/>
+                    <constraint firstItem="ORv-ld-PRr" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.85" constant="1" id="Ore-He-IoH"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -91,6 +91,7 @@
             <connections>
                 <outlet property="addButton" destination="Ky2-cW-Vb1" id="zKL-ZO-vn1"/>
                 <outlet property="collectionView" destination="0Sk-ed-uco" id="qZJ-Vo-Q6x"/>
+                <outlet property="containerView" destination="ORv-ld-PRr" id="VPX-ht-03b"/>
                 <outlet property="sectionLabel" destination="a4x-7k-D02" id="wud-Wu-7Oc"/>
                 <outlet property="selectButton" destination="ua2-2X-1mm" id="j3V-7o-ItQ"/>
             </connections>

@@ -14,7 +14,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet var blurrView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var statusBarView: UILabel!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
@@ -49,20 +48,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func setUpViews() {
         
-        let gradient = CAGradientLayer()
-        if UIDevice().userInterfaceIdiom == .phone && UIScreen.main.nativeBounds.height == 2436 {
-            statusBarView.bounds = CGRect(x: statusBarView.bounds.minX, y: statusBarView.bounds.minY, width: statusBarView.bounds.width, height: 44)
-            gradient.frame = statusBarView.bounds
-        } else {
-            statusBarView.bounds = CGRect(x: statusBarView.bounds.minX, y: statusBarView.bounds.minY, width: statusBarView.bounds.width, height: 33)
-            gradient.frame = statusBarView.bounds
-        }
-        gradient.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
-        statusBarView.layer.mask = gradient
+        
         
         tableView.register(UINib(nibName: FlyerCollectionCellView.NIB_NAME, bundle: nil), forCellReuseIdentifier: FlyerCollectionCellView.IDENTIFIER)
         tableView.register(UINib(nibName: HeaderCellView.NIB_NAME, bundle: nil), forCellReuseIdentifier: HeaderCellView.IDENTIFIER)
-        self.tableView.rowHeight = 250
+        self.tableView.rowHeight = 200
         
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width:UIScreen.main.bounds.width/3,height: 30)
@@ -71,9 +61,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         flowLayout.minimumInteritemSpacing = 0.0
         
         
-        menuView.backgroundColor = UIColor.white.withAlphaComponent(0.85)
-        menuView.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
-        menuView.layer.borderWidth = 0.25
         
         
         loadingIndicator.layer.cornerRadius = 10

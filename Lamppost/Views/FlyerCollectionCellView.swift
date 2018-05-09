@@ -14,6 +14,7 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
     @IBOutlet weak var selectButton: UIButton!
     @IBOutlet weak var sectionLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet var containerView: UIView!
     
     static let NIB_NAME = "FlyerCollectionCellView"
     static let IDENTIFIER = "flyer_collection_cell"
@@ -27,12 +28,19 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
         collectionView.dataSource = self
         collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width:80,height: 130)
+        flowLayout.itemSize = CGSize(width:80,height: 100)
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
         flowLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
         flowLayout.minimumInteritemSpacing = 0.0
         collectionView.collectionViewLayout = flowLayout
+        containerView.layer.cornerRadius = 10
+        containerView.layer.masksToBounds = true
+        sectionLabel.textColor = UIColor.init(red: random(), green: random(), blue: random(), alpha: 1)
         
+    }
+    
+    func random() -> CGFloat {
+        return CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
