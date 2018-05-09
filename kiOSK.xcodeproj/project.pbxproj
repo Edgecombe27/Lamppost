@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8523724E20A33B3B004809FA /* TopCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8523724C20A33B3B004809FA /* TopCellView.swift */; };
 		8523724F20A33B3B004809FA /* TopCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8523724D20A33B3B004809FA /* TopCellView.xib */; };
+		857D363A20A3A29D00822421 /* ActionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857D363820A3A29D00822421 /* ActionCellView.swift */; };
+		857D363B20A3A29D00822421 /* ActionCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 857D363920A3A29D00822421 /* ActionCellView.xib */; };
 		85A683382025FEAB0074754E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A683372025FEAB0074754E /* AppDelegate.swift */; };
 		85A6833A2025FEAB0074754E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A683392025FEAB0074754E /* ViewController.swift */; };
 		85A6833D2025FEAB0074754E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A6833B2025FEAB0074754E /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		8523724C20A33B3B004809FA /* TopCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCellView.swift; sourceTree = "<group>"; };
 		8523724D20A33B3B004809FA /* TopCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCellView.xib; sourceTree = "<group>"; };
+		857D363820A3A29D00822421 /* ActionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCellView.swift; sourceTree = "<group>"; };
+		857D363920A3A29D00822421 /* ActionCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionCellView.xib; sourceTree = "<group>"; };
 		85A683342025FEAB0074754E /* kiOSK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kiOSK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A683372025FEAB0074754E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85A683392025FEAB0074754E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 				8523724C20A33B3B004809FA /* TopCellView.swift */,
 				8523724D20A33B3B004809FA /* TopCellView.xib */,
 				FB0B0AC8202CEE6200D0722F /* FlyerCollectionCellView.swift */,
+				857D363820A3A29D00822421 /* ActionCellView.swift */,
+				857D363920A3A29D00822421 /* ActionCellView.xib */,
 				FB0B0AC9202CEE6200D0722F /* FlyerCollectionCellView.xib */,
 				FB0B0ACE202CEF0F00D0722F /* ContactFlyerCellView.swift */,
 				FB0B0ACF202CEF0F00D0722F /* ContactFlyerCellView.xib */,
@@ -242,6 +248,7 @@
 				8523724F20A33B3B004809FA /* TopCellView.xib in Resources */,
 				85A6833F2025FEAB0074754E /* Assets.xcassets in Resources */,
 				FBD9AE58203221B90039443B /* ShortcutCellView.xib in Resources */,
+				857D363B20A3A29D00822421 /* ActionCellView.xib in Resources */,
 				FBA2C347203785E5001791B1 /* ContactDetailViewController.xib in Resources */,
 				85A6833D2025FEAB0074754E /* Main.storyboard in Resources */,
 				FB6E744C203DC52900C15740 /* AddCollectionViewController.xib in Resources */,
@@ -259,6 +266,7 @@
 				85FE792C20291C2B00DE00B0 /* ContactFlyer.swift in Sources */,
 				FB02EF6C203F374600BC5E4E /* SettingsViewController.swift in Sources */,
 				FB37F3E0202B8592004527CA /* Action.swift in Sources */,
+				857D363A20A3A29D00822421 /* ActionCellView.swift in Sources */,
 				FBD9AE57203221B90039443B /* ShortcutCellView.swift in Sources */,
 				FB22A74E203DF99C0064BA76 /* UserData.swift in Sources */,
 				85ABB2F02039E78100F46C83 /* EmailActionCellView.swift in Sources */,
