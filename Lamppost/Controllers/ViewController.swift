@@ -19,6 +19,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var menuView: UIView!
+    @IBOutlet var slider: UISlider!
+    @IBOutlet var topButton: UIButton!
     
     private var selectedCollections : [FlyerCollection]!
     private var selectedFlyers : [String : [Flyer]]!
@@ -60,8 +62,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         flowLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
         flowLayout.minimumInteritemSpacing = 0.0
         
+        slider.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2.0))
+        slider.layer.cornerRadius = 15
+        slider.layer.masksToBounds = true
+        slider.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        slider.layer.borderColor = UIColor.darkGray.cgColor
+        slider.layer.borderWidth = 0.25
         
+        topButton.layer.cornerRadius = 20
+        topButton.layer.masksToBounds = true
+        topButton.layer.borderColor = UIColor.gray.cgColor
+        topButton.layer.borderWidth = 0.5
         
+        slider.minimumValue = 0
+        slider.maximumValue = Float(tableView.rowHeight * CGFloat(tableView.numberOfRows(inSection: 0)))
         
         loadingIndicator.layer.cornerRadius = 10
         loadingIndicator.layer.masksToBounds = true
@@ -143,6 +157,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cnPicker.delegate = self
         self.present(cnPicker, animated: true, completion: nil)
         
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        slider.isHidden = true
+        topButton.isHidden = true
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        //slider.isHidden = false
+        topButton.isHidden = false
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        slider.setValue(Float(tableView.contentOffset.y), animated: true)
+    }
+    
+    @IBAction func sliderValueChanged(_ sender: Any) {
+        
+        tableView.contentOffset = CGPoint(x: 0, y: CGFloat(slider.value))
+    
+    }
+    
+    @IBAction func topButtonPressed(_ sender: Any) {
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

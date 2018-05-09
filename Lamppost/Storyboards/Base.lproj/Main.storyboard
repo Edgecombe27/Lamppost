@@ -90,6 +90,31 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4r-B3-N7w">
+                                <rect key="frame" x="87.5" y="628" width="200" height="39"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="orM-ne-6hA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="scroll to top"/>
+                                <connections>
+                                    <action selector="topButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qo0-oy-Xdx"/>
+                                </connections>
+                            </button>
+                            <slider hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4oK-o5-gnA">
+                                <rect key="frame" x="198" y="420" width="304" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="bJC-V8-zNe"/>
+                                </constraints>
+                                <color key="minimumTrackTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="KAZ-pr-8Tq"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <constraints>
                             <constraint firstItem="0fY-fw-4WJ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="0GO-TG-HqX"/>
@@ -98,16 +123,20 @@
                             <constraint firstItem="YtE-nQ-cfN" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Elw-Dm-Xpg"/>
                             <constraint firstItem="y8m-iI-Oqh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fu8-Ow-kz7"/>
                             <constraint firstItem="0fY-fw-4WJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ghv-0D-WUS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a4r-B3-N7w" secondAttribute="bottom" id="IBa-2r-TvG"/>
                             <constraint firstItem="y8m-iI-Oqh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="J8c-KL-3FN"/>
                             <constraint firstItem="YtE-nQ-cfN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RGN-SI-pb5"/>
                             <constraint firstItem="y8m-iI-Oqh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Tze-jP-Zb1"/>
+                            <constraint firstItem="4oK-o5-gnA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="400" id="Xeq-cQ-ufQ"/>
                             <constraint firstItem="0fY-fw-4WJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Zvw-WI-kEg"/>
+                            <constraint firstItem="a4r-B3-N7w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="agT-Rx-zVB"/>
                             <constraint firstItem="y8m-iI-Oqh" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="bsG-Op-eet"/>
                             <constraint firstItem="npB-hC-aoB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="haw-Lw-GvR"/>
                             <constraint firstItem="YtE-nQ-cfN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kQf-tu-Ord"/>
                             <constraint firstItem="89F-M0-5JG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oPh-Cr-Ghc"/>
                             <constraint firstItem="YtE-nQ-cfN" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="rpm-IO-UYs"/>
                             <constraint firstItem="npB-hC-aoB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wYB-wu-v7h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4oK-o5-gnA" secondAttribute="trailing" constant="-125" id="wbD-LW-qzB"/>
                             <constraint firstItem="0fY-fw-4WJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="zmY-oy-oj9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -119,7 +148,9 @@
                         <outlet property="editButton" destination="2no-G8-V9h" id="2TZ-cE-WCg"/>
                         <outlet property="loadingIndicator" destination="npB-hC-aoB" id="SOQ-O8-bIO"/>
                         <outlet property="menuView" destination="Y49-Gx-avr" id="R3x-W5-oT3"/>
+                        <outlet property="slider" destination="4oK-o5-gnA" id="pzT-vH-mgd"/>
                         <outlet property="tableView" destination="0fY-fw-4WJ" id="Lfm-Jh-QfJ"/>
+                        <outlet property="topButton" destination="a4r-B3-N7w" id="GAQ-98-x7a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
