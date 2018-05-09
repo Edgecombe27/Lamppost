@@ -46,6 +46,19 @@
                                 <state key="normal" title="select">
                                     <color key="titleColor" red="0.08235294118" green="0.4941176471" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="selectButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dps-GY-x38"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mP-X7-27J">
+                                <rect key="frame" x="197" y="26" width="43" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="delete">
+                                    <color key="titleColor" red="0.99511772389999997" green="0.23938807849999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="twJ-1N-pBc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qjo-9G-Y0y">
                                 <rect key="frame" x="294" y="22.5" width="31" height="34"/>
@@ -53,6 +66,9 @@
                                 <state key="normal" title="add">
                                     <color key="titleColor" red="0.08235294118" green="0.4941176471" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="EQa-y6-iI4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -60,9 +76,11 @@
                             <constraint firstAttribute="trailing" secondItem="Qjo-9G-Y0y" secondAttribute="trailing" constant="16" id="5eE-bq-6QZ"/>
                             <constraint firstItem="Qjo-9G-Y0y" firstAttribute="leading" secondItem="uH7-U6-Wm3" secondAttribute="trailing" constant="16" id="AHv-AY-Qgw"/>
                             <constraint firstItem="Wcn-45-6bR" firstAttribute="leading" secondItem="Ccw-Hw-QD7" secondAttribute="leading" constant="16" id="Cro-Mu-uji"/>
+                            <constraint firstItem="uH7-U6-Wm3" firstAttribute="leading" secondItem="5mP-X7-27J" secondAttribute="trailing" constant="16" id="F9x-Ds-v1H"/>
                             <constraint firstItem="Wcn-45-6bR" firstAttribute="centerY" secondItem="Ccw-Hw-QD7" secondAttribute="centerY" id="ST9-O0-cIP"/>
                             <constraint firstItem="Qjo-9G-Y0y" firstAttribute="centerY" secondItem="Ccw-Hw-QD7" secondAttribute="centerY" id="bCW-Co-39v"/>
                             <constraint firstItem="uH7-U6-Wm3" firstAttribute="centerY" secondItem="Ccw-Hw-QD7" secondAttribute="centerY" id="eYn-ru-AeC"/>
+                            <constraint firstItem="5mP-X7-27J" firstAttribute="centerY" secondItem="Ccw-Hw-QD7" secondAttribute="centerY" id="vJR-Nd-Lpi"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -82,6 +100,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="dateLabel" destination="yNB-F4-iLJ" id="RS9-3l-Q7e"/>
+                <outlet property="deleteButton" destination="5mP-X7-27J" id="tn9-nT-sNA"/>
+                <outlet property="selectButton" destination="uH7-U6-Wm3" id="Z3c-Dc-BO6"/>
                 <outlet property="timeLabel" destination="2LC-TV-60N" id="y8w-Rg-ai8"/>
                 <outlet property="toolBarView" destination="Ccw-Hw-QD7" id="JPy-Ba-MsY"/>
             </connections>

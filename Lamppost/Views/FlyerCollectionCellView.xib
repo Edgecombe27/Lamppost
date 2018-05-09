@@ -23,7 +23,7 @@
                         <rect key="frame" x="8.5" y="13.5" width="338" height="156"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0Sk-ed-uco">
-                                <rect key="frame" x="8" y="43.5" width="330" height="104.5"/>
+                                <rect key="frame" x="0.0" y="43.5" width="338" height="104.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2Th-Jp-WIx">
                                     <size key="itemSize" width="50" height="50"/>
@@ -67,7 +67,7 @@
                             <constraint firstItem="a4x-7k-D02" firstAttribute="leading" secondItem="ORv-ld-PRr" secondAttribute="leading" constant="24" id="3dN-mA-n9c"/>
                             <constraint firstItem="ua2-2X-1mm" firstAttribute="top" secondItem="ORv-ld-PRr" secondAttribute="top" id="TMk-xg-HRp"/>
                             <constraint firstAttribute="trailing" secondItem="ua2-2X-1mm" secondAttribute="trailing" constant="8" id="Uif-bT-aXb"/>
-                            <constraint firstItem="0Sk-ed-uco" firstAttribute="leading" secondItem="ORv-ld-PRr" secondAttribute="leading" constant="8" id="han-nf-7KB"/>
+                            <constraint firstItem="0Sk-ed-uco" firstAttribute="leading" secondItem="ORv-ld-PRr" secondAttribute="leading" id="han-nf-7KB"/>
                             <constraint firstItem="ua2-2X-1mm" firstAttribute="leading" secondItem="Ky2-cW-Vb1" secondAttribute="trailing" constant="8" id="ipw-Th-E0t"/>
                             <constraint firstItem="Ky2-cW-Vb1" firstAttribute="top" secondItem="ORv-ld-PRr" secondAttribute="top" id="wTx-qX-Raq"/>
                             <constraint firstItem="a4x-7k-D02" firstAttribute="top" secondItem="ORv-ld-PRr" secondAttribute="top" constant="16" id="x3g-Fq-F5H"/>

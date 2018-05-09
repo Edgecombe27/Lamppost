@@ -104,8 +104,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         loadUserData()
         contactHandler.requestPermission(completion: { granted in
             if granted {
-                self.contactHandler.importContacts()
-                self.flyerData.append(contentsOf: self.contactHandler.generateFlyers())
+                //self.contactHandler.importContacts()
+                //self.flyerData.append(contentsOf: self.contactHandler.generateFlyers())
                 self.tableView.reloadData()
             }
             self.loadingIndicator.stopAnimating()
@@ -184,7 +184,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return flyerData.count
+        return flyerData.count+1
     }
     
     
@@ -192,6 +192,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if (indexPath.row == 0) {
             let cell : TopCellView = self.tableView.dequeueReusableCell(withIdentifier: TopCellView.IDENTIFIER, for: indexPath) as! TopCellView
+            cell.viewController = self
             return cell
         }
         
@@ -205,7 +206,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     
-    @IBAction func deleteButtonPressed(_ sender: Any) {
+    func deleteButtonPressed() {
         let deleteAlert = UIAlertController(title: "Delete flyers", message: "Are you sure you want to delete these flyers?", preferredStyle: .alert)
         let action = UIAlertAction(title: "Yes", style: .default, handler: { (action) in
             self.deleteSelected()
@@ -216,14 +217,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    @IBAction func editButtonPressed(_ sender: Any) {
+    func editButtonPressed() {
         if inEditMode {
-            editButton.setTitle("edit", for: .normal)
-            deleteButton.isHidden = true
             exitEditMode()
         } else {
-            deleteButton.isHidden = false
-            editButton.setTitle("done", for: .normal)
             enterEditMode()
         }
         
@@ -238,7 +235,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
-    @IBAction func addButtonPressed(_ sender: Any) {
+    func addButtonPressed() {
         
         let addCollectionViewController = AddCollectionViewController()
         addCollectionViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext

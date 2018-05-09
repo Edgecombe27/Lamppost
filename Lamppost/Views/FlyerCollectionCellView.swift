@@ -28,7 +28,7 @@ class FlyerCollectionCellView: UITableViewCell, UICollectionViewDataSource, UICo
         collectionView.dataSource = self
         collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width:80,height: 100)
+        flowLayout.itemSize = CGSize(width:80,height: 130)
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
         flowLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
         flowLayout.minimumInteritemSpacing = 0.0
