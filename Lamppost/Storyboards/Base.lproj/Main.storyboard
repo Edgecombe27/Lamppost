@@ -76,44 +76,7 @@
                             </slider>
                             <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8m-iI-Oqh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PtT-4M-Gap">
-                                        <rect key="frame" x="337" y="626" width="30" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="add">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XHK-Qr-hKu"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2no-G8-V9h">
-                                        <rect key="frame" x="337" y="585" width="30" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="edit">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="editButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YAa-Fy-vdh"/>
-                                        </connections>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM6-ge-QNa">
-                                        <rect key="frame" x="319" y="544" width="48" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="delete">
-                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="deleteButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bvv-gZ-Qqw"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="PtT-4M-Gap" secondAttribute="trailing" constant="8" id="3yH-Tx-moW"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <constraints>
@@ -142,10 +105,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="addButton" destination="PtT-4M-Gap" id="C3Y-OP-Sbg"/>
                         <outlet property="blurrView" destination="y8m-iI-Oqh" id="Mp9-CH-2ti"/>
-                        <outlet property="deleteButton" destination="QM6-ge-QNa" id="HZQ-Zq-iCv"/>
-                        <outlet property="editButton" destination="2no-G8-V9h" id="2TZ-cE-WCg"/>
                         <outlet property="loadingIndicator" destination="npB-hC-aoB" id="SOQ-O8-bIO"/>
                         <outlet property="menuView" destination="Y49-Gx-avr" id="R3x-W5-oT3"/>
                         <outlet property="slider" destination="4oK-o5-gnA" id="pzT-vH-mgd"/>

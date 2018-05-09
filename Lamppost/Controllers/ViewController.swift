@@ -15,9 +15,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var blurrView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var editButton: UIButton!
-    @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var menuView: UIView!
     @IBOutlet var slider: UISlider!
     @IBOutlet var topButton: UIButton!
@@ -42,10 +39,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidAppear(_ animated: Bool) {
         contactsEnabled = CNContactStore.authorizationStatus(for: .contacts) == .authorized
-        
-        editButton.isEnabled = contactsEnabled
-        addButton.isEnabled = contactsEnabled
-        tableView.isHidden = !contactsEnabled
     }
     
     func setUpViews() {

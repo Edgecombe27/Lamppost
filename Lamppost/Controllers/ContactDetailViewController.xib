@@ -27,8 +27,8 @@
                 <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTi-11-LSy">
                     <rect key="frame" x="0.0" y="516" width="375" height="201"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkd-C8-Y7f">
-                            <rect key="frame" x="120" y="8" width="247" height="29"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkd-C8-Y7f">
+                            <rect key="frame" x="120" y="5.5" width="247" height="29"/>
                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,12 +36,11 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="zkd-C8-Y7f" firstAttribute="top" secondItem="aTi-11-LSy" secondAttribute="top" constant="8" id="Ukf-Pb-6fc"/>
                         <constraint firstAttribute="trailing" secondItem="zkd-C8-Y7f" secondAttribute="trailing" constant="8" id="Ynb-3C-TuT"/>
                     </constraints>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bQF-6u-07L">
-                    <rect key="frame" x="32" y="476" width="80" height="80"/>
+                    <rect key="frame" x="16" y="496" width="80" height="80"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="bQF-6u-07L" secondAttribute="height" multiplier="1:1" id="u2n-mx-Ngc"/>
                         <constraint firstAttribute="width" constant="80" id="wFa-TF-Nmx"/>
@@ -62,13 +61,14 @@
                 <constraint firstItem="bHy-oK-pXL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="56B-16-bPM"/>
                 <constraint firstItem="aTi-11-LSy" firstAttribute="top" secondItem="bHy-oK-pXL" secondAttribute="bottom" constant="8" id="79p-nu-oSx"/>
                 <constraint firstItem="aTi-11-LSy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DX6-26-bbW"/>
-                <constraint firstItem="zkd-C8-Y7f" firstAttribute="leading" secondItem="bQF-6u-07L" secondAttribute="trailing" constant="8" id="WUL-Lu-euZ"/>
+                <constraint firstItem="zkd-C8-Y7f" firstAttribute="centerY" secondItem="bQF-6u-07L" secondAttribute="centerY" id="P6i-2L-egB"/>
+                <constraint firstItem="zkd-C8-Y7f" firstAttribute="leading" secondItem="bQF-6u-07L" secondAttribute="trailing" constant="24" id="WUL-Lu-euZ"/>
                 <constraint firstItem="aTi-11-LSy" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" constant="1" id="dvN-vi-3bU"/>
-                <constraint firstItem="bQF-6u-07L" firstAttribute="top" secondItem="aTi-11-LSy" secondAttribute="top" constant="-40" id="f4f-LY-oEO"/>
+                <constraint firstItem="bQF-6u-07L" firstAttribute="top" secondItem="aTi-11-LSy" secondAttribute="top" constant="-20" id="f4f-LY-oEO"/>
                 <constraint firstItem="aTi-11-LSy" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="50" id="gYQ-rC-Gia"/>
                 <constraint firstItem="aTi-11-LSy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="hz9-4B-efP"/>
                 <constraint firstItem="bHy-oK-pXL" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="kRb-SG-aYO"/>
-                <constraint firstItem="bQF-6u-07L" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="tug-WM-3de"/>
+                <constraint firstItem="bQF-6u-07L" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="tug-WM-3de"/>
                 <constraint firstItem="bHy-oK-pXL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yVB-bA-m2W"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
