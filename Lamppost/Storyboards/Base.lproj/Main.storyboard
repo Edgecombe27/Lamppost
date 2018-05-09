@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_1" translatesAutoresizingMaskIntoConstraints="NO" id="YtE-nQ-cfN">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="venice" translatesAutoresizingMaskIntoConstraints="NO" id="YtE-nQ-cfN">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8m-iI-Oqh">
@@ -91,7 +91,7 @@
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4r-B3-N7w">
-                                <rect key="frame" x="87.5" y="628" width="200" height="39"/>
+                                <rect key="frame" x="87.5" y="620" width="200" height="39"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="orM-ne-6hA"/>
@@ -123,7 +123,7 @@
                             <constraint firstItem="YtE-nQ-cfN" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Elw-Dm-Xpg"/>
                             <constraint firstItem="y8m-iI-Oqh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fu8-Ow-kz7"/>
                             <constraint firstItem="0fY-fw-4WJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ghv-0D-WUS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a4r-B3-N7w" secondAttribute="bottom" id="IBa-2r-TvG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a4r-B3-N7w" secondAttribute="bottom" constant="8" id="IBa-2r-TvG"/>
                             <constraint firstItem="y8m-iI-Oqh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="J8c-KL-3FN"/>
                             <constraint firstItem="YtE-nQ-cfN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RGN-SI-pb5"/>
                             <constraint firstItem="y8m-iI-Oqh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Tze-jP-Zb1"/>
@@ -159,6 +159,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back_1" width="3024" height="4032"/>
+        <image name="venice" width="3024" height="4032"/>
     </resources>
 </document>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8523724E20A33B3B004809FA /* TopCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8523724C20A33B3B004809FA /* TopCellView.swift */; };
+		8523724F20A33B3B004809FA /* TopCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8523724D20A33B3B004809FA /* TopCellView.xib */; };
 		85A683382025FEAB0074754E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A683372025FEAB0074754E /* AppDelegate.swift */; };
 		85A6833A2025FEAB0074754E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A683392025FEAB0074754E /* ViewController.swift */; };
 		85A6833D2025FEAB0074754E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A6833B2025FEAB0074754E /* Main.storyboard */; };
@@ -36,11 +38,11 @@
 		FBA2C347203785E5001791B1 /* ContactDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA2C345203785E5001791B1 /* ContactDetailViewController.xib */; };
 		FBD9AE57203221B90039443B /* ShortcutCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD9AE55203221B90039443B /* ShortcutCellView.swift */; };
 		FBD9AE58203221B90039443B /* ShortcutCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD9AE56203221B90039443B /* ShortcutCellView.xib */; };
-		FBE3C975203325E9009B8F83 /* HeaderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3C973203325E9009B8F83 /* HeaderCellView.swift */; };
-		FBE3C976203325E9009B8F83 /* HeaderCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE3C974203325E9009B8F83 /* HeaderCellView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8523724C20A33B3B004809FA /* TopCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCellView.swift; sourceTree = "<group>"; };
+		8523724D20A33B3B004809FA /* TopCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCellView.xib; sourceTree = "<group>"; };
 		85A683342025FEAB0074754E /* kiOSK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kiOSK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A683372025FEAB0074754E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85A683392025FEAB0074754E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,8 +74,6 @@
 		FBA2C345203785E5001791B1 /* ContactDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactDetailViewController.xib; sourceTree = "<group>"; };
 		FBD9AE55203221B90039443B /* ShortcutCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutCellView.swift; sourceTree = "<group>"; };
 		FBD9AE56203221B90039443B /* ShortcutCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShortcutCellView.xib; sourceTree = "<group>"; };
-		FBE3C973203325E9009B8F83 /* HeaderCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCellView.swift; sourceTree = "<group>"; };
-		FBE3C974203325E9009B8F83 /* HeaderCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCellView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,10 +134,10 @@
 		85A6834A2027BA420074754E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8523724C20A33B3B004809FA /* TopCellView.swift */,
+				8523724D20A33B3B004809FA /* TopCellView.xib */,
 				FB0B0AC8202CEE6200D0722F /* FlyerCollectionCellView.swift */,
 				FB0B0AC9202CEE6200D0722F /* FlyerCollectionCellView.xib */,
-				FBE3C973203325E9009B8F83 /* HeaderCellView.swift */,
-				FBE3C974203325E9009B8F83 /* HeaderCellView.xib */,
 				FB0B0ACE202CEF0F00D0722F /* ContactFlyerCellView.swift */,
 				FB0B0ACF202CEF0F00D0722F /* ContactFlyerCellView.xib */,
 				FB11EF01203780A000C6A8C4 /* FlyerCellView.swift */,
@@ -236,10 +236,10 @@
 				FB02EF6D203F374600BC5E4E /* SettingsViewController.xib in Resources */,
 				85ABB2ED2039E76D00F46C83 /* PhoneActionCellView.xib in Resources */,
 				85A683422025FEAB0074754E /* LaunchScreen.storyboard in Resources */,
-				FBE3C976203325E9009B8F83 /* HeaderCellView.xib in Resources */,
 				FB0B0ACB202CEE6200D0722F /* FlyerCollectionCellView.xib in Resources */,
 				FB0B0AD1202CEF0F00D0722F /* ContactFlyerCellView.xib in Resources */,
 				85ABB2F12039E78100F46C83 /* EmailActionCellView.xib in Resources */,
+				8523724F20A33B3B004809FA /* TopCellView.xib in Resources */,
 				85A6833F2025FEAB0074754E /* Assets.xcassets in Resources */,
 				FBD9AE58203221B90039443B /* ShortcutCellView.xib in Resources */,
 				FBA2C347203785E5001791B1 /* ContactDetailViewController.xib in Resources */,
@@ -259,10 +259,10 @@
 				85FE792C20291C2B00DE00B0 /* ContactFlyer.swift in Sources */,
 				FB02EF6C203F374600BC5E4E /* SettingsViewController.swift in Sources */,
 				FB37F3E0202B8592004527CA /* Action.swift in Sources */,
-				FBE3C975203325E9009B8F83 /* HeaderCellView.swift in Sources */,
 				FBD9AE57203221B90039443B /* ShortcutCellView.swift in Sources */,
 				FB22A74E203DF99C0064BA76 /* UserData.swift in Sources */,
 				85ABB2F02039E78100F46C83 /* EmailActionCellView.swift in Sources */,
+				8523724E20A33B3B004809FA /* TopCellView.swift in Sources */,
 				85ABB2EC2039E76D00F46C83 /* PhoneActionCellView.swift in Sources */,
 				FB0B0ACA202CEE6200D0722F /* FlyerCollectionCellView.swift in Sources */,
 				85A6833A2025FEAB0074754E /* ViewController.swift in Sources */,

@@ -53,7 +53,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         tableView.register(UINib(nibName: FlyerCollectionCellView.NIB_NAME, bundle: nil), forCellReuseIdentifier: FlyerCollectionCellView.IDENTIFIER)
-        tableView.register(UINib(nibName: HeaderCellView.NIB_NAME, bundle: nil), forCellReuseIdentifier: HeaderCellView.IDENTIFIER)
+        tableView.register(UINib(nibName: TopCellView.NIB_NAME, bundle: nil), forCellReuseIdentifier: TopCellView.IDENTIFIER)
         self.tableView.rowHeight = 200
         
         let flowLayout = UICollectionViewFlowLayout()
@@ -183,20 +183,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return flyerData.count
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return flyerData.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        if (indexPath.row == 0) {
+            let cell : TopCellView = self.tableView.dequeueReusableCell(withIdentifier: TopCellView.IDENTIFIER, for: indexPath) as! TopCellView
+            return cell
+        }
+        
             let cell : FlyerCollectionCellView = self.tableView.dequeueReusableCell(withIdentifier: FlyerCollectionCellView.IDENTIFIER, for: indexPath) as! FlyerCollectionCellView
             cell.viewController = self
-            cell.render(withCollection: flyerData[indexPath.section])
+            cell.render(withCollection: flyerData[indexPath.row-1])
             return cell
     }
     
