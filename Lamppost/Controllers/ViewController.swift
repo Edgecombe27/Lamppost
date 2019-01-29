@@ -92,8 +92,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func renderContacts() {
         flyerData = []
         contactHandler = ContactHandler()
-        loadingIndicator.isHidden = false
-        loadingIndicator.startAnimating()
+        //loadingIndicator.isHidden = false
+        //loadingIndicator.startAnimating()
         loadUserData()
         contactHandler.requestPermission(completion: { granted in
             if granted {
@@ -101,7 +101,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 //self.flyerData.append(contentsOf: self.contactHandler.generateFlyers())
                 self.tableView.reloadData()
             }
-            self.loadingIndicator.stopAnimating()
+            //self.loadingIndicator.stopAnimating()
             self.loadingIndicator.isHidden = true
         })
     }

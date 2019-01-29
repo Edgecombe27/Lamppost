@@ -27,7 +27,7 @@ class ContactDetailViewController: UIViewController, UICollectionViewDelegate, U
         collectionView.dataSource = self
         collectionView.delegate = self
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width:110,height: 110)
+        flowLayout.itemSize = CGSize(width:100,height: 100)
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
         flowLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
         flowLayout.minimumInteritemSpacing = 0.0

@@ -19,11 +19,11 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.2</string>
 	<key>CFBundleVersion</key>
-	<string>6</string>
+	<string>7</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSContactsUsageDescription</key>
-	<string>kiOSk does not share or store this information anywhere other than your device.</string>
+	<string>kiOSk would like to access your contacts so you can conveniently sort them with our interface. We do not share your contact information with anyone.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

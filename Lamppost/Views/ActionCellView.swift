@@ -19,7 +19,7 @@ class ActionCellView: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        label.layer.cornerRadius = label.frame.height / 2.0
+        label.layer.cornerRadius = label.frame.width / 2.0
         label.layer.masksToBounds = true
     }
     

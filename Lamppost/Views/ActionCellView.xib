@@ -20,11 +20,11 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYY-PQ-pmk">
-                        <rect key="frame" x="15" y="12.5" width="100" height="100"/>
+                        <rect key="frame" x="22.5" y="20" width="85" height="85"/>
                         <color key="backgroundColor" red="0.08235294118" green="0.4941176471" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="ZYY-PQ-pmk" secondAttribute="height" multiplier="1:1" id="N6g-t8-ees"/>
-                            <constraint firstAttribute="width" constant="100" id="hhd-Tu-o8j"/>
+                            <constraint firstAttribute="width" constant="85" id="ZpN-kt-M0q"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
