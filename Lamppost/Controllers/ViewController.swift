@@ -18,6 +18,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var menuView: UIView!
     @IBOutlet var slider: UISlider!
     @IBOutlet var topButton: UIButton!
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    @IBOutlet weak var deleteButton: UIBarButtonItem!
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    
     
     private var selectedCollections : [FlyerCollection]!
     private var selectedFlyers : [String : [Flyer]]!
@@ -34,6 +38,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         contactsEnabled = CNContactStore.authorizationStatus(for: .contacts) == .authorized
         setUpViews()
         renderContacts()
+        deleteButton.title = ""
+        deleteButton.isEnabled = false
         
     }
     
@@ -62,10 +68,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         slider.layer.borderColor = UIColor.darkGray.cgColor
         slider.layer.borderWidth = 0.25
         
-        topButton.layer.cornerRadius = 20
+        topButton.layer.cornerRadius = topButton.frame.height / 2
         topButton.layer.masksToBounds = true
-        topButton.layer.borderColor = UIColor.gray.cgColor
-        topButton.layer.borderWidth = 0.5
         
         slider.minimumValue = 0
         slider.maximumValue = Float(tableView.rowHeight * CGFloat(tableView.numberOfRows(inSection: 0)))
@@ -177,29 +181,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return flyerData.count+1
+        return flyerData.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if (indexPath.row == 0) {
-            let cell : TopCellView = self.tableView.dequeueReusableCell(withIdentifier: TopCellView.IDENTIFIER, for: indexPath) as! TopCellView
-            cell.viewController = self
-            return cell
-        }
-        
-            let cell : FlyerCollectionCellView = self.tableView.dequeueReusableCell(withIdentifier: FlyerCollectionCellView.IDENTIFIER, for: indexPath) as! FlyerCollectionCellView
-            cell.viewController = self
-            cell.render(withCollection: flyerData[indexPath.row-1])
-            return cell
+        let cell : FlyerCollectionCellView = self.tableView.dequeueReusableCell(withIdentifier: FlyerCollectionCellView.IDENTIFIER, for: indexPath) as! FlyerCollectionCellView
+        cell.viewController = self
+        cell.render(withCollection: flyerData[indexPath.row])
+        return cell
     }
     
     
     
-    
-    
-    func deleteButtonPressed() {
+    @IBAction func deleteButtonPressed(_ sender: Any) {
         let deleteAlert = UIAlertController(title: "Delete flyers", message: "Are you sure you want to delete these flyers?", preferredStyle: .alert)
         let action = UIAlertAction(title: "Yes", style: .default, handler: { (action) in
             self.deleteSelected()
@@ -207,17 +203,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         deleteAlert.addAction(action)
         present(deleteAlert, animated: true, completion: nil)
-        
     }
     
-    func editButtonPressed() {
+    
+    @IBAction func editButtonPressed(_ sender: Any) {
         if inEditMode {
             exitEditMode()
         } else {
             enterEditMode()
         }
-        
+        if editButton.title == "Edit" {
+            editButton.title = "Done"
+            deleteButton.title = "Delete"
+            deleteButton.isEnabled = true
+        } else {
+            editButton.title = "Edit"
+            deleteButton.title = ""
+            deleteButton.isEnabled = false
+        }
     }
+    
+    
     
     @IBAction func settingsButtonPressed(_ sender: Any) {
         let settingsViewController = SettingsViewController()
@@ -227,15 +233,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         present(settingsViewController, animated: true, completion: nil)
     }
     
-    
-    func addButtonPressed() {
-        
+    @IBAction func addButtonPressed(_ sender: Any) {
         let addCollectionViewController = AddCollectionViewController()
         addCollectionViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         blurrView.isHidden = false
         addCollectionViewController.viewController = self
         present(addCollectionViewController, animated: true, completion: nil)
-        
     }
     
     // Renders edit buttons and clears selected flyers and collections

@@ -53,26 +53,7 @@ class TopCellView: UITableViewCell {
         
     }
 
-    @IBAction func addButtonPressed(_ sender: Any) {
-        viewController.addButtonPressed()
-    }
-    
-    @IBAction func selectButtonPressed(_ sender: Any) {
-        viewController.editButtonPressed()
-        if selectButton.titleLabel?.text == "select" {
-            selectButton.setTitle("done", for: .normal)
-            deleteButton.isHidden = false
-        } else {
-            selectButton.setTitle("select", for: .normal)
-            deleteButton.isHidden = true
-        }
-    }
-    
-    
-    @IBAction func deleteButtonPressed(_ sender: Any) {
-        viewController.deleteButtonPressed()
-    }
-    
+
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
